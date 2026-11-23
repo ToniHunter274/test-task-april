@@ -1,0 +1,58 @@
+# Put this at .github/workflows/sklearn-boundary-check.yml in any GitHub repo,
+# then run it from the Actions tab ("Run workflow").
+name: sklearn-boundary-check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.10", "3.11"]
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Install scikit-learn as it resolved on the incident date
+        run: |
+          pip install -q uv
+          # Ignore anything uploaded after Nov 12, 2026, so the resolution matches the incident date
+          uv pip install --system --exclude-newer 2026-11-13T00:00:00Z scikit-learn
+
+      - name: Run the training cases
+        run: |
+          cat > check.py <<'EOF'
+          import sys, warnings, sklearn
+          from sklearn.datasets import load_iris
+          from sklearn.linear_model import LogisticRegression
+          from sklearn.multiclass import OneVsRestClassifier
+
+          print("python", sys.version.split()[0], "| scikit-learn", sklearn.__version__)
+          X, y = load_iris(return_X_y=True)
+          cases = [
+              ("3-class multi_class=ovr", lambda: LogisticRegression(max_iter=1000, multi_class="ovr"), X, y),
+              ("3-class solver=liblinear", lambda: LogisticRegression(max_iter=1000, solver="liblinear"), X, y),
+              ("binary  solver=liblinear", lambda: LogisticRegression(max_iter=1000, solver="liblinear"), X[y < 2], y[y < 2]),
+              ("3-class penalty=l2", lambda: LogisticRegression(max_iter=1000, penalty="l2"), X, y),
+              ("fix: OneVsRest(liblinear)", lambda: OneVsRestClassifier(LogisticRegression(max_iter=1000, solver="liblinear")), X, y),
+              ("fix: default LogisticRegression", lambda: LogisticRegression(max_iter=1000), X, y),
+          ]
+          for name, make, Xs, ys in cases:
+              try:
+                  with warnings.catch_warnings(record=True) as w:
+                      warnings.simplefilter("always")
+                      make().fit(Xs, ys)
+                  print(f"{name:34} OK    warnings={sorted({x.category.__name__ for x in w})}")
+              except Exception as e:
+                  print(f"{name:34} {type(e).__name__}: {e}")
+          EOF
+          python check.py | tee result-py${{ matrix.python }}.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: result-py${{ matrix.python }}
+          path: result-py${{ matrix.python }}.txt
