@@ -1,0 +1,108 @@
+name: tokenizer-fleet-check
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/tokenizer-fleet-check.yml
+      - tokenizer_fleet_check.py
+      - tokenizer_fleet_summarize.py
+jobs:
+  freeze-model-revisions:
+    name: Freeze 20 public model revisions
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --disable-pip-version-check 'huggingface_hub>=0.25,<2'
+      - name: Resolve each model's commit once
+        run: python tokenizer_fleet_check.py freeze --manifest tokenizer-fleet-manifest.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tokenizer-fleet-model-manifest
+          path: tokenizer-fleet-manifest.json
+  fleet:
+    name: Transformers ${{ matrix.version }} / 20 models
+    needs: freeze-model-revisions
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        version:
+          - '4.36.1'  # Databricks 14.3 ML
+          - '4.41.2'  # Databricks 15.4 ML
+          - '4.45.0'  # Last tested old-default patch
+          - '4.45.1'  # First tested new-default patch
+          - '4.50.2'  # Databricks 16.4 ML
+          - '4.51.3'  # Databricks 17.3 ML
+          - '4.57.6'  # Databricks 19 ML
+          - '5.24.0'  # Newest-release comparison as of 2026-11-23
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          name: tokenizer-fleet-model-manifest
+      - name: Install pinned Transformers
+        continue-on-error: true
+        run: |
+          python -m pip install --disable-pip-version-check --retries 2 --timeout 45 \
+            "transformers==${{ matrix.version }}" \
+            "sentencepiece>=0.1.99,<0.3" \
+            "numpy<2" > install-log.txt 2>&1
+          tail -n 25 install-log.txt
+      - name: Run 20 model × 3 input matrix
+        if: always()
+        env:
+          MATRIX_VERSION: ${{ matrix.version }}
+          HF_HUB_DOWNLOAD_TIMEOUT: '60'
+          HF_HUB_ETAG_TIMEOUT: '60'
+          HF_HUB_DISABLE_TELEMETRY: '1'
+        run: |
+          python tokenizer_fleet_check.py run --manifest tokenizer-fleet-manifest.json \
+            --version "${{ matrix.version }}" --out "fleet-${{ matrix.version }}.csv" \
+            > run-log.txt 2>&1 || true
+          cat run-log.txt
+          python -m pip freeze > dependencies.txt
+      - name: Upload results including errors
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tokenizer-fleet-${{ matrix.version }}
+          path: |
+            fleet-${{ matrix.version }}.csv
+            run-log.txt
+            install-log.txt
+            dependencies.txt
+          if-no-files-found: warn
+  consolidate:
+    name: Consolidate eight version CSVs
+    needs: fleet
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: tokenizer-fleet-*
+          path: fleet-artifacts
+          merge-multiple: false
+      - name: Generate combined CSV and source-checked differences
+        run: |
+          python tokenizer_fleet_summarize.py fleet-artifacts | tee tokenizer-fleet-summary.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tokenizer-fleet-consolidated
+          path: |
+            tokenizer-fleet-matrix.csv
+            tokenizer-fleet-summary.txt
+            all-eight-csv/
