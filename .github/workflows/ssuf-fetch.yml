@@ -1,0 +1,35 @@
+name: ssuf-fetch
+on:
+  workflow_dispatch:
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Clone repo and run the original 17-terminal and Paper I verifiers
+        run: |
+          git clone https://github.com/snikolenko/unsplittable-flows.git uf
+          cd uf
+          git log -1 --format='HEAD %H %cs' | tee ../run_log.txt
+          git log --format='%h %cs %s' | head -40 >> ../run_log.txt
+          pip install -r verify/requirements.txt >> ../run_log.txt 2>&1 || true
+          for s in verify/p2_v1_k17.py verify/v2_instances.py; do
+            echo "===== $s" >> ../run_log.txt
+            timeout 1200 python "$s" >> ../run_log.txt 2>&1 || echo "exit $?" >> ../run_log.txt
+          done
+          ls -R | head -300 >> ../run_log.txt
+      - name: Collect
+        run: |
+          mkdir -p art
+          cp run_log.txt art/
+          cp -r uf/verify art/verify
+          cp -r uf/certificates art/certificates || true
+          cp uf/README.md uf/VERIFICATION.md art/ || true
+          mkdir -p art/paper && cp uf/paper/*.pdf art/paper/ || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ssuf-fetch
+          path: art/
