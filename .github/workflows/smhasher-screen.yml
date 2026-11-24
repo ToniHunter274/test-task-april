@@ -1,0 +1,70 @@
+name: smhasher-screen
+on:
+  workflow_dispatch:
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Clone with history (blobs on demand)
+        run: |
+          git clone --filter=blob:none https://github.com/rurban/smhasher.git smhasher
+          cd smhasher && git log -1 --format='smhasher HEAD %H %cs' | tee ../heads.txt
+          for f in doc/*.txt; do echo "$f $(git log -1 --format=%cs -- "$f") $(git log --format=%cs -- "$f" | tail -1)"; done > ../docdates.txt
+          wc -l ../docdates.txt
+      - name: Screen logs
+        run: |
+          cat > screen.py <<'EOF'
+          import os, re, glob, collections
+          out = open("screen_report.txt", "w")
+          def p(*a):
+              print(*a); print(*a, file=out)
+          p(open("heads.txt").read())
+          dates = {}
+          for ln in open("docdates.txt"):
+              q = ln.split()
+              if len(q) >= 3: dates[q[0]] = (q[1], q[2])
+          sigs = collections.Counter(); rows = []
+          tails = collections.Counter()
+          for f in sorted(glob.glob("smhasher/doc/*.txt")):
+              txt = open(f, errors="replace").read().split("\n")
+              rel = f.replace("smhasher/", "")
+              head = next((l for l in txt if l.startswith("--- Testing")), "")
+              secs = []; cur = "pre"; fails = collections.Counter(); failbanners = 0
+              for l in txt:
+                  m = re.match(r"\[\[\[ (.*?) \]\]\]", l.strip())
+                  if m: cur = m.group(1); secs.append(cur)
+                  if l.rstrip().endswith("!!!!!"): fails[cur] += 1
+                  if "*********FAIL*********" in l: failbanners += 1
+                  t = re.search(r"(\!+|\(\!\)|\bhigh\b|SKIP\w*|WARNING)\s*$", l.rstrip())
+                  if t: tails[t.group(1)] += 1
+              sig = tuple(secs); sigs[sig] += 1
+              rows.append((rel, len(txt), dates.get(rel, ("?", "?")), head[:90], len(secs), sum(fails.values()), failbanners, dict(fails)))
+          p("== Per-log summary: file | lines | last/first commit | header | #sections | #'!!!!!' lines | #FAIL banners | fails per section ==")
+          for r in rows: p(" | ".join(str(x) for x in r))
+          p("\n== Distinct section-set signatures (count of logs) ==")
+          for sig, n in sigs.most_common(): p(n, "|", len(sig), "sections |", "; ".join(sig))
+          p("\n== Line-ending marker inventory across all logs ==")
+          for k, v in tails.most_common(): p(repr(k), v)
+          # README table cross-check
+          p("\n== README rows: name | doc link | quality problems | '!!!!!' count in linked log ==")
+          rd = open("smhasher/README.md", errors="replace").read().split("\n")
+          cnt = {r[0]: r[5] for r in rows}
+          for l in rd:
+              if l.startswith("|") and "doc/" in l:
+                  cells = [c.strip() for c in l.strip("|").split("|")]
+                  m = re.search(r"\((doc/[^)]+\.txt)\)", cells[0])
+                  link = m.group(1) if m else "?"
+                  p(f"{cells[0][:60]} | {link} | {cells[-1][:120]} | {cnt.get(link, 'NOLOG')}")
+          out.close()
+          EOF
+          python screen.py
+      - name: Collect
+        run: |
+          mkdir -p art && cp screen_report.txt docdates.txt heads.txt art/ && cp -r smhasher/doc art/doc && cp smhasher/README.md art/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: smhasher-screen
+          path: art/
