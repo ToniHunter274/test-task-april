@@ -59,7 +59,7 @@ jobs:
           # ---------- 2. Tensor identity check on .sms triples ----------
           p("\n== 2. Bilinear identity check (L,R,P .sms) over Q and mod 2 ==")
           def read_sms(path):
-              lines = open(path, errors="replace").read().split("\n")
+              lines = [ln.split("#", 1)[0].strip() for ln in open(path, errors="replace") if ln.split("#", 1)[0].strip()]
               h = lines[0].split(); m, n = int(h[0]), int(h[1])
               M = [[Fr(0)] * n for _ in range(m)]
               for ln in lines[1:]:
@@ -100,7 +100,7 @@ jobs:
               if not (ln_ == 16 and rn == 16 and pm == 16 and lm == rm == pn):
                   p(f"{name}: {shape} -> not a plain 4x4 decomposition (alternative-basis or change-of-basis piece); skipped"); continue
               q = check(L, R, P)
-              m2 = check(L, R, P, mod=2)
+              m2 = "undefined" if any(x.denominator % 2 == 0 for M in (L, R, P) for row in M for x in row) else check(L, R, P, mod=2)
               dens = sorted({x.denominator for M in (L, R, P) for row in M for x in row if x})
               p(f"{name}: {shape} denominators={dens} valid_over_Q={q} valid_mod_2={m2}")
           # ---------- 3. matmulcatalog: 4x4x4 rows in field-scoped comparison tables ----------
@@ -131,6 +131,7 @@ jobs:
           EOF
           python verify.py
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: fmm48-verify
           path: verify_report.txt
