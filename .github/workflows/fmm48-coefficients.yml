@@ -1,0 +1,85 @@
+name: fmm48-coefficients
+on:
+  workflow_dispatch:
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Clone sources
+        run: |
+          git clone --depth 1 https://github.com/jgdumas/plinopt.git plinopt
+          git clone --depth 1 https://github.com/solven-eu/matmulcatalog.git matmulcatalog || echo "matmulcatalog clone failed"
+          (cd plinopt && git log -1 --format='plinopt HEAD %H %cs')
+          (cd matmulcatalog 2>/dev/null && git log -1 --format='matmulcatalog HEAD %H %cs') || true
+      - name: Inventory and coefficient scan
+        run: |
+          cat > scan.py <<'EOF'
+          import os, re, sys
+          from fractions import Fraction
+          out = open("report.txt", "w")
+          def p(*a):
+              print(*a); print(*a, file=out)
+          p("== All files whose name mentions 4x4x4, 444, 48 or rank48 ==")
+          hits = []
+          for root, _, files in os.walk("plinopt"):
+              if "/.git" in root: continue
+              for f in files:
+                  path = os.path.join(root, f)
+                  low = f.lower()
+                  if re.search(r"4x4x4|444|_48|48_|rank48|4x4_48", low):
+                      hits.append(path); p(path, os.path.getsize(path))
+          p("\n== Directory tree (depth 2) ==")
+          for root, dirs, files in os.walk("plinopt"):
+              if "/.git" in root: continue
+              d = root.count(os.sep)
+              if d <= 2: p(root, "|", len(files), "files")
+          def tokens(path):
+              vals = []
+              with open(path, errors="replace") as fh:
+                  for line in fh:
+                      parts = line.split()
+                      if len(parts) == 3 and parts[0].lstrip('-').isdigit() and parts[1].lstrip('-').isdigit():
+                          vals.append(parts[2])
+              return vals
+          p("\n== Coefficient scan per candidate file (.sms-style 'i j value' lines) ==")
+          for path in hits:
+              vals = tokens(path)
+              if not vals:
+                  p(path, ": no i j value lines"); continue
+              distinct = sorted(set(vals))
+              dens = set(); cplx = False; bad = []
+              for v in distinct:
+                  if re.search(r"[iIjJ]", v): cplx = True; continue
+                  try: dens.add(Fraction(v).denominator)
+                  except Exception: bad.append(v)
+              nnz = sum(1 for v in vals if v not in ("0",))
+              p(f"{path}: entries={len(vals)} nonzero={nnz} distinct={distinct[:40]} denominators={sorted(dens)} complex={cplx} unparsed={bad[:10]}")
+          p("\n== Head of each candidate file (first 6 lines) ==")
+          for path in hits:
+              p("--", path)
+              with open(path, errors="replace") as fh:
+                  for i, line in enumerate(fh):
+                      if i >= 6: break
+                      p("   ", line.rstrip())
+          p("\n== Novelty grep: crossover / threshold / validity-by-ring mentions ==")
+          pat = re.compile(r"crossover|cross-over|break-?even|threshold|inverse of 2|characteristic|modulo 2\^?64|wrap", re.I)
+          for repo in ["plinopt", "matmulcatalog"]:
+              for root, _, files in os.walk(repo):
+                  if "/.git" in root: continue
+                  for f in files:
+                      if not f.lower().endswith((".md", ".txt", ".tex", ".html", ".rst")): continue
+                      path = os.path.join(root, f)
+                      try:
+                          for n, line in enumerate(open(path, errors="replace"), 1):
+                              if pat.search(line): p(f"{path}:{n}: {line.strip()[:220]}")
+                      except Exception: pass
+          out.close()
+          EOF
+          python scan.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fmm48-coefficients
+          path: report.txt
