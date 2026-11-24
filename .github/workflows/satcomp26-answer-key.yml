@@ -1,0 +1,73 @@
+name: satcomp26-answer-key
+
+on:
+  workflow_dispatch:
+
+jobs:
+  key:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Clone the competition repo and export every revision of scores.csv
+        run: |
+          git clone https://github.com/satcompetition/2026.git satcomp
+          cd satcomp
+          mkdir -p ../revs
+          git log --format='%H %cs %s' -- downloads/scores.csv | tee ../revs/history.txt
+          while read sha date rest; do
+            git show "$sha:downloads/scores.csv" > "../revs/scores_${date}_${sha:0:8}.csv"
+          done < ../revs/history.txt
+          ls -la ../revs
+
+      - name: Compute the answer key for each revision
+        run: |
+          cat > key.py <<'EOF'
+          import csv, glob, statistics
+          from collections import defaultdict
+          PEN = 10000.0
+          for path in sorted(glob.glob("revs/scores_*.csv")):
+              rows = list(csv.DictReader(open(path)))
+              solvers = sorted({r["solverid"] for r in rows if r["solverid"].endswith("[main]")})
+              insts = sorted({r["instanceid"] for r in rows})
+              statuses = sorted({r["status"] for r in rows})
+              vres = {}
+              contrib = defaultdict(dict)
+              for r in rows:
+                  if r["vresult"]: vres[r["instanceid"]] = r["vresult"]
+                  if r["solverid"] not in solvers: continue
+                  solved = r["status"] in ("sat-verified", "unsat-verified")
+                  contrib[r["solverid"]][r["instanceid"]] = float(r["runtime"]) if solved else PEN
+              print(f"\n===== {path} =====")
+              print(f"rows {len(rows)} | main solvers {len(solvers)} | instances {len(insts)} | statuses {statuses}")
+              missing = [(s, len(insts) - len(contrib[s])) for s in solvers if len(contrib[s]) != len(insts)]
+              print("solvers with missing instance rows:", missing or "none")
+              sat = [i for i in insts if vres.get(i) == "sat"]; uns = [i for i in insts if vres.get(i) == "unsat"]
+              print(f"sat instances {len(sat)} | unsat instances {len(uns)} | no vresult {len(insts)-len(sat)-len(uns)}")
+              def par2(s, subset): return statistics.fmean(contrib[s].get(i, PEN) for i in subset)
+              def nsolved(s): return sum(1 for i in insts if contrib[s].get(i, PEN) < PEN)
+              table = sorted((par2(s, insts), s, nsolved(s), par2(s, sat), par2(s, uns)) for s in solvers)
+              ranks = {k: {s: i+1 for i, s in enumerate(sorted(solvers, key=lambda s: par2(s, sub)))}
+                       for k, sub in (("all", insts), ("sat", sat), ("unsat", uns))}
+              def vbs(portfolio):
+                  vals = [min(contrib[s].get(i, PEN) for s in portfolio) for i in insts]
+                  return sum(1 for v in vals if v < PEN), statistics.fmean(vals)
+              vs, vp = vbs(solvers)
+              print(f"VBS solved {vs} | VBS PAR-2 {vp:.4f}")
+              print("rank_all rank_sat rank_unsat | solver | solved | PAR2_all | PAR2_sat | PAR2_unsat | VBS_loss_if_removed | unique_solves")
+              for p_all, s, n, p_sat, p_uns in table:
+                  _, vp_wo = vbs([x for x in solvers if x != s])
+                  uniq = sum(1 for i in insts if contrib[s].get(i, PEN) < PEN and
+                             all(contrib[o].get(i, PEN) >= PEN for o in solvers if o != s))
+                  print(f"{ranks['all'][s]:>3} {ranks['sat'][s]:>3} {ranks['unsat'][s]:>3} | {s} | {n} | {p_all:.4f} | {p_sat:.4f} | {p_uns:.4f} | {vp_wo - vp:.4f} | {uniq}")
+          EOF
+          python key.py | tee answer_key.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: satcomp26-answer-key
+          path: |
+            answer_key.txt
+            revs/
