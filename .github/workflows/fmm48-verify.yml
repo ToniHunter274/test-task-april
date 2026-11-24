@@ -1,0 +1,136 @@
+name: fmm48-verify
+on:
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Clone sources
+        run: |
+          git clone --depth 1 https://github.com/jgdumas/plinopt.git plinopt
+          git clone --depth 1 https://github.com/solven-eu/matmulcatalog.git matmulcatalog
+          (cd plinopt && git log -1 --format='plinopt HEAD %H %cs') | tee heads.txt
+          (cd matmulcatalog && git log -1 --format='matmulcatalog HEAD %H %cs') | tee -a heads.txt
+      - name: Count operations and verify tensor identities
+        run: |
+          cat > verify.py <<'EOF'
+          import os, re, glob, itertools
+          from fractions import Fraction as Fr
+          out = open("verify_report.txt", "w")
+          def p(*a):
+              print(*a); print(*a, file=out)
+          p(open("heads.txt").read())
+          D = "plinopt/data"
+          # ---------- 1. Operation counts from straight-line programs ----------
+          p("== 1. Operation counts per .slp file ==")
+          p("file | lines | add/sub | scalings(coef not +-1) | other '*' | raw text sample")
+          def count_slp(path):
+              txt = open(path, errors="replace").read()
+              stmts = [s.strip() for s in txt.replace("\n", " ").split(";") if ":=" in s]
+              adds = scal = muls = 0
+              for s in stmts:
+                  rhs = s.split(":=", 1)[1].strip()
+                  # top-level terms split on + or - not at start and not after * or /
+                  terms = [t for t in re.split(r"(?<=[\w\)])\s*[+-]\s*", rhs) if t.strip()]
+                  adds += max(len(terms) - 1, 0)
+                  for t in terms:
+                      t = t.strip()
+                      if "*" in t or "/" in t:
+                          coef = re.sub(r"[io]\d+|[zt]\d+|[a-zA-Z_]\w*", "", t).replace("*", "").replace("(", "").replace(")", "").strip()
+                          if coef and coef not in ("1", "-1", "+1"):
+                              scal += 1
+                          elif not coef:
+                              muls += 1
+              return len(stmts), adds, scal, muls, txt[:160].replace("\n", " ")
+          fams = {}
+          for path in sorted(glob.glob(D + "/4x4x4_4[789]*.slp")):
+              n, a, s, m, sample = count_slp(path)
+              name = os.path.basename(path)
+              p(f"{name} | {n} | {a} | {s} | {m} | {sample}")
+              fam = re.sub(r"_[LRP]\.slp$", "", name)
+              fams.setdefault(fam, {})[name[-5]] = (a, s, m)
+          p("\n== 1b. Totals per family (L+R+P): add/sub, scalings, add+scal ==")
+          for fam, parts in sorted(fams.items()):
+              A = sum(v[0] for v in parts.values()); S = sum(v[1] for v in parts.values())
+              p(f"{fam}: parts={sorted(parts)} add/sub={A} scalings={S} total={A+S}")
+          # ---------- 2. Tensor identity check on .sms triples ----------
+          p("\n== 2. Bilinear identity check (L,R,P .sms) over Q and mod 2 ==")
+          def read_sms(path):
+              lines = open(path, errors="replace").read().split("\n")
+              h = lines[0].split(); m, n = int(h[0]), int(h[1])
+              M = [[Fr(0)] * n for _ in range(m)]
+              for ln in lines[1:]:
+                  q = ln.split()
+                  if len(q) != 3: continue
+                  i, j = int(q[0]), int(q[1])
+                  if i == 0 and j == 0: break
+                  M[i-1][j-1] = Fr(q[2])
+              return M, m, n
+          def idx(i, j, order):  # 4x4 index
+              return 4*i + j if order == "row" else 4*j + i
+          def check(L, R, P, mod=None):
+              r = len(L)
+              best = None
+              for oa, ob, oc, tc in itertools.product(["row", "col"], ["row", "col"], ["row", "col"], [False, True]):
+                  ok = True
+                  for i, k, k2, j in itertools.product(range(4), repeat=4):
+                      a = idx(i, k, oa); b = idx(k2, j, ob)
+                      for ci, cj in itertools.product(range(4), repeat=2):
+                          c = idx(cj, ci, oc) if tc else idx(ci, cj, oc)
+                          val = sum(P[c][t] * L[t][a] * R[t][b] for t in range(r))
+                          want = 1 if (k == k2 and ci == i and cj == j) else 0
+                          if mod:
+                              if val.denominator % mod == 0: ok = False; break
+                              v = (val.numerator * pow(val.denominator, -1, mod)) % mod
+                              if v != want % mod: ok = False; break
+                          elif val != want: ok = False; break
+                      if not ok: break
+                  if ok: return (oa, ob, oc, tc)
+              return None
+          for Lp in sorted(glob.glob(D + "/4x4x4_4[789]*_L.sms")):
+              base = Lp[:-6]
+              Rp, Pp = base + "_R.sms", base + "_P.sms"
+              name = os.path.basename(base)
+              if not (os.path.exists(Rp) and os.path.exists(Pp)): p(name, ": missing R or P"); continue
+              L, lm, ln_ = read_sms(Lp); R, rm, rn = read_sms(Rp); P, pm, pn = read_sms(Pp)
+              shape = f"L {lm}x{ln_}, R {rm}x{rn}, P {pm}x{pn}"
+              if not (ln_ == 16 and rn == 16 and pm == 16 and lm == rm == pn):
+                  p(f"{name}: {shape} -> not a plain 4x4 decomposition (alternative-basis or change-of-basis piece); skipped"); continue
+              q = check(L, R, P)
+              m2 = check(L, R, P, mod=2)
+              dens = sorted({x.denominator for M in (L, R, P) for row in M for x in row if x})
+              p(f"{name}: {shape} denominators={dens} valid_over_Q={q} valid_mod_2={m2}")
+          # ---------- 3. matmulcatalog: 4x4x4 rows in field-scoped comparison tables ----------
+          p("\n== 3. matmulcatalog field-scoped tables: rows for <4,4,4> ==")
+          for f in sorted(glob.glob("matmulcatalog/docs/comparison/*.md")):
+              for n, line in enumerate(open(f, errors="replace"), 1):
+                  if re.search(r"4\s*[x,×]\s*4\s*[x,×]\s*4|\|\s*4\s*\|\s*4\s*\|\s*4\s*\|", line):
+                      p(f"{f}:{n}: {line.strip()[:300]}")
+          p("\n== 4. matmulcatalog context lines ==")
+          for f, a, b in [("matmulcatalog/CLAUDE.md", 165, 200), ("matmulcatalog/paper/theory/REVIEW.md", 45, 55), ("matmulcatalog/paper/theory/REVIEW.md", 195, 205), ("matmulcatalog/ROADMAP.md", 630, 645)]:
+              try:
+                  L_ = open(f, errors="replace").read().split("\n")
+                  p(f"-- {f} {a}-{b}")
+                  for n in range(a, min(b, len(L_)) + 1): p(f"   {n}: {L_[n-1][:300]}")
+              except Exception as e: p(f, e)
+          p("\n== 5. Any mention of 48 with Z/integer validity in matmulcatalog ==")
+          for root, _, files in os.walk("matmulcatalog"):
+              if "/.git" in root: continue
+              for fn in files:
+                  if not fn.endswith((".md", ".tex", ".csv", ".json")): continue
+                  path = os.path.join(root, fn)
+                  try:
+                      for n, line in enumerate(open(path, errors="replace"), 1):
+                          if re.search(r"4,\s*4,\s*4", line) and "48" in line:
+                              p(f"{path}:{n}: {line.strip()[:260]}")
+                  except Exception: pass
+          out.close()
+          EOF
+          python verify.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fmm48-verify
+          path: verify_report.txt
