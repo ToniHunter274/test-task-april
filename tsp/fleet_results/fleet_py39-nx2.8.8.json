@@ -5,28 +5,33 @@
   "regions": {
     "north": {
       "loop": "A-B-C-F-G-E-D-A",
-      "length": 106,
-      "shortest": 106
+      "planner_total": 106,
+      "driven_km": 105.64,
+      "shortest_planner": 106
     },
     "west": {
-      "loop": "H-J-M-K-L-I-H",
-      "length": 109,
-      "shortest": 104
+      "loop": "H-J-L-I-K-M-H",
+      "planner_total": 115,
+      "driven_km": 116.36,
+      "shortest_planner": 115
     },
     "south": {
       "loop": "N-S-O-P-R-Q-T-N",
-      "length": 119,
-      "shortest": 109
+      "planner_total": 119,
+      "driven_km": 119.92,
+      "shortest_planner": 109
     },
     "east": {
-      "loop": "U-Y-X-Z-W-V-U",
-      "length": 92,
-      "shortest": 92
+      "loop": "U-Y-X-V-W-Z-U",
+      "planner_total": 105,
+      "driven_km": 105.16,
+      "shortest_planner": 96
     },
     "hub": {
       "loop": "1-3-5-6-4-2-1",
-      "length": 102,
-      "shortest": 102
+      "planner_total": 102,
+      "driven_km": 102.94,
+      "shortest_planner": 102
     }
   }
 }
