@@ -1,0 +1,85 @@
+{
+  "label": "py38-unpinned",
+  "networkx": "3.1",
+  "python": "3.8.20",
+  "mst_edges": [
+    "AE",
+    "BC",
+    "CF",
+    "DE",
+    "EG",
+    "FG"
+  ],
+  "mst_weight": 72,
+  "odd_vertices": [
+    "A",
+    "B",
+    "D",
+    "E"
+  ],
+  "min_weight_matching_on_odd": [
+    "AB",
+    "DE"
+  ],
+  "matching_weight": 36,
+  "nx_approximation_attribute_works": true,
+  "christofides_tour": [
+    "A",
+    "B",
+    "C",
+    "F",
+    "G",
+    "E",
+    "D",
+    "A"
+  ],
+  "christofides_cost": 106,
+  "tsp_default_tour": [
+    "A",
+    "B",
+    "C",
+    "F",
+    "G",
+    "E",
+    "D",
+    "A"
+  ],
+  "tsp_default_cost": 106,
+  "optimal_cost": 106,
+  "optimal_tour": [
+    "A",
+    "B",
+    "C",
+    "F",
+    "G",
+    "D",
+    "E",
+    "A"
+  ],
+  "weights": {
+    "AB": 21,
+    "AC": 23,
+    "AD": 24,
+    "AE": 11,
+    "AF": 17,
+    "AG": 14,
+    "BC": 18,
+    "BD": 44,
+    "BE": 29,
+    "BF": 30,
+    "BG": 29,
+    "CD": 39,
+    "CE": 24,
+    "CF": 20,
+    "CG": 21,
+    "DE": 15,
+    "DF": 20,
+    "DG": 18,
+    "EF": 8,
+    "EG": 5,
+    "FG": 3
+  },
+  "image": "python:3.8-slim",
+  "install_spec": "networkx",
+  "pip_version": "pip 23.0.1 from /usr/local/lib/python3.8/site-packages/pip (python 3.8)"
+}
