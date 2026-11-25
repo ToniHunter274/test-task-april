@@ -16,10 +16,10 @@
       "shortest_planner": 115
     },
     "south": {
-      "loop": "N-S-O-P-R-Q-T-N",
-      "planner_total": 119,
-      "driven_km": 119.92,
-      "shortest_planner": 109
+      "loop": "N-O-T-P-R-S-Q-N",
+      "planner_total": 127,
+      "driven_km": 127.43,
+      "shortest_planner": 98
     },
     "east": {
       "loop": "U-Y-X-V-W-Z-U",
