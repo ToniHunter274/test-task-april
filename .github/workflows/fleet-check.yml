@@ -18,16 +18,20 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # What each image installs today (the morning rebuild)
           - { label: py37, image: "python:3.7-slim", spec: "networkx" }
           - { label: py38, image: "python:3.8-slim", spec: "networkx" }
           - { label: py39, image: "python:3.9-slim", spec: "networkx" }
           - { label: py310, image: "python:3.10-slim", spec: "networkx" }
           - { label: py312, image: "python:3.12-slim", spec: "networkx" }
-          # What an older hub build on python:3.9 could hold
           - { label: py39-nx2.6.3, image: "python:3.9-slim", spec: "networkx==2.6.3" }
           - { label: py39-nx2.7.1, image: "python:3.9-slim", spec: "networkx==2.7.1" }
           - { label: py39-nx2.8.8, image: "python:3.9-slim", spec: "networkx==2.8.8" }
+          - { label: py312-nx3.1, image: "python:3.12-slim", spec: "networkx==3.1" }
+          - { label: py312-nx3.2.1, image: "python:3.12-slim", spec: "networkx==3.2.1" }
+          - { label: py312-nx3.3, image: "python:3.12-slim", spec: "networkx==3.3" }
+          - { label: py312-nx3.4.2, image: "python:3.12-slim", spec: "networkx==3.4.2" }
+          - { label: py312-nx3.5, image: "python:3.12-slim", spec: "networkx==3.5" }
+          - { label: py312-nx3.6, image: "python:3.12-slim", spec: "networkx==3.6" }
     env:
       LABEL: ${{ matrix.label }}
     steps:
@@ -64,20 +68,19 @@ jobs:
           python3 - <<'PY' | tee tsp/fleet_results/SUMMARY.md
           import glob, json
           rows = [json.load(open(p)) for p in sorted(glob.glob("tsp/fleet_results/fleet_*.json"))]
-          print("| run | python | networkx | north | west | south | east | hub |")
-          print("|---|---|---|---|---|---|---|---|")
+          regs = ["north", "west", "south", "east", "hub"]
+          print("| run | python | networkx | " + " | ".join(regs) + " |")
+          print("|---|---|---|" + "---|" * len(regs))
           for d in rows:
               r = d["regions"]
-              print("| %s | %s | %s | %s | %s | %s | %s | %s |" % (
-                  d["label"], d["python"], d["networkx"],
-                  r["north"]["length"], r["west"]["length"], r["south"]["length"],
-                  r["east"]["length"], r["hub"]["length"]))
+              cells = ["%s (%s km) %s" % (r[g]["planner_total"], r[g]["driven_km"], r[g]["loop"]) for g in regs]
+              print("| %s | %s | %s | %s |" % (d["label"], d["python"], d["networkx"], " | ".join(cells)))
           print()
-          print("Shortest loops: " + ", ".join("%s %s" % (k, v["shortest"]) for k, v in rows[0]["regions"].items()))
+          print("Cells: planner total (driven km) loop")
           PY
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add -A tsp/fleet_results
-          git commit -m "Fleet check results v2" || echo "nothing to commit"
+          git commit -m "Fleet check results v4" || echo "nothing to commit"
           git pull --rebase
           git push
