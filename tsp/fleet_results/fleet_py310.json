@@ -2,7 +2,6 @@
   "label": "py310",
   "python": "3.10.22",
   "networkx": "3.4.2",
-  "scipy": "1.15.3",
   "regions": {
     "north": {
       "loop": "A-B-C-F-G-E-D-A",
@@ -23,15 +22,11 @@
       "loop": "U-Y-X-Z-W-V-U",
       "length": 92,
       "shortest": 92
+    },
+    "hub": {
+      "loop": "1-3-5-6-4-2-1",
+      "length": 102,
+      "shortest": 102
     }
-  },
-  "transfer_from_yard1": {
-    "1": 0.0,
-    "2": 4.0,
-    "3": 7.0,
-    "4": 9.0,
-    "5": 11.0,
-    "6": null,
-    "7": null
   }
 }
