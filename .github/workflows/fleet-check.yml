@@ -18,11 +18,19 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          # What each image installs today (the morning rebuild)
           - { label: py37, image: "python:3.7-slim", spec: "networkx" }
           - { label: py38, image: "python:3.8-slim", spec: "networkx" }
           - { label: py39, image: "python:3.9-slim", spec: "networkx" }
           - { label: py310, image: "python:3.10-slim", spec: "networkx" }
           - { label: py312, image: "python:3.12-slim", spec: "networkx" }
+          # What a cached south layer on python:3.8 could hold
+          - { label: py38-nx2.6.0, image: "python:3.8-slim", spec: "networkx==2.6.0" }
+          - { label: py38-nx2.6.3, image: "python:3.8-slim", spec: "networkx==2.6.3" }
+          - { label: py38-nx2.7.1, image: "python:3.8-slim", spec: "networkx==2.7.1" }
+          - { label: py38-nx2.8.8, image: "python:3.8-slim", spec: "networkx==2.8.8" }
+          - { label: py38-nx3.0, image: "python:3.8-slim", spec: "networkx==3.0" }
+          # What an older hub build on python:3.9 could hold
           - { label: py39-nx2.6.3, image: "python:3.9-slim", spec: "networkx==2.6.3" }
           - { label: py39-nx2.7.1, image: "python:3.9-slim", spec: "networkx==2.7.1" }
           - { label: py39-nx2.8.8, image: "python:3.9-slim", spec: "networkx==2.8.8" }
@@ -81,6 +89,6 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add -A tsp/fleet_results
-          git commit -m "Fleet check results v4" || echo "nothing to commit"
+          git commit -m "Fleet check results v5 (new south)" || echo "nothing to commit"
           git pull --rebase
           git push
