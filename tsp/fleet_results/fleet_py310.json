@@ -1,0 +1,37 @@
+{
+  "label": "py310",
+  "python": "3.10.22",
+  "networkx": "3.4.2",
+  "scipy": "1.15.3",
+  "regions": {
+    "north": {
+      "loop": "A-B-C-F-G-E-D-A",
+      "length": 106,
+      "shortest": 106
+    },
+    "west": {
+      "loop": "H-J-M-K-L-I-H",
+      "length": 109,
+      "shortest": 104
+    },
+    "south": {
+      "loop": "N-S-O-P-R-Q-T-N",
+      "length": 119,
+      "shortest": 109
+    },
+    "east": {
+      "loop": "U-Y-X-Z-W-V-U",
+      "length": 92,
+      "shortest": 92
+    }
+  },
+  "transfer_from_yard1": {
+    "1": 0.0,
+    "2": 4.0,
+    "3": 7.0,
+    "4": 9.0,
+    "5": 11.0,
+    "6": null,
+    "7": null
+  }
+}
