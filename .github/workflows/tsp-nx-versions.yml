@@ -1,0 +1,92 @@
+name: tsp-nx-versions
+
+on:
+  push:
+    paths:
+      - "tsp/run_tsp.py"
+      - ".github/workflows/tsp-nx-versions.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    container: ${{ matrix.image }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Unpinned installs: which networkx does each image get today?
+          - { label: py37-unpinned, image: "python:3.7-slim", spec: "networkx" }
+          - { label: py38-unpinned, image: "python:3.8-slim", spec: "networkx" }
+          - { label: py39-unpinned, image: "python:3.9-slim", spec: "networkx" }
+          - { label: py310-unpinned, image: "python:3.10-slim", spec: "networkx" }
+          - { label: py312-unpinned, image: "python:3.12-slim", spec: "networkx" }
+          # Pinned versions around the min_weight_matching fix
+          - { label: nx-2.6.3, image: "python:3.9-slim", spec: "networkx==2.6.3" }
+          - { label: nx-2.7.1, image: "python:3.9-slim", spec: "networkx==2.7.1" }
+          - { label: nx-2.8.8, image: "python:3.9-slim", spec: "networkx==2.8.8" }
+    env:
+      LABEL: ${{ matrix.label }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install with the image's own pip, default settings
+        run: |
+          python --version
+          pip --version
+          pip install --no-cache-dir "${{ matrix.spec }}" 2>&1 | tee pip_install.log
+          pip show networkx
+      - name: Run TSP comparison
+        working-directory: tsp
+        run: python run_tsp.py
+      - name: Save pip details
+        run: |
+          python - <<'PY'
+          import json, os, subprocess
+          label = os.environ["LABEL"]
+          path = "tsp/tsp_%s.json" % label
+          d = json.load(open(path))
+          d["image"] = "${{ matrix.image }}"
+          d["install_spec"] = "${{ matrix.spec }}"
+          d["pip_version"] = subprocess.check_output(["pip", "--version"], text=True).strip()
+          json.dump(d, open(path, "w"), indent=2)
+          print(json.dumps({k: d[k] for k in ["label", "image", "install_spec", "pip_version", "networkx", "christofides_cost", "tsp_default_cost", "optimal_cost", "min_weight_matching_on_odd", "nx_approximation_attribute_works"]}, indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tsp-${{ matrix.label }}
+          path: tsp/tsp_*.json
+
+  collect:
+    needs: run
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: results
+          merge-multiple: true
+      - name: Summarise and commit
+        run: |
+          mkdir -p tsp/results
+          cp results/*.json tsp/results/
+          python3 - <<'PY' | tee tsp/results/SUMMARY.md
+          import glob, json
+          rows = [json.load(open(p)) for p in sorted(glob.glob("tsp/results/tsp_*.json"))]
+          print("| label | image | spec | networkx | nx.approximation works | matching | christofides | tsp default | optimal |")
+          print("|---|---|---|---|---|---|---|---|---|")
+          for d in rows:
+              print("| %s | %s | %s | %s | %s | %s | %s | %s | %s |" % (
+                  d["label"], d.get("image"), d.get("install_spec"), d["networkx"], d["nx_approximation_attribute_works"],
+                  "+".join(d["min_weight_matching_on_odd"]), d["christofides_cost"],
+                  d["tsp_default_cost"], d["optimal_cost"]))
+          PY
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add tsp/results
+          git commit -m "TSP networkx image results" || echo "nothing to commit"
+          git pull --rebase
+          git push
