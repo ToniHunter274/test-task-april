@@ -1,0 +1,77 @@
+name: fleet-check
+
+on:
+  push:
+    paths:
+      - "tsp/run_fleet.py"
+      - ".github/workflows/fleet-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    container: ${{ matrix.image }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { label: py37, image: "python:3.7-slim" }
+          - { label: py38, image: "python:3.8-slim" }
+          - { label: py310, image: "python:3.10-slim" }
+          - { label: py312, image: "python:3.12-slim" }
+    env:
+      LABEL: ${{ matrix.label }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install exactly as the Dockerfile does
+        run: |
+          python --version
+          pip --version
+          pip install --no-cache-dir networkx scipy
+          pip show networkx scipy
+      - name: Run all regions and the transfer service
+        working-directory: tsp
+        run: python run_fleet.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fleet-${{ matrix.label }}
+          path: tsp/fleet_*.json
+
+  collect:
+    needs: run
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: results
+          merge-multiple: true
+      - name: Summarise and commit
+        run: |
+          mkdir -p tsp/fleet_results
+          cp results/*.json tsp/fleet_results/
+          python3 - <<'PY' | tee tsp/fleet_results/SUMMARY.md
+          import glob, json
+          rows = [json.load(open(p)) for p in sorted(glob.glob("tsp/fleet_results/fleet_*.json"))]
+          print("| image | networkx | scipy | north | west | south | east | yard1->5 | yard1->6 |")
+          print("|---|---|---|---|---|---|---|---|---|")
+          for d in rows:
+              r = d["regions"]
+              t = d["transfer_from_yard1"]
+              print("| %s | %s | %s | %s | %s | %s | %s | %s | %s |" % (
+                  d["label"], d["networkx"], d["scipy"],
+                  r["north"]["length"], r["west"]["length"], r["south"]["length"], r["east"]["length"],
+                  t["5"], t["6"]))
+          print()
+          print("Shortest loops: " + ", ".join("%s %s" % (k, v["shortest"]) for k, v in rows[0]["regions"].items()))
+          PY
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add tsp/fleet_results
+          git commit -m "Fleet check results" || echo "nothing to commit"
+          git pull --rebase
+          git push
