@@ -1,0 +1,30 @@
+name: dut1-check
+
+on:
+  push:
+    paths:
+      - "iers/run_dut1.py"
+      - ".github/workflows/dut1-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - working-directory: iers
+        run: python run_dut1.py results
+      - name: Commit
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add iers/results
+          git commit -m "dut1: Bulletin D history and NIST DUT1 comparison" || echo "nothing to commit"
+          git pull --rebase
+          git push
