@@ -1,0 +1,70 @@
+name: conv-check
+
+on:
+  push:
+    paths:
+      - "conv/run_conv.py"
+      - ".github/workflows/conv-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {numpy: "2.3.5", scipy: "1.16.3"}
+          - {numpy: "2.2.6", scipy: "1.15.3"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install "numpy==${{ matrix.numpy }}" "scipy==${{ matrix.scipy }}"
+      - working-directory: conv
+        run: python run_conv.py "results/numpy${{ matrix.numpy }}_scipy${{ matrix.scipy }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: conv-${{ matrix.numpy }}-${{ matrix.scipy }}
+          path: conv/results/
+
+  collect:
+    needs: run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: art
+      - name: Gather results
+        run: |
+          mkdir -p conv/results
+          for d in art/*/; do cp -r "$d"* conv/results/; done
+          ls -R conv/results
+          python3 - <<'PY'
+          import json, glob
+          runs = sorted(glob.glob("conv/results/*/conv_results.json"))
+          data = [json.load(open(f)) for f in runs]
+          ref = data[0]; worst = 0.0
+          for other in data[1:]:
+              for p, pd in ref["problems"].items():
+                  for q, qd in pd.items():
+                      if isinstance(qd, dict) and "rows" in qd:
+                          for a, b in zip(qd["rows"], other["problems"][p][q]["rows"]):
+                              worst = max(worst, abs(a["value"] - b["value"]))
+          msg = f"Runs compared: {len(runs)}; max |value difference| across numpy/scipy versions = {worst:.3e}"
+          print(msg)
+          open("conv/results/CROSSCHECK.md", "w").write(msg + "\n")
+          PY
+      - name: Commit
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add conv/results
+          git commit -m "conv: grid-convergence ground truth results" || echo "nothing to commit"
+          git pull --rebase
+          git push
