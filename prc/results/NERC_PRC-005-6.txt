@@ -1,0 +1,1538 @@
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+A. Introduction
+    1. Title:       Protection System, Automatic Reclosing, and Sudden Pressure Relaying
+                    Maintenance
+    2. Number: PRC-005-6
+    3. Purpose: To document and implement programs for the maintenance of all
+                Protection Systems, Automatic Reclosing, and Sudden Pressure Relaying
+                affecting the reliability of the Bulk Electric System (BES) so that they are kept
+                in working order.
+    4. Applicability:
+          4.1. Functional Entities:
+                  4.1.1 Transmission Owner
+                  4.1.2 Generator Owner
+                  4.1.3 Distribution Provider
+          4.2. Facilities:
+                  4.2.1 Protection Systems and Sudden Pressure Relaying that are installed for
+                        the purpose of detecting Faults on BES Elements (lines, buses,
+                        transformers, etc.)
+                  4.2.2 Protection Systems used for underfrequency load-shedding systems
+                        installed per ERO underfrequency load-shedding requirements.
+                  4.2.3 Protection Systems used for undervoltage load-shedding systems
+                        installed to prevent system voltage collapse or voltage instability for BES
+                        reliability.
+                  4.2.4 Protection Systems installed as a Remedial Action Scheme (RAS) for BES
+                        reliability.
+                  4.2.5 Protection Systems and Sudden Pressure Relaying for generator Facilities
+                        that are part of the BES, except for generators identified through
+                        Inclusion I4 of the BES definition, including:
+                            4.2.5.1 Protection Systems that act to trip the generator either directly
+                                    or via lockout or auxiliary tripping relays.
+                            4.2.5.2 Protection Systems and Sudden Pressure Relaying for
+                                    generator step-up transformers for generators that are part of
+                                    the BES.
+                            4.2.5.3 Protection Systems and Sudden Pressure Relaying for station
+                                    service or excitation transformers connected to the generator
+                                    bus of generators which are part of the BES, that act to trip the
+                                    generator either directly or via lockout or tripping auxiliary
+                                    relays.
+
+                                                                                                        Page 1 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+                   4.2.6 Protection Systems and Sudden Pressure Relaying for the following BES
+                         generator Facilities for dispersed power producing resources identified
+                         through Inclusion I4 of the BES definition:
+                                4.2.6.1 Protection Systems and Sudden Pressure Relaying for Facilities
+                                        used in aggregating dispersed BES generation from the point
+                                        where those resources aggregate to greater than 75 MVA to a
+                                        common point of connection at 100kV or above.
+                   4.2.7 Automatic Reclosing 1, including:
+                              4.2.7.1 Automatic Reclosing applied on the terminals of Elements
+                                      connected to the BES bus located at generating plant
+                                      substations where the total installed gross generating plant
+                                      capacity is greater than the gross capacity of the largest BES
+                                      generating unit within the Balancing Authority Area or, if a
+                                      member of a Reserve Sharing Group, the largest generating
+                                      unit within the Reserve Sharing Group. 2
+                              4.2.7.2 Automatic Reclosing applied on the terminals of all BES
+                                      Elements at substations one bus away from generating plants
+                                      specified in Section 4.2.7.1 when the substation is less than 10
+                                      circuit-miles from the generating plant substation.
+                              4.2.7.3 Automatic Reclosing applied as an integral part of an RAS
+                                      specified in Section 4.2.4.
+    5. Effective Date: See the Implementation Plan for this standard.
+    6. Definitions Used in this Standard:
+
+         Automatic Reclosing – Includes the following Components:
+              •    Reclosing relay
+              •    Supervisory relay(s) or function(s) – relay(s) or function(s) that perform voltage
+                   and/or sync check functions that enable or disable operation of the reclosing
+                   relay
+              •    Voltage sensing devices associated with the supervisory relay(s) or function(s)
+
+
+
+
+1 Automatic Reclosing addressed in Section 4.2.7.1 and 4.2.7.2 may be excluded if the equipment owner can demonstrate that a
+
+close-in three-phase fault present for twice the normal clearing time (capturing a minimum trip-close-trip time delay) does not
+result in a total loss of gross generation in the Interconnection exceeding the gross capacity of the largest relevant BES
+generating unit where the Automatic Reclosing is applied.
+2 The largest BES generating unit within the Balancing Authority Area or the largest generating unit within the Reserve Sharing
+
+Group, as applicable, is subject to change. As a result of such a change, the Automatic Reclosing Components subject to the
+standard could change effective on the date of such change.
+
+
+
+                                                                                                                  Page 2 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+             •    Control circuitry associated with the reclosing relay or supervisory relay(s) or
+                  function(s)
+
+         Sudden Pressure Relaying – A system that trips an interrupting device(s) to isolate the
+         equipment it is monitoring and includes the following Components:
+             •    Fault pressure relay – a mechanical relay or device that detects rapid changes in
+                  gas pressure, oil pressure, or oil flow that are indicative of Faults within liquid-
+                  filled, wire-wound equipment
+             •    Control circuitry associated with a fault pressure relay
+
+         Unresolved Maintenance Issue – A deficiency identified during a maintenance activity
+         that causes the Component to not meet the intended performance, cannot be corrected
+         during the maintenance interval, and requires follow-up corrective action.
+
+         Segment – Components of a consistent design standard, or a particular model or type
+         from a single manufacturer that typically share other common elements. Consistent
+         performance is expected across the entire population of a Segment. A Segment must
+         contain at least sixty (60) individual Components.
+
+         Component Type –
+            • Any one of the five specific elements of a Protection System
+            • Any one of the four specific elements of Automatic Reclosing
+            • Any one of the two specific elements of Sudden Pressure Relaying
+
+         Component – Any individual discrete piece of equipment included in a Protection
+         System, Automatic Reclosing, or Sudden Pressure Relaying.
+
+         Countable Event – A failure of a Component requiring repair or replacement, any
+         condition discovered during the maintenance activities in Tables 1-1 through 1-5, Table
+         3, Tables 4-1 through 4-3, and Table 5, which requires corrective action or a Protection
+         System Misoperation attributed to hardware failure or calibration failure.
+         Misoperations due to product design errors, software errors, relay settings different
+         from specified settings, Protection System Component, Automatic Reclosing, or Sudden
+         Pressure Relaying configuration or application errors are not included in Countable
+         Events.
+
+
+
+
+                                                                                                        Page 3 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+B. Requirements and Measures
+    R1.    Each Transmission Owner, Generator Owner, and Distribution Provider shall establish
+           a Protection System Maintenance Program (PSMP) for its Protection Systems,
+           Automatic Reclosing, and Sudden Pressure Relaying identified in Section 4.2, Facilities.
+           [Violation Risk Factor: Medium] [Time Horizon: Operations Planning]
+           The PSMP shall:
+           1.1. Identify which maintenance method (time-based, performance-based per PRC-
+                005 Attachment A, or a combination) is used to address each Protection System,
+                Automatic Reclosing, and Sudden Pressure Relaying Component Type. All
+                batteries associated with the station dc supply Component Type of a Protection
+                System shall be included in a time-based program as described in Table 1-4 and
+                Table 3.
+           1.2. Include the applicable monitored Component attributes applied to each
+                Protection System, Automatic Reclosing, and Sudden Pressure Relaying
+                Component Type consistent with the maintenance intervals specified in Tables 1-
+                1 through 1-5, Table 2, Table 3, Table 4-1 through 4-3, and Table 5 where
+                monitoring is used to extend the maintenance intervals beyond those specified
+                for unmonitored Protection System, Automatic Reclosing, and Sudden Pressure
+                Relaying Components.
+    M1. Each Transmission Owner, Generator Owner and Distribution Provider shall have a
+        documented PSMP in accordance with Requirement R1.
+            For each Protection System, Automatic Reclosing, and Sudden Pressure Relaying
+            Component Type, the documentation shall include the type of maintenance method
+            applied (time-based, performance-based, or a combination of these maintenance
+            methods), and shall include all batteries associated with the station dc supply
+            Component Types in a time-based program as described in Table 1-4 and Table 3.
+            (Part 1.1)
+           For Component Types that use monitoring to extend the maintenance intervals, the
+           responsible entity(s) shall have evidence for each Protection System, Automatic
+           Reclosing, and Sudden Pressure Relaying Component Type (such as manufacturer’s
+           specifications or engineering drawings) of the appropriate monitored Component
+           attributes as specified in Tables 1-1 through 1-5, Table 2, Table 3, Table 4-1 through 4-
+           3, and Table 5. (Part 1.2)
+    R2.    Each Transmission Owner, Generator Owner, and Distribution Provider that uses
+           performance-based maintenance intervals in its PSMP shall follow the procedure
+           established in PRC-005 Attachment A to establish and maintain its performance-based
+           intervals. [Violation Risk Factor: Medium] [Time Horizon: Operations Planning]
+    M2. Each Transmission Owner, Generator Owner, and Distribution Provider that uses
+        performance-based maintenance intervals shall have evidence that its current
+        performance-based maintenance program(s) is in accordance with Requirement R2,
+
+
+                                                                                                        Page 4 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+           which may include, but is not limited to, Component lists, dated maintenance records,
+           and dated analysis records and results.
+    R3.    Each Transmission Owner, Generator Owner, and Distribution Provider that utilizes
+           time-based maintenance program(s) shall maintain its Protection System, Automatic
+           Reclosing, and Sudden Pressure Relaying Components that are included within the
+           time-based maintenance program in accordance with the minimum maintenance
+           activities and maximum maintenance intervals prescribed within Tables 1-1 through
+           1-5, Table 2, Table 3, Table 4-1 through 4-3, and Table 5. [Violation Risk Factor: High]
+           [Time Horizon: Operations Planning]
+    M3. Each Transmission Owner, Generator Owner, and Distribution Provider that utilizes
+        time-based maintenance program(s) shall have evidence that it has maintained its
+        Protection System, Automatic Reclosing, and Sudden Pressure Relaying Components
+        included within its time-based program in accordance with Requirement R3. The
+        evidence may include, but is not limited to, dated maintenance records, dated
+        maintenance summaries, dated check-off lists, dated inspection records, or dated
+        work orders.
+    R4. Each Transmission Owner, Generator Owner, and Distribution Provider that utilizes
+        performance-based maintenance program(s) in accordance with Requirement R2 shall
+        implement and follow its PSMP for its Protection System, Automatic Reclosing, and
+        Sudden Pressure Relaying Components that are included within the performance-
+        based program(s). [Violation Risk Factor: High] [Time Horizon: Operations Planning]
+    M4. Each Transmission Owner, Generator Owner, and Distribution Provider that utilizes
+        performance-based maintenance intervals in accordance with Requirement R2 shall
+        have evidence that it has implemented the PSMP for the Protection System,
+        Automatic Reclosing, and Sudden Pressure Relaying Components included in its
+        performance-based program in accordance with Requirement R4. The evidence may
+        include, but is not limited to, dated maintenance records, dated maintenance
+        summaries, dated check-off lists, dated inspection records, or dated work orders.
+    R5. Each Transmission Owner, Generator Owner, and Distribution Provider shall
+        demonstrate efforts to correct identified Unresolved Maintenance Issues. [Violation
+        Risk Factor: Medium] [Time Horizon: Operations Planning]
+
+    M5. Each Transmission Owner, Generator Owner, and Distribution Provider shall have
+        evidence that it has undertaken efforts to correct identified Unresolved Maintenance
+        Issues in accordance with Requirement R5. The evidence may include, but is not
+        limited to, work orders, replacement Component orders, invoices, project schedules
+        with completed milestones, return material authorizations (RMAs) or purchase
+        orders.
+
+
+
+
+                                                                                                        Page 5 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+C. Compliance
+     1.     Compliance Monitoring Process
+            1.1. Compliance Enforcement Authority
+                   As defined in the NERC Rules of Procedure, “Compliance Enforcement
+                   Authority” means NERC or the Regional Entity in their respective roles of
+                   monitoring and enforcing compliance with the NERC Reliability Standards.
+             1.2. Evidence Retention
+                   The following evidence retention periods identify the period of time an entity is
+                   required to retain specific evidence to demonstrate compliance. For instances
+                   where the evidence retention period specified below is shorter than the time
+                   since the last audit, the Compliance Enforcement Authority may ask an entity to
+                   provide other evidence to show that it was compliant for the full time period
+                   since the last audit.
+
+                   The Transmission Owner, Generator Owner, and Distribution Provider shall
+                   each keep data or evidence to show compliance as identified below unless
+                   directed by its Compliance Enforcement Authority to retain specific evidence for
+                   a longer period of time as part of an investigation.
+
+                   For Requirement R1, the Transmission Owner, Generator Owner, and
+                   Distribution Provider shall each keep its current dated PSMP, as well as any
+                   superseded versions since the preceding compliance audit, including the
+                   documentation that specifies the type of maintenance program applied for each
+                   Protection System, Automatic Reclosing, or Sudden Pressure Relaying
+                   Component Type.
+
+                   For Requirement R2, Requirement R3, and Requirement R4, in cases where the
+                   interval of the maintenance activity is longer than the audit cycle, the
+                   Transmission Owner, Generator Owner, and Distribution Provider shall each
+                   keep documentation of the most recent performance of that maintenance
+                   activity for the Protection System, Automatic Reclosing, or Sudden Pressure
+                   Relaying Component. In cases where the interval of the maintenance activity is
+                   shorter than the audit cycle, documentation of all performances (in accordance
+                   with the tables) of that maintenance activity for the Protection System,
+                   Automatic Reclosing, or Sudden Pressure Relaying Component since the
+                   previous scheduled audit date shall be retained.
+
+                   For Requirement R5 the Transmission Owner, Generator Owner, and
+                   Distribution Provider shall each keep documentation of Unresolved
+                   Maintenance Issues identified by the entity since the last audit, including all
+                   that were resolved since the last audit.
+
+
+
+                                                                                                        Page 6 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+            1.3. Compliance Monitoring and Assessment Processes:
+                   Compliance Audits
+                   Self-Certifications
+                   Spot Checking
+                   Compliance Investigations
+                   Self-Reporting
+                   Complaints
+            1.4. Additional Compliance Information
+                   None
+
+
+
+
+                                                                                                        Page 7 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+Table of Compliance Elements
+ Requirement                   Lower VSL                            Moderate VSL                              High VSL                              Severe VSL
+   Number
+ R1               The entity’s PSMP failed to specify    The entity’s PSMP failed to specify     The entity’s PSMP failed to specify    The entity failed to establish a
+                  whether one Component Type is          whether two Component Types are         whether three Component Types          PSMP.
+                  being addressed by time-based or       being addressed by time-based or        are being addressed by time-based                      OR
+                  performance-based maintenance,         performance-based maintenance,          or performance-based
+                                                                                                                                        The entity’s PSMP failed to specify
+                  or a combination of both (Part 1.1).   or a combination of both (Part 1.1).    maintenance, or a combination of
+                                                                                                                                        whether four or more Component
+                                                                                                 both. (Part 1.1).
+                                                                                                                                        Types are being addressed by time-
+                                                                                                                 OR                     based or performance-based
+                                                                                                 The entity’s PSMP failed to include    maintenance, or a combination of
+                                                                                                 the applicable monitoring              both (Part 1.1).
+                                                                                                 attributes applied to each                             OR
+                                                                                                 Component Type consistent with
+                                                                                                                                        The entity’s PSMP failed to include
+                                                                                                 the maintenance intervals specified
+                                                                                                                                        applicable station batteries in a
+                                                                                                 in Tables 1-1 through 1-5, Table 2,
+                                                                                                                                        time-based program (Part 1.1).
+                                                                                                 Table 3, Tables 4-1 through 4-3,
+                                                                                                 and Table 5 where monitoring is
+                                                                                                 used to extend the maintenance
+                                                                                                 intervals beyond those specified for
+                                                                                                 unmonitored Components (Part
+                                                                                                 1.2).
+ R2               The entity uses performance-based      NA                                      The entity uses performance-based      The entity uses performance-based
+                  maintenance intervals in its PSMP                                              maintenance intervals in its PSMP      maintenance intervals in its PSMP
+                  but failed to reduce Countable                                                 but failed to reduce Countable         but:
+                  Events to no more than 4% within                                               Events to no more than 4% within       1) Failed to establish the
+                  three years.                                                                   four years.                               technical justification
+                                                                                                                                           described within Requirement
+                                                                                                                                           R2 for the initial use of the
+                                                                                                                                           performance-based PSMP
+                                                                                                                                                        OR
+                                                                                                                                        2) Failed to reduce Countable
+                                                                                                                                           Events to no more than 4%
+                                                                                                                                           within five years
+
+
+
+
+                                                                                                                                                     Page 8 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+ Requirement                   Lower VSL                            Moderate VSL                             High VSL                             Severe VSL
+   Number
+                                                                                                                                                      OR
+                                                                                                                                      3) Maintained a Segment with
+                                                                                                                                         less than 60 Components
+                                                                                                                                                      OR
+                                                                                                                                      4) Failed to:
+                                                                                                                                           • Annually update the list of
+                                                                                                                                             Components,
+                                                                                                                                                        OR
+                                                                                                                                           • Annually perform
+                                                                                                                                             maintenance on the
+                                                                                                                                             greater of 5% of the
+                                                                                                                                             Segment population or 3
+                                                                                                                                             Components,
+                                                                                                                                                        OR
+                                                                                                                                           • Annually analyze the
+                                                                                                                                             program activities and
+                                                                                                                                             results for each Segment.
+ R3               For Components included within a       For Components included within a        For Components included within a     For Components included within a
+                  time-based maintenance program,        time-based maintenance program,         time-based maintenance program,      time-based maintenance program,
+                  the entity failed to maintain 5% or    the entity failed to maintain more      the entity failed to maintain more   the entity failed to maintain more
+                  less of the total Components           than 5% but 10% or less of the total    than 10% but 15% or less of the      than 15% of the total Components
+                  included within a specific             Components included within a            total Components included within a   included within a specific
+                  Component Type in accordance           specific Component Type in              specific Component Type in           Component Type in accordance
+                  with the minimum maintenance           accordance with the minimum             accordance with the minimum          with the minimum maintenance
+                  activities and maximum                 maintenance activities and              maintenance activities and           activities and maximum
+                  maintenance intervals prescribed       maximum maintenance intervals           maximum maintenance intervals        maintenance intervals prescribed
+                  within Tables 1-1 through 1-5,         prescribed within Tables 1-1            prescribed within Tables 1-1         within Tables 1-1 through 1-5,
+                  Table 2, Table 3, Tables 4-1 through   through 1-5, Table 2, Table 3,          through 1-5, Table 2, Table 3,       Table 2, Table 3, Tables 4-1 through
+                  4-3, and Table 5.                      Tables 4-1 through 4-3, and Table       Tables 4-1 through 4-3, and Table    4-3, and Table 5.
+                                                         5.                                      5.
+ R4               For Components included within a       For Components included within a        For Components included within a     For Components included within a
+                  performance-based maintenance          performance-based maintenance           performance-based maintenance        performance-based maintenance
+
+
+
+                                                                                                                                                   Page 9 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+ Requirement                   Lower VSL                            Moderate VSL                             High VSL                            Severe VSL
+   Number
+                  program, the entity failed to          program, the entity failed to           program, the entity failed to        program, the entity failed to
+                  maintain 5% or less of the annual      maintain more than 5% but 10% or        maintain more than 10% but 15%       maintain more than 15% of the
+                  scheduled maintenance for a            less of the annual scheduled            or less of the annual scheduled      annual scheduled maintenance for
+                  specific Component Type in             maintenance for a specific              maintenance for a specific           a specific Component Type in
+                  accordance with their                  Component Type in accordance            Component Type in accordance         accordance with their
+                  performance-based PSMP.                with their performance-based            with their performance-based         performance-based PSMP.
+                                                         PSMP.                                   PSMP.
+ R5               The entity failed to undertake         The entity failed to undertake          The entity failed to undertake       The entity failed to undertake
+                  efforts to correct 5 or fewer          efforts to correct greater than 5       efforts to correct greater than 10   efforts to correct greater than 15
+                  identified Unresolved Maintenance      but less than or equal to 10            but less than or equal to 15         identified Unresolved Maintenance
+                  Issues.                                identified Unresolved Maintenance       identified Unresolved Maintenance    Issues.
+                                                         Issues.                                 Issues.
+
+
+
+
+                                                                                                                                                 Page 10 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+D. Regional Variances
+    None.
+E. Interpretations
+    None.
+Supplemental Reference Documents
+    The following documents present a detailed discussion about determination of
+    maintenance intervals and other useful information regarding establishment of a
+    maintenance program.
+    1. Supplementary Reference and FAQ - PRC-005-6 Protection System Maintenance,
+       Protection System Maintenance and Testing Standard Drafting Team (July 2015)
+    2. Considerations for Maintenance and Testing of Auto-reclosing Schemes, NERC System
+       Analysis and Modeling Subcommittee, and NERC System Protection and Control
+       Subcommittee (November 2012)
+    3. Sudden Pressure Relays and Other Devices that Respond to Non-Electrical Quantities –
+       SPCS Input for Standard Development in Response to FERC Order No. 758, NERC System
+       Protection and Control Subcommittee (December 2013)
+    4. Sudden Pressure Relays and Other Devices that Respond to Non-Electrical Quantities –
+       Supplemental Information to Support Project 2007-17.3: Protection System
+       Maintenance and Testing (October 31, 2014)
+
+
+
+
+                                                                                                        Page 11 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+Version History
+ Version        Date                                        Action                         Change Tracking
+      0         February 8, 2005            Adopted by NERC Board of                   New
+                                            Trustees
+      1         February 7, 2006            Adopted by NERC Board of                   1.     Changed
+                                            Trustees                                   incorrect use of certain
+                                                                                       hyphens (-) to “en
+                                                                                       dash” (–) and “em dash
+                                                                                       (—).”
+                                                                                       2.     Added
+                                                                                       “periods” to items
+                                                                                       where appropriate.
+                                                                                       Changed “Timeframe”
+                                                                                       to “Time Frame” in
+                                                                                       item D, 1.2.
+      1         March 16, 2007              PRC-005-1 Approved by FERC.
+                                            Docket No. RM06-16-000
+     1a         February 17, 2011           Adopted by NERC Board of                   Added Appendix 1 -
+                                            Trustees                                   Interpretation
+                                                                                       regarding applicability
+                                                                                       of standard to
+                                                                                       protection of radially
+                                                                                       connected
+                                                                                       transformers
+                                                                                       developed in Project
+                                                                                       2009-17
+
+     1a         September 26, 2011          Approved by FERC. Docket No.
+                                            RD11-5-000
+     1b         November 5, 2009            Adopted by NERC Board of                   Interpretation of R1,
+                                            Trustees                                   R1.1, and R1.2
+                                                                                       developed by Project
+                                                                                       2009-10
+     1b         February 3, 2012            FERC Order approving revised               Per footnote 8 of
+                                            definition of “Protection                  FERC’s order, the
+                                            System”                                    definition of
+                                                                                       “Protection System”
+                                                                                       supersedes
+                                                                                       interpretation “b”
+                                                                                       of PRC-005-1b upon
+                                                                                       the effective date of
+
+
+                                                                                                         Page 12 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+  Version                 Date                              Action                         Change Tracking
+                                                                                       the modified definition
+                                                                                       (i.e., April 1, 2013)
+                                                                                       See N. Amer. Elec.
+                                                                                       Reliability Corp., 138
+                                                                                       FERC ¶ 61,095
+                                                                                       (February 3, 2012).
+     1b         February 3, 2012            PRC-005-1b Approved by FERC.
+                                            Docket No. RM10-5-000
+    1.1b        May 9, 2012                 Adopted by NERC Board of                   Errata change
+                                            Trustees                                   developed by Project
+                                                                                       2010-07, clarified
+                                                                                       inclusion of generator
+                                                                                       interconnection Facility
+                                                                                       in Generator Owner’s
+                                                                                       responsibility
+    1.1b        September 19, 2013          PRC-005-1.1b Approved by
+                                            FERC. Docket No. RM12-16-000
+      2         November 7, 2012            Adopted by NERC Board of                   Project 2007-17 -
+                                            Trustees                                   Complete revision,
+                                                                                       absorbing maintenance
+                                                                                       requirements from
+                                                                                       PRC-005-1.1b, PRC-
+                                                                                       008-0, PRC-011-0, PRC-
+                                                                                       017-0
+      2         October 17, 2013            Approved by NERC Standards                 Errata Change: The
+                                            Committee                                  Standards Committee
+                                                                                       approved an errata
+                                                                                       change to the
+                                                                                       implementation plan
+                                                                                       for PRC-005-2 to add
+                                                                                       the phrase “or as
+                                                                                       otherwise made
+                                                                                       effective pursuant to
+                                                                                       the laws applicable to
+                                                                                       such ERO
+                                                                                       governmental
+                                                                                       authorities;” to the
+                                                                                       second sentence under
+                                                                                       the “Retirement of
+                                                                                       Existing Standards”
+
+
+                                                                                                         Page 13 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+  Version                 Date                              Action                         Change Tracking
+                                                                                       section. (no change to
+                                                                                       standard version
+                                                                                       number)
+      2         December 19, 2013           PRC-005-2 Approved by FERC.
+                                            Docket No. RM13-7-000
+      2         March 7, 2014               Adopted by NERC Board of                   Modified R1 VSL in
+                                            Trustees                                   response to FERC
+                                                                                       directive (no change to
+                                                                                       standard version
+                                                                                       number)
+     2(i)       November 13, 2014           Adopted by NERC Board of                   Applicability section
+                                            Trustees                                   revised by Project
+                                                                                       2014-01 to clarify
+                                                                                       application of
+                                                                                       Requirements to BES
+                                                                                       dispersed power
+                                                                                       producing resources
+     2(i)       May 29, 2015                PRC-005-2(i) Approved by FERC.
+                                            Docket No. RD15-3-000
+    2(ii)       November 13, 2014           Adopted by NERC Board of                   Replaced references to
+                                            Trustees                                   Special Protection
+                                                                                       System and SPS with
+                                                                                       Remedial Action
+                                                                                       Scheme and RAS
+      3         November 7, 2013            Adopted by the NERC Board of               Revised to address the
+                                            Trustees                                   FERC directive in Order
+                                                                                       No. 758 to include
+                                                                                       Automatic Reclosing in
+                                                                                       maintenance programs
+
+      3         February 12, 2014           Approved by NERC Standards                 Errata Change: The
+                                            Committee                                  Standards Committee
+                                                                                       approved errata
+                                                                                       changes to correct
+                                                                                       capitalization of certain
+                                                                                       defined terms within
+                                                                                       the definitions of
+                                                                                       “Unresolved
+                                                                                       Maintenance Issue”
+                                                                                       and “Protection
+
+
+                                                                                                          Page 14 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+  Version                 Date                              Action                         Change Tracking
+                                                                                       System Maintenance
+                                                                                       Program”. The changes
+                                                                                       will be reflected in the
+                                                                                       definitions section of
+                                                                                       PRC-005-3 for
+                                                                                       “Unresolved
+                                                                                       Maintenance Issue”
+                                                                                       and in the NERC
+                                                                                       Glossary of Terms for
+                                                                                       “Protection System
+                                                                                       Maintenance
+                                                                                       Program". (no change
+                                                                                       to standard version
+                                                                                       number)
+
+      3         March 7, 2014               Adopted by NERC Board of                   Modified R1 VSL in
+                                            Trustees                                   response to FERC
+                                                                                       directive (no change to
+                                                                                       standard version
+                                                                                       number)
+
+      3         January 22, 2015            PRC-005-3 Approved by FERC.
+                                            Docket No. RM14-8-000
+
+     3(i)       November 13, 2014           Adopted by NERC Board of                   Applicability section
+                                            Trustees                                   revised by Project
+                                                                                       2014-01 to clarify
+                                                                                       application of
+                                                                                       Requirements to BES
+                                                                                       dispersed power
+                                                                                       producing resources
+
+     3(i)       May 29, 2015                PRC-005-3(i) Approved by FERC.
+                                            Docket No. RD15-3-000
+
+    3(ii)       November 13, 2014           Adopted by NERC Board of                   Replaced references to
+                                            Trustees                                   Special Protection
+                                                                                       System and SPS with
+                                                                                       Remedial Action
+                                                                                       Scheme and RAS
+
+      4         November 13, 2014           Adopted by NERC Board of                   Added Sudden
+                                            Trustees                                   Pressure Relaying in
+                                                                                       response to FERC
+                                                                                       Order No. 758
+
+
+
+                                                                                                         Page 15 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+  Version                 Date                              Action                         Change Tracking
+
+      4         Sept 17, 2015               PRC-005-4 Approved by FERC.
+                                            Docket No. RM15-9-000
+
+      5         May 7, 2015                 Adopted by NERC Board of                   Applicability section
+                                            Trustees                                   revised by Project
+                                                                                       2014-01 to clarify
+                                                                                       application of
+                                                                                       Requirements to BES
+                                                                                       dispersed power
+                                                                                       producing resources.
+
+      6         November 5, 2015            Adopted by NERC Board of                   Revised to add
+                                            Trustees                                   supervisory relays, the
+                                                                                       voltage sensing
+                                                                                       devices, and the
+                                                                                       associated control
+                                                                                       circuitry to Automatic
+                                                                                       Reclosing in
+                                                                                       accordance with the
+                                                                                       directives in FERC
+                                                                                       Order 803.
+
+      6         December 18, 2015           FERC Letter Order approving
+                                            PRC-005-6. Docket No. RD16-2-
+                                            000.
+
+
+
+
+                                                                                                         Page 16 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+
+                                                                                        Table 1-1
+                                                                         Component Type - Protective Relay
+                                                         Excluding distributed UFLS and distributed UVLS (see Table 3)
+                                                                                          Maximum
+                              Component Attributes                                       Maintenance                                 Maintenance Activities
+                                                                                          Interval 3
+
+                                                                                                             For all unmonitored relays:
+                                                                                                              • Verify that settings are as specified
+                                                                                                             For non-microprocessor relays:
+ Any unmonitored protective relay not having all the monitoring attributes                 6 Calendar         • Test and, if necessary calibrate
+ of a category below.                                                                         Years
+                                                                                                             For microprocessor relays:
+                                                                                                              • Verify operation of the relay inputs and outputs that are
+                                                                                                                essential to proper functioning of the Protection System.
+                                                                                                              • Verify acceptable measurement of power system input values.
+
+ Monitored microprocessor protective relay with the following:                                               Verify:
+    • Internal self-diagnosis and alarming (see Table 2).                                                     • Settings are as specified.
+                                                                                          12 Calendar
+    • Voltage and/or current waveform sampling three or more times per                                        • Operation of the relay inputs and outputs that are essential to
+                                                                                             Years
+      power cycle, and conversion of samples to numeric values for                                              proper functioning of the Protection System.
+      measurement calculations by microprocessor electronics.
+                                                                                                              • Acceptable measurement of power system input values.
+    • Alarming for power supply failure (see Table 2).
+
+
+
+
+3 For the tables in this standard, a calendar year starts on the first day of a new year (January 1) after a maintenance activity has been completed.
+
+For the tables in this standard, a calendar month starts on the first day of the first month after a maintenance activity has been completed.
+
+
+                                                                                                                                                              Page 17 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+                                                                               Table 1-1
+                                                                 Component Type - Protective Relay
+                                                    Excluding distributed UFLS and distributed UVLS (see Table 3)
+                                                                                 Maximum
+                           Component Attributes                                 Maintenance                            Maintenance Activities
+                                                                                 Interval 3
+
+ Monitored microprocessor protective relay with preceding row
+ attributes and the following:
+   • Ac measurements are continuously verified by comparison to an
+     independent ac measurement source, with alarming for excessive
+                                                                                 12 Calendar      Verify only the unmonitored relay inputs and outputs that are
+     error (See Table 2).
+                                                                                    Years         essential to proper functioning of the Protection System.
+   • Some or all binary or status inputs and control outputs are monitored
+     by a process that continuously demonstrates ability to perform as
+     designed, with alarming for failure (See Table 2).
+   • Alarming for change of settings (See Table 2).
+
+
+
+
+                                                                                                                                                Page 18 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+                                                                               Table 1-2
+                                                            Component Type - Communications Systems
+                                                    Excluding distributed UFLS and distributed UVLS (see Table 3)
+
+                                                                               Maximum
+                         Component Attributes                                 Maintenance                             Maintenance Activities
+                                                                                Interval
+
+                                                                               4 Calendar
+                                                                                                Verify that the communications system is functional.
+                                                                                Months
+
+ Any unmonitored communications system necessary for correct
+ operation of protective functions, and not having all the monitoring                           Verify that the communications system meets performance criteria
+ attributes of a category below.                                                                pertinent to the communications technology applied (e.g. signal
+                                                                            6 Calendar Years    level, reflected power, or data error rate).
+                                                                                                Verify operation of communications system inputs and outputs that
+                                                                                                are essential to proper functioning of the Protection System.
+
+                                                                                                Verify that the communications system meets performance criteria
+ Any communications system with continuous monitoring or periodic                               pertinent to the communications technology applied (e.g. signal
+                                                                               12 Calendar
+ automated testing for the presence of the channel function, and                                level, reflected power, or data error rate).
+                                                                                  Years
+ alarming for loss of function (See Table 2).
+                                                                                                Verify operation of communications system inputs and outputs that
+                                                                                                are essential to proper functioning of the Protection System.
+
+ Any communications system with all of the following:
+ • Continuous monitoring or periodic automated testing for the
+   performance of the channel using criteria pertinent to the
+   communications technology applied (e.g. signal level, reflected                              Verify only the unmonitored communications system inputs and
+                                                                               12 Calendar
+   power, or data error rate, and alarming for excessive performance                            outputs that are essential to proper functioning of the Protection
+                                                                                  Years
+   degradation). (See Table 2)                                                                  System
+
+  • Some or all binary or status inputs and control outputs are
+    monitored by a process that continuously demonstrates ability to
+    perform as designed, with alarming for failure (See Table 2).
+
+
+
+
+                                                                                                                                               Page 19 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+                                                                             Table 1-3
+                                 Component Type - Voltage and Current Sensing Devices Providing Inputs to Protective Relays
+                                                  Excluding distributed UFLS and distributed UVLS (see Table 3)
+                                                                                Maximum
+                         Component Attributes                                  Maintenance                            Maintenance Activities
+                                                                                 Interval
+
+
+ Any voltage and current sensing devices not having monitoring                                    Verify that current and voltage signal values are provided to
+                                                                            12 Calendar Years
+ attributes of the category below.                                                                the protective relays.
+
+
+
+
+ Voltage and Current Sensing devices connected to microprocessor
+ relays with ac measurements that are continuously verified by                 No periodic
+ comparison of sensing input value, as measured by the                         maintenance        None.
+ microprocessor relay, to an independent ac measurement source,                 specified
+ with alarming for unacceptable error or failure (see Table 2).
+
+
+
+
+                                                                                                                                                Page 20 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+
+                                                                             Table 1-4(a)
+                                 Component Type – Protection System Station dc Supply Using Vented Lead-Acid (VLA) Batteries
+                                                   Excluding distributed UFLS and distributed UVLS (see Table 3)
+
+
+   Protection System Station dc supply used only for non-BES interrupting devices for RAS, non-distributed UFLS systems, or non-distributed UVLS systems is
+                                                                 excluded (see Table 1-4(e)).
+
+                 Component Attributes                        Maximum Maintenance                                     Maintenance Activities
+                                                                   Interval
+
+                                                                                            Verify:
+                                                                                            • Station dc supply voltage
+                                                                4 Calendar Months           Inspect:
+                                                                                            • Electrolyte level
+                                                                                            • For unintentional grounds
+
+                                                                                            Verify:
+ Protection System Station dc supply using Vented
+                                                                                            • Float voltage of battery charger
+ Lead-Acid (VLA) batteries not having monitoring
+ attributes of Table 1-4(f).                                                                • Battery continuity
+                                                                                            • Battery terminal connection resistance
+                                                               18 Calendar Months           • Battery intercell or unit-to-unit connection resistance
+                                                                                            Inspect:
+                                                                                            • Cell condition of all individual battery cells where cells are visible – or
+                                                                                              measure battery cell/unit internal ohmic values where the cells are
+                                                                                              not visible
+                                                                                            • Physical condition of battery rack
+
+
+
+
+                                                                                                                                                   Page 21 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+                                                                               Table 1-4(a)
+                                 Component Type – Protection System Station dc Supply Using Vented Lead-Acid (VLA) Batteries
+                                                   Excluding distributed UFLS and distributed UVLS (see Table 3)
+
+
+   Protection System Station dc supply used only for non-BES interrupting devices for RAS, non-distributed UFLS systems, or non-distributed UVLS systems is
+                                                                 excluded (see Table 1-4(e)).
+
+                 Component Attributes                        Maximum Maintenance                                     Maintenance Activities
+                                                                   Interval
+
+                                                                                              Verify that the station battery can perform as manufactured by
+                                                                                              evaluating cell/unit measurements indicative of battery performance
+                                                               18 Calendar Months             (e.g. internal ohmic values or float current) against the station battery
+                                                                        -or-                  baseline.
+                                                                                                                                 -or-
+                                                                 6 Calendar Years             Verify that the station battery can perform as manufactured by
+                                                                                              conducting a performance or modified performance capacity test of
+                                                                                              the entire battery bank.
+
+
+
+
+                                                                                                                                                  Page 22 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+
+                                                                             Table 1-4(b)
+                            Component Type – Protection System Station dc Supply Using Valve-Regulated Lead-Acid (VRLA) Batteries
+                                                   Excluding distributed UFLS and distributed UVLS (see Table 3)
+
+
+   Protection System Station dc supply used only for non-BES interrupting devices for RAS, non-distributed UFLS systems, or non-distributed UVLS systems is
+                                                                 excluded (see Table 1-4(e)).
+
+                                                                        Maximum
+                     Component Attributes                              Maintenance                                  Maintenance Activities
+                                                                         Interval
+
+                                                                                            Verify:
+                                                                                            • Station dc supply voltage
+                                                                    4 Calendar Months
+                                                                                            Inspect:
+                                                                                            • For unintentional grounds
+
+                                                                                            Inspect:
+                                                                    6 Calendar Months
+                                                                                            • Condition of all individual units by measuring battery cell/unit
+ Protection System Station dc supply with Valve Regulated                                     internal ohmic values.
+ Lead-Acid (VRLA) batteries not having monitoring attributes of
+ Table 1-4(f).                                                                              Verify:
+                                                                                            • Float voltage of battery charger
+                                                                                            • Battery continuity
+                                                                        18 Calendar
+                                                                          Months            • Battery terminal connection resistance
+                                                                                            • Battery intercell or unit-to-unit connection resistance
+                                                                                            Inspect:
+                                                                                            • Physical condition of battery rack
+
+
+
+
+                                                                                                                                                 Page 23 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+                                                                             Table 1-4(b)
+                            Component Type – Protection System Station dc Supply Using Valve-Regulated Lead-Acid (VRLA) Batteries
+                                                   Excluding distributed UFLS and distributed UVLS (see Table 3)
+
+
+   Protection System Station dc supply used only for non-BES interrupting devices for RAS, non-distributed UFLS systems, or non-distributed UVLS systems is
+                                                                 excluded (see Table 1-4(e)).
+
+                                                                        Maximum
+                     Component Attributes                              Maintenance                                  Maintenance Activities
+                                                                         Interval
+
+                                                                                             Verify that the station battery can perform as manufactured by
+                                                                                             evaluating cell/unit measurements indicative of battery performance
+                                                                    6 Calendar Months        (e.g. internal ohmic values or float current) against the station battery
+                                                                            -or-             baseline.
+                                                                                                                                -or-
+                                                                      3 Calendar Years       Verify that the station battery can perform as manufactured by
+                                                                                             conducting a performance or modified performance capacity test of
+                                                                                             the entire battery bank.
+
+
+
+
+                                                                                                                                                 Page 24 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+
+                                                                             Table 1-4(c)
+                                 Component Type – Protection System Station dc Supply Using Nickel-Cadmium (NiCad) Batteries
+                                                   Excluding distributed UFLS and distributed UVLS (see Table 3)
+
+
+   Protection System Station dc supply used only for non-BES interrupting devices for RAS, non-distributed UFLS system, or non-distributed UVLS systems is
+                                                                 excluded (see Table 1-4(e)).
+
+                                                                        Maximum
+                     Component Attributes                              Maintenance                                   Maintenance Activities
+                                                                         Interval
+
+                                                                                            Verify:
+                                                                                            • Station dc supply voltage
+                                                                    4 Calendar Months       Inspect:
+                                                                                            • Electrolyte level
+                                                                                            • For unintentional grounds
+
+                                                                                            Verify:
+ Protection System Station dc supply Nickel-Cadmium (NiCad)
+ batteries not having monitoring attributes of Table 1-4(f).                                • Float voltage of battery charger
+                                                                                            • Battery continuity
+                                                                        18 Calendar         • Battery terminal connection resistance
+                                                                          Months
+                                                                                            • Battery intercell or unit-to-unit connection resistance
+                                                                                            Inspect:
+                                                                                            • Cell condition of all individual battery cells.
+                                                                                            • Physical condition of battery rack
+
+
+
+
+                                                                                                                                                 Page 25 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+                                                                             Table 1-4(c)
+                                 Component Type – Protection System Station dc Supply Using Nickel-Cadmium (NiCad) Batteries
+                                                   Excluding distributed UFLS and distributed UVLS (see Table 3)
+
+
+   Protection System Station dc supply used only for non-BES interrupting devices for RAS, non-distributed UFLS system, or non-distributed UVLS systems is
+                                                                 excluded (see Table 1-4(e)).
+
+                                                                        Maximum
+                     Component Attributes                              Maintenance                                 Maintenance Activities
+                                                                         Interval
+
+                                                                                             Verify that the station battery can perform as manufactured by
+                                                                      6 Calendar Years       conducting a performance or modified performance capacity test of
+                                                                                             the entire battery bank.
+
+
+
+
+                                                                                                                                             Page 26 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+
+                                                                             Table 1-4(d)
+                                 Component Type – Protection System Station dc Supply Using Non Battery Based Energy Storage
+                                                   Excluding distributed UFLS and distributed UVLS (see Table 3)
+
+
+   Protection System Station dc supply used only for non-BES interrupting devices for RAS, non-distributed UFLS system, or non-distributed UVLS systems is
+                                                                 excluded (see Table 1-4(e)).
+
+                                                                        Maximum
+                     Component Attributes                              Maintenance                                 Maintenance Activities
+                                                                         Interval
+
+                                                                                            Verify:
+                                                                                            • Station dc supply voltage
+                                                                    4 Calendar Months
+                                                                                            Inspect:
+                                                                                            • For unintentional grounds
+ Any Protection System station dc supply not using a battery
+ and not having monitoring attributes of Table 1-4(f).                  18 Calendar         Inspect:
+                                                                          Months
+                                                                                            Condition of non-battery based dc supply
+
+                                                                                            Verify that the dc supply can perform as manufactured when ac power
+                                                                     6 Calendar Years
+                                                                                            is not present.
+
+
+
+
+                                                                                                                                             Page 27 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+
+                                                                             Table 1-4(e)
+  Component Type – Protection System Station dc Supply for non-BES Interrupting Devices for RAS, non-distributed UFLS, and non-distributed UVLS systems
+
+                                                                        Maximum
+                     Component Attributes                              Maintenance                                   Maintenance Activities
+                                                                         Interval
+
+ Any Protection System dc supply used for tripping only non-            When control
+ BES interrupting devices as part of a RAS, non-distributed         circuits are verified   Verify Station dc supply voltage.
+ UFLS, or non-distributed UVLS system and not having                   (See Table 1-5)
+ monitoring attributes of Table 1-4(f).
+
+
+
+
+                                                                                                                                              Page 28 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+                                                                           Table 1-4(f)
+                                       Exclusions for Protection System Station dc Supply Monitoring Devices and Systems
+
+                                                                    Maximum Maintenance
+                     Component Attributes                                                                               Maintenance Activities
+                                                                          Interval
+
+ Any station dc supply with high and low voltage monitoring
+ and alarming of the battery charger voltage to detect charger                                     No periodic verification of station dc supply voltage is required.
+ overvoltage and charger failure (See Table 2).
+
+ Any battery based station dc supply with electrolyte level                                        No periodic inspection of the electrolyte level for each cell is
+ monitoring and alarming in every cell (See Table 2).                                              required.
+
+ Any station dc supply with unintentional dc ground monitoring
+                                                                                                   No periodic inspection of unintentional dc grounds is required.
+ and alarming (See Table 2).
+
+ Any station dc supply with charger float voltage monitoring
+                                                                                                   No periodic verification of float voltage of battery charger is
+ and alarming to ensure correct float voltage is being applied
+                                                                                                   required.
+ on the station dc supply (See Table 2).
+
+ Any battery based station dc supply with monitoring and                  No periodic
+                                                                     maintenance specified         No periodic verification of the battery continuity is required.
+ alarming of battery string continuity (See Table 2).
+
+ Any battery based station dc supply with monitoring and
+                                                                                                   No periodic verification of the intercell and terminal connection
+ alarming of the intercell and/or terminal connection detail
+                                                                                                   resistance is required.
+ resistance of the entire battery (See Table 2).
+
+ Any Valve Regulated Lead-Acid (VRLA) or Vented Lead-Acid
+ (VLA) station battery with internal ohmic value or float current                                  No periodic evaluation relative to baseline of battery cell/unit
+ monitoring and alarming, and evaluating present values                                            measurements indicative of battery performance is required to
+ relative to baseline internal ohmic values for every cell/unit                                    verify the station battery can perform as manufactured.
+ (See Table 2).
+
+ Any Valve Regulated Lead-Acid (VRLA) or Vented Lead-Acid                                          No periodic inspection of the condition of all individual units by
+ (VLA) station battery with monitoring and alarming of each                                        measuring battery cell/unit internal ohmic values of a station
+ cell/unit internal ohmic value (See Table 2).                                                     VRLA or Vented Lead-Acid (VLA) battery is required.
+
+
+
+
+                                                                                                                                                  Page 29 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+
+                                                                               Table 1-5
+                                          Component Type - Control Circuitry Associated With Protective Functions
+        Excluding distributed UFLS and distributed UVLS (see Table 3), Automatic Reclosing (see Table 4), and Sudden Pressure Relaying (see Table 5)
+                     Note: Table requirements apply to all Control Circuitry Components of Protection Systems, and RAS except as noted.
+                                                                                       Maximum
+                              Component Attributes                                    Maintenance                           Maintenance Activities
+                                                                                        Interval
+
+
+ Trip coils or actuators of circuit breakers, interrupting devices, or mitigating      6 Calendar       Verify that each trip coil is able to operate the circuit
+ devices (regardless of any monitoring of the control circuitry).                         Years         breaker, interrupting device, or mitigating device.
+
+
+
+ Electromechanical lockout devices which are directly in a trip path from the
+                                                                                       6 Calendar       Verify electrical operation of electromechanical lockout
+ protective relay to the interrupting device trip coil (regardless of any
+                                                                                          Years         devices.
+ monitoring of the control circuitry).
+
+
+ Unmonitored control circuitry associated with RAS.                                   12 Calendar       Verify all paths of the control circuits essential for proper
+ (See Table 4-2(b) for RAS which include Automatic Reclosing.)                           Years          operation of the RAS.
+
+
+                                                                                                        Verify all paths of the trip circuits inclusive of all auxiliary
+ Unmonitored control circuitry associated with protective functions inclusive         12 Calendar
+                                                                                                        relays through the trip coil(s) of the circuit breakers or
+ of all auxiliary relays.                                                                Years
+                                                                                                        other interrupting devices.
+
+                                                                                      No periodic
+ Control circuitry associated with protective functions and/or RAS whose
+                                                                                      maintenance       None.
+ integrity is monitored and alarmed (See Table 2).
+                                                                                       specified
+
+
+
+
+                                                                                                                                                      Page 30 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+                                                           Table 2 – Alarming Paths and Monitoring
+ In Tables 1-1 through 1-5, Table 3, Tables 4-1 through 4-3, and Table 5 alarm attributes used to justify extended maximum maintenance intervals and/or
+                                  reduced maintenance activities are subject to the following maintenance requirements
+
+                                                                                          Maximum
+                              Component Attributes                                       Maintenance                    Maintenance Activities
+                                                                                           Interval
+
+ Any alarm path through which alarms in Tables 1-1 through 1-5, Table 3, Tables
+ 4-1 through 4-3, and Table 5 are conveyed from the alarm origin to the location
+ where corrective action can be initiated, and not having all the attributes of the                        Verify that the alarm path conveys alarm signals
+ “Alarm Path with monitoring” category below.                                          12 Calendar Years   to a location where corrective action can be
+                                                                                                           initiated.
+ Alarms are reported within 24 hours of detection to a location where
+ corrective action can be initiated.
+
+ Alarm Path with monitoring:
+                                                                                         No periodic
+ The location where corrective action is taken receives an alarm within 24 hours         maintenance       None.
+ for failure of any portion of the alarming path from the alarm origin to the             specified
+ location where corrective action can be initiated.
+
+
+
+
+                                                                                                                                             Page 31 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+
+                                                                                Table 3
+                                      Maintenance Activities and Intervals for distributed UFLS and distributed UVLS Systems
+
+                                                                                     Maximum
+                             Component Attributes                                   Maintenance                              Maintenance Activities
+                                                                                      Interval
+
+                                                                                                        Verify that settings are as specified.
+                                                                                                        For non-microprocessor relays:
+                                                                                                        • Test and, if necessary calibrate.
+ Any unmonitored protective relay not having all the monitoring attributes of        6 Calendar
+                                                                                                        For microprocessor relays:
+ a category below.                                                                      Years
+                                                                                                        • Verify operation of the relay inputs and outputs that are
+                                                                                                          essential to proper functioning of the Protection System.
+                                                                                                        • Verify acceptable measurement of power system input
+                                                                                                          values.
+
+ Monitored microprocessor protective relay with the following:                                          Verify:
+   • Internal self-diagnosis and alarming (See Table 2).                                                • Settings are as specified.
+                                                                                    12 Calendar
+   • Voltage and/or current waveform sampling three or more times per                                   • Operation of the relay inputs and outputs that are essential
+                                                                                       Years
+     power cycle, and conversion of samples to numeric values for                                         to proper functioning of the Protection System.
+     measurement calculations by microprocessor electronics.
+                                                                                                        • Acceptable measurement of power system input values.
+ Alarming for power supply failure (See Table 2).
+ Monitored microprocessor protective relay with preceding row attributes
+ and the following:
+                                                                                    12 Calendar         Verify only the unmonitored relay inputs and outputs that are
+   • AC measurements are continuously verified by comparison to an                     Years            essential to proper functioning of the Protection System.
+     independent ac measurement source, with alarming for excessive error
+     (See Table 2).
+
+
+
+
+                                                                                                                                                  Page 32 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+                                                                                Table 3
+                                      Maintenance Activities and Intervals for distributed UFLS and distributed UVLS Systems
+
+                                                                                     Maximum
+                             Component Attributes                                   Maintenance                             Maintenance Activities
+                                                                                      Interval
+   • Some or all binary or status inputs and control outputs are monitored by
+     a process that continuously demonstrates ability to perform as
+     designed, with alarming for failure (See Table 2).
+ Alarming for change of settings (See Table 2).
+
+ Voltage and/or current sensing devices associated with UFLS or UVLS                12 Calendar         Verify that current and/or voltage signal values are provided to
+ systems.                                                                              Years            the protective relays.
+
+ Protection System dc supply for tripping non-BES interrupting devices used         12 Calendar
+                                                                                       Years            Verify Protection System dc supply voltage.
+ only for a UFLS or UVLS system.
+
+ Control circuitry between the UFLS or UVLS relays and electromechanical            12 Calendar         Verify the path from the relay to the lockout and/or tripping
+ lockout and/or tripping auxiliary devices (excludes non-BES interrupting              Years            auxiliary relay (including essential supervisory logic).
+ device trip coils).
+
+ Electromechanical lockout and/or tripping auxiliary devices associated only        12 Calendar         Verify electrical operation of electromechanical lockout and/or
+ with UFLS or UVLS systems (excludes non-BES interrupting device trip coils).          Years            tripping auxiliary devices.
+
+ Control circuitry between the electromechanical lockout and/or tripping
+ auxiliary devices and the non-BES interrupting devices in UFLS or UVLS             No periodic
+ systems, or between UFLS or UVLS relays (with no interposing                       maintenance         None.
+ electromechanical lockout or auxiliary device) and the non-BES interrupting         specified
+ devices (excludes non-BES interrupting device trip coils).
+                                                                                    No periodic
+ Trip coils of non-BES interrupting devices in UFLS or UVLS systems.                maintenance         None.
+                                                                                     specified
+
+
+
+
+                                                                                                                                                   Page 33 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+                                                                               Table 4-1
+                                             Maintenance Activities and Intervals for Automatic Reclosing Components
+                                                         Component Type – Reclosing and Supervisory Relay
+ Note: In cases where Components of Automatic Reclosing are common to Components listed in Table 1-1 through 1-5, the Components only need to be
+ tested once during a distinct maintenance interval.
+
+                                                                                     Maximum
+                             Component Attributes                                   Maintenance                              Maintenance Activities
+                                                                                      Interval
+
+                                                                                                        Verify that settings are as specified.
+                                                                                                        For non-microprocessor reclosing or supervisory relays:
+                                                                                                        • Test and, if necessary calibrate
+
+ Any unmonitored reclosing relay or supervisory relay not having all the             6 Calendar         For microprocessor reclosing or supervisory relays:
+ monitoring attributes of a category below.                                             Years           • Verify operation of the relay inputs and outputs that are
+                                                                                                          essential to proper functioning of the Automatic Reclosing.
+                                                                                                        For microprocessor supervisory relays:
+                                                                                                        • Verify acceptable measurement of power system input
+                                                                                                          values.
+
+   • Monitored microprocessor reclosing relay or supervisory relay with the                             Verify:
+     following: Internal self-diagnosis and alarming (See Table 2).                                     • Settings are as specified.
+   • Alarming for power supply failure (See Table 2).                                                   • Operation of the relay inputs and outputs that are essential
+                                                                                    12 Calendar
+   For supervisory relay:                                                              Years              to proper functioning of the Automatic Reclosing.
+
+   • Voltage waveform sampling three or more times per power cycle, and                                 For supervisory relays:
+     conversion of samples to numeric values for measurement calculations                               • Verify acceptable measurement of power system input
+     by microprocessor electronics.                                                                       values.
+
+
+
+
+                                                                                                                                                  Page 34 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+                                                                               Table 4-1
+                                             Maintenance Activities and Intervals for Automatic Reclosing Components
+                                                         Component Type – Reclosing and Supervisory Relay
+ Note: In cases where Components of Automatic Reclosing are common to Components listed in Table 1-1 through 1-5, the Components only need to be
+ tested once during a distinct maintenance interval.
+
+                                                                                     Maximum
+                             Component Attributes                                   Maintenance                            Maintenance Activities
+                                                                                      Interval
+
+ Monitored microprocessor reclosing relay or supervisory relay with
+ preceding row attributes and the following:
+   • Some or all binary or status inputs and control outputs are monitored by
+     a process that continuously demonstrates ability to perform as
+     designed, with alarming for failure (See Table 2).
+                                                                                    12 Calendar         Verify only the unmonitored relay inputs and outputs that are
+   • Alarming for change of settings (See Table 2).
+                                                                                       Years            essential to proper functioning of the Automatic Reclosing.
+   For supervisory relay:
+   • Ac measurements are continuously verified by comparison to an
+     independent ac measurement source, with alarming for excessive error
+     (See Table 2).
+
+
+
+
+                                                                                                                                                  Page 35 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+                                                                                Table 4-2(a)
+                                             Maintenance Activities and Intervals for Automatic Reclosing Components
+                  Component Type – Control Circuitry Associated with Reclosing and Supervisory Relays that are NOT an Integral Part of an RAS
+     Note: In cases where Components of Automatic Reclosing are common to Components listed in Table 1-5, the Components only need to be tested once
+                                                          during a distinct maintenance interval.
+
+                                                                                      Maximum
+                             Component Attributes                                    Maintenance                         Maintenance Activities
+                                                                                       Interval
+
+ Unmonitored Control circuitry associated with Automatic Reclosing that is            12 Calendar       Verify that Automatic Reclosing, upon initiation, does not
+ not an integral part of an RAS.                                                         Years          issue a premature closing command to the close circuitry.
+
+
+ Control circuitry associated with Automatic Reclosing that is not part of an         No periodic
+ RAS and is monitored and alarmed for conditions that would result in a               maintenance       None.
+ premature closing command. (See Table 2)                                              specified
+
+
+
+
+                                                                                                                                                Page 36 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+                                                                               Table 4-2(b)
+                                              Maintenance Activities and Intervals for Automatic Reclosing Components
+                    Component Type – Control Circuitry Associated with Reclosing and Supervisory Relays that ARE an Integral Part of an RAS
+     Note: In cases where Components of Automatic Reclosing are common to Components listed in Table 1-5, the Components only need to be tested once
+                                                          during a distinct maintenance interval.
+                                                                                     Maximum
+                             Component Attributes                                   Maintenance                              Maintenance Activities
+                                                                                      Interval
+ Close coils or actuators of circuit breakers or similar devices that are used in
+                                                                                      6 Calendar        Verify that each close coil or actuator is able to operate the
+ conjunction with Automatic Reclosing as part of an RAS (regardless of any
+                                                                                         Years          circuit breaker or mitigating device.
+ monitoring of the control circuitry).
+ Unmonitored close control circuitry associated with Automatic Reclosing             12 Calendar        Verify all paths of the control circuits associated with Automatic
+ used as an integral part of an RAS.                                                    Years           Reclosing that are essential for proper operation of the RAS.
+                                                                                     No periodic
+ Control circuitry associated with Automatic Reclosing that is an integral part
+                                                                                     maintenance        None.
+ of an RAS whose integrity is monitored and alarmed. (See Table 2)
+                                                                                      specified
+
+
+
+
+                                                                                                                                                    Page 37 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+                                                                               Table 4-3
+                                             Maintenance Activities and Intervals for Automatic Reclosing Components
+                                          Component Type – Voltage Sensing Devices Associated with Supervisory Relays
+     Note: In cases where Components of Automatic Reclosing are common to Components listed in Table 1-3, the Components only need to be tested once
+                                                          during a distinct maintenance interval.
+
+                                                                                     Maximum
+                             Component Attributes                                   Maintenance                             Maintenance Activities
+                                                                                      Interval
+
+                                                                                                        Verify that voltage signal values are provided to the supervisory
+ Any voltage sensing devices not having monitoring attributes of the category       12 Calendar
+                                                                                                        relays.
+ below.                                                                                Years
+
+ Voltage sensing devices that are connected to microprocessor supervisory
+ relays with ac measurements that are continuously verified by comparison of        No periodic
+ sensing input value, as measured by the microprocessor relay, to an                maintenance         None.
+ independent ac measurement source, with alarming for unacceptable error             specified
+ or failure. (See Table 2)
+
+
+
+
+                                                                                                                                                   Page 38 of 41
+Standard PRC-005-6 – Protection System, Automatic Reclosing, and Sudden Pressure Relaying Maintenance
+
+
+
+                                                                                Table 5
+                                                 Maintenance Activities and Intervals for Sudden Pressure Relaying
+  Note: In cases where Components of Sudden Pressure Relaying are common to Components listed in Table 1-5, the Components only need to be tested once
+                                                         during a distinct maintenance interval.
+                                                                  Maximum Maintenance
+                    Component Attributes                                                                               Maintenance Activities
+                                                                        Interval
+
+ Any fault pressure relay.                                            6 Calendar Years        Verify the pressure or flow sensing mechanism is operable.
+
+ Electromechanical lockout devices which are directly in a
+ trip path from the fault pressure relay to the interrupting
+                                                                      6 Calendar Years        Verify electrical operation of electromechanical lockout devices.
+ device trip coil (regardless of any monitoring of the control
+ circuitry).
+
+                                                                                              Verify all paths of the trip circuits inclusive of all auxiliary relays
+ Unmonitored control circuitry associated with Sudden
+                                                                     12 Calendar Years        through the trip coil(s) of the circuit breakers or other interrupting
+ Pressure Relaying.
+                                                                                              devices.
+
+ Control circuitry associated with Sudden Pressure Relaying      No periodic maintenance
+                                                                                              None.
+ whose integrity is monitored and alarmed (See Table 2).                 specified
+
+
+
+
+                                                                                                                                                  Page 39 of 41
+                                   PRC-005 — Attachment A
+         Criteria for a Performance-Based Protection System Maintenance Program
+
+Purpose: To establish a technical basis for initial and continued use of a performance-based
+Protection System Maintenance Program (PSMP).
+
+To establish the technical justification for the initial use of a performance-based PSMP:
+   1. Develop a list with a description of Components included in each designated Segment,
+      with a minimum Segment population of 60 Components.
+   2. Maintain the Components in each Segment according to the time-based maximum
+      allowable intervals established in Tables 1-1 through 1-5, Table 3, Tables 4-1 through 4-
+      3, and Table 5 until results of maintenance activities for the Segment are available for a
+      minimum of 30 individual Components of the Segment.
+   3. Document the maintenance program activities and results for each Segment, including
+      maintenance dates and Countable Events for each included Component.
+   4. Analyze the maintenance program activities and results for each Segment to determine
+      the overall performance of the Segment and develop maintenance intervals.
+   5. Determine the maximum allowable maintenance interval for each Segment such that
+      the Segment experiences Countable Events on no more than 4% of the Components
+      within the Segment, for the greater of either the last 30 Components maintained or all
+      Components maintained in the previous year.
+To maintain the technical justification for the ongoing use of a performance-based PSMP:
+   1. At least annually, update the list of Components and Segments and/or description if any
+      changes occur within the Segment.
+   2. Perform maintenance on the greater of 5% of the Components (addressed in the
+      performance based PSMP) in each Segment or 3 individual Components within the
+      Segment in each year.
+   3. For the prior year, analyze the maintenance program activities and results for each
+      Segment to determine the overall performance of the Segment.
+   4. Using the prior year’s data, determine the maximum allowable maintenance interval for
+      each Segment such that the Segment experiences Countable Events on no more than
+      4% of the Components within the Segment, for the greater of either the last 30
+      Components maintained or all Components maintained in the previous year.
+If the Components in a Segment maintained through a performance-based PSMP experience
+4% or more Countable Events, develop, document, and implement an action plan to reduce the
+Countable Events to less than 4% of the Segment population within 3 years.
+
+
+
+
+                                                                             Page 40 of 41
+Rationale:
+
+During development of this standard, text boxes were embedded within the standard to explain
+the rationale for various parts of the standard. Upon BOT approval, the text from the rationale
+text boxes was moved to this section.
+
+Rationale for revisions to Automatic Reclosing:
+To address directives from FERC Order No. 803 addressing Automatic Reclosing, the definition
+for Automatic Reclosing was revised to add supervisory relays, the associated voltage sensing
+devices, and the associated control circuitry.
+
+Rationale for revisions to Component Type:
+With the revision of the definition of Automatic Reclosing, there are four specific elements of
+this definition, rather than two as stated in the prior version.
+
+
+
+
+                                                                              Page 41 of 41
+

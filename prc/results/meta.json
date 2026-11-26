@@ -1,0 +1,129 @@
+{
+ "NERC_PRC-005-6": {
+  "url": "https://www.nerc.com/pa/Stand/Reliability%20Standards/PRC-005-6.pdf",
+  "status": 200,
+  "final_url": "https://www.nerc.com/globalassets/standards/reliability-standards/prc/prc-005-6.pdf",
+  "content_type": "application/pdf",
+  "content_disposition": null,
+  "bytes": 475473,
+  "sha256": "51b621894cb548d869dea26e597f1677b4590b60cf1b3665d3444d05cadb3d13",
+  "starts_with_pdf": true,
+  "text_chars": 117637,
+  "interval_inventory": {
+   "Table 3": [
+    "12 calendar years",
+    "6 calendar years"
+   ],
+   "Table 1-4(e)": [
+    "18 calendar months",
+    "3 calendar years",
+    "4 calendar months",
+    "6 calendar months",
+    "6 calendar years"
+   ],
+   "Table 1-4(f)": [
+    "18 calendar months",
+    "6 calendar years"
+   ],
+   "Table 5": [
+    "12 calendar years"
+   ],
+   "Table 2": [
+    "12 calendar years"
+   ],
+   "Table 1-5": [
+    "12 calendar years",
+    "6 calendar years"
+   ]
+  }
+ },
+ "BC_PRC-005-6": {
+  "url": "https://www.wecc.org/sites/default/files/documents/standards/2024/PRC-005-6%20BC.pdf",
+  "status": 200,
+  "final_url": "https://www.wecc.org/sites/default/files/documents/standards/2024/PRC-005-6%20BC.pdf",
+  "content_type": "application/pdf",
+  "content_disposition": null,
+  "bytes": 808733,
+  "sha256": "2507073365af10777a31dc3494ef04a65451c2ab263d5d7747930c8caac606a3",
+  "starts_with_pdf": true,
+  "text_chars": 142312,
+  "interval_inventory": {
+   "Table 3": [
+    "12 calendar years",
+    "6 calendar years"
+   ],
+   "Table 1-4(e)": [
+    "18 calendar months",
+    "3 calendar years",
+    "4 calendar months",
+    "6 calendar months",
+    "6 calendar years"
+   ],
+   "Table 1-4(f)": [
+    "18 calendar months",
+    "6 calendar years"
+   ],
+   "Table 5": [
+    "12 calendar years"
+   ],
+   "Table 2": [
+    "12 calendar years"
+   ],
+   "Table 1-5": [
+    "12 calendar years",
+    "6 calendar years"
+   ]
+  }
+ },
+ "AB_PRC-005-AB2-6": {
+  "url": "https://aeso.ca/rules-standards-and-tariff/alberta-reliability-standards/prc-005-protection-system-automatic-reclosing-and-sudden-pressure-relaying-maintenance//download/PRC-005-AB2-6-Protection-system-Maintenance.pdf",
+  "status": 200,
+  "final_url": "https://aeso.ca/rules-standards-and-tariff/alberta-reliability-standards/prc-005-protection-system-automatic-reclosing-and-sudden-pressure-relaying-maintenance//download/PRC-005-AB2-6-Protection-system-Maintenance.pdf",
+  "content_type": "application/force-download",
+  "content_disposition": "attachment; filename=\"PRC-005-AB2-6-Protection-system-Maintenance.pdf\"",
+  "bytes": 460834,
+  "sha256": "26b4ed27ff40b0d70468bca2d53f6a368b427095898256eec7a7938ed3c9ddcf",
+  "starts_with_pdf": true,
+  "text_chars": 94577,
+  "interval_inventory": {
+   "Table 3": [
+    "12 calendar years",
+    "6 calendar years"
+   ],
+   "Table 1-4(e)": [
+    "3 calendar years",
+    "6 calendar years"
+   ],
+   "Table 1-4(f)": [
+    "6 calendar years"
+   ],
+   "Table 5": [
+    "1 calendar year",
+    "12 calendar years",
+    "2 calendar years",
+    "3 calendar years",
+    "6 calendar years"
+   ],
+   "Table 4-2(b)": [
+    "12 calendar years"
+   ],
+   "Table 2": [
+    "12 calendar years"
+   ],
+   "Table 1-1": [
+    "12 calendar years",
+    "6 calendar years"
+   ],
+   "Table 1-5": [
+    "12 calendar years",
+    "6 calendar years"
+   ],
+   "Table 1-3": [
+    "12 calendar years"
+   ],
+   "Table 5-2": [
+    "12 calendar years"
+   ]
+  }
+ }
+}

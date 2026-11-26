@@ -1,0 +1,1446 @@
+Alberta Reliability Standard
+Protection System, Automatic Reclosing and
+Sudden Pressure Relaying Maintenance
+PRC-005-AB2-6
+1. Purpose
+The purpose of this reliability standard is to document and implement programs for the maintenance of
+all protection systems, automatic reclosing, and sudden pressure relaying affecting the reliability of the
+transmission system so that they are kept in working order.
+
+2. Applicability
+The entities identified in subsection 2.1 must apply the requirements of this reliability standard to the
+devices listed in subsection 2.2, unless exempted under subsection 2.3.
+    2.1 This reliability standard applies to:
+         (a) the legal owner of a transmission facility that:
+              (i) is part of the bulk electric system, excluding any transformer with less than 2 terminals
+                  energized at 100 kV or higher;
+              (ii) is not part of the bulk electric system, and owns any of the following:
+                          (A) the protection systems used for the ISO’s underfrequency load shedding
+                              program;
+                          (B) the protection systems used for undervoltage load shed systems installed
+                              to prevent system voltage collapse or voltage instability for the reliability of
+                              the interconnected electric system;
+                          (C) protection systems installed as a remedial action scheme, including
+                              automatic reclosing applied as an integral part of a remedial action scheme,
+                              for the reliability of the interconnected electric system; or
+              (iii) is material to this reliability standard and to the reliability of either the interconnected
+                    electric system or the City of Medicine Hat electric system, as the ISO determines and
+                    includes on a list published on the AESO website, which the ISO may amend from time to
+                    time in accordance with the process set out in Appendix 3.
+         (b) the legal owner of a generating unit that:
+              (i) has a maximum authorized real power rating greater than 18 MW and is either:
+                   (A) directly connected to the transmission system,
+                   (B) directly connected to transmission facilities within the City of Medicine Hat, or
+                   (C) part of an industrial complex that is directly connected to the transmission system
+                       or to transmission facilities within the City of Medicine Hat;
+              (ii) is within a power plant that:
+                   (A) is not part of an aggregated generating facility;
+                   (B) is directly connected to the transmission system or to transmission facilities
+                       within the City of Medicine Hat; and
+                   (C) has a combined maximum authorized real power rating greater than 67.5 MW;
+              (iii) is a black start resource; or
+              (iv) is material to this reliability standard and to the reliability of either the interconnected
+                   electric system or the City of Medicine Hat electric system, regardless of the maximum
+                   authorized real power rating of the generating unit, as the ISO determines and
+
+Effective: 2020-10-13                               Page 1 of 41                                         Public
+Alberta Reliability Standard
+Protection System, Automatic Reclosing and
+Sudden Pressure Relaying Maintenance
+PRC-005-AB2-6
+                        includes on a list published on the AESO website, which the ISO may amend from time to
+                        time in accordance with the process set out in Appendix 3;
+           (c) the legal owner of an aggregated generating facility that:
+                (i) has a maximum authorized real power rating greater than 67.5 MW and is either:
+                        (A) directly connected to the transmission system;
+                        (B) directly connected to transmission facilities within the City of Medicine Hat; or
+                        (C) part of an industrial complex that is directly connected to the transmission system
+                            or to transmission facilities within the City of Medicine Hat;
+                (ii) is a black start resource; or
+                (iii) is material to this reliability standard and to the reliability of either the interconnected
+                      electric system or the City of Medicine Hat electric system, regardless of the maximum
+                      authorized real power rating of the aggregated generating facility, as the ISO
+                      determines and includes on a list published on the AESO website, which the ISO may
+                      amend from time to time in accordance with the process set out in Appendix 3.
+      2.2 This reliability standard applies to the following devices:
+           (a) protection systems and sudden pressure relaying that are installed for the purpose of
+               detecting faults on system elements as identified in section 2.1;
+           (b) protection systems used for the ISO’s underfrequency load shedding program;
+           (c) protection systems used for undervoltage load shed systems installed to prevent system
+               voltage collapse or voltage instability for the reliability of the interconnected electric
+               system;
+           (d) protection systems installed as a remedial action scheme for the reliability of the
+               interconnected electric system;
+           (e) protection systems and sudden pressure relaying for generating units, including:
+                (i) protection systems that act to trip the generating unit either directly or via lockout or
+                    auxiliary tripping relays;
+                (ii) protection systems and sudden pressure relaying for generating unit step-up
+                     transformers; and
+                (iii) protection systems and sudden pressure relaying for station service or excitation
+                      transformers connected to the generating unit bus, that act to trip the generating unit
+                      either directly or via lockout or tripping auxiliary relays;
+           (f) protection systems and sudden pressure relaying for aggregated generating facilities
+               from and including the collector bus to a common point of connection at 100 kV or above;
+           (g) automatic reclosing :
+                (i)      applied on all transmission lines connected to a bus operated at a voltage level of 100
+                        kV or higher located at generating plant substations where the combined maximum
+                        authorized real power is greater than 500 MW;
+                (ii) applied on all transmission line terminals operated at a voltage level of 100 kV or higher
+                     at substations one bus away from generating plants specified in Section 2.2 (g)(i) when
+                     the substation is less than 10 circuit-miles from the generating plant substation; and
+
+
+Effective: 2020-10-13                                    Page 2 of 41                                           Public
+Alberta Reliability Standard
+Protection System, Automatic Reclosing and
+Sudden Pressure Relaying Maintenance
+PRC-005-AB2-6
+                (iii) applied as an integral part of a remedial action scheme specified in subsection (d)
+                      above.
+      2.3 Automatic reclosing addressed in subsections 2.2(g)(i) and 2.2(g)(ii) may be excluded if the
+          equipment owner can demonstrate to the ISO that a close-in three-phase fault present for twice
+          the normal clearing time (capturing a minimum trip-close-trip time delay) does not result in a total
+          loss of gross generation in either the interconnected electric system or the City of Medicine Hat
+          electric system exceeding the gross capacity of the largest generating unit where the automatic
+          reclosing is applied.
+
+ 3. Requirements
+ R1 Each legal owner of a transmission facility, legal owner of a generating unit, and legal owner of
+    an aggregated generating facility must establish a protection system maintenance program for its
+    protection systems, automatic reclosing, and sudden pressure relaying.
+      The protection system maintenance program must:
+      R1.1 identify which maintenance method (a time-based method, the performance-based method per
+           Appendix 2, or a combination of these maintenance methods) is used to address each
+           protection system, automatic reclosing, and sudden pressure relaying component type (as
+           identified in Appendix 1). All batteries associated with the station dc supply component type of
+           a protection system must be included in a time-based program as described in Table 1-4 and
+           Table 3 of Appendix 1.
+      R1.2 include the applicable monitored component attributes applied to each protection system,
+           automatic reclosing, and sudden pressure relaying component type consistent with the
+           maintenance intervals specified in Tables 1-1 through 1-5, Table 2, Table 3, Tables 4-1 through
+           4-3, and Table 5 of Appendix 1, where monitoring is used to extend the maintenance intervals
+           beyond those specified for unmonitored protection system, automatic reclosing, and sudden
+           pressure relaying components.
+ R2 Each legal owner of a transmission facility, legal owner of a generating unit, and legal owner of
+    an aggregated generating facility that uses performance-based maintenance intervals in its
+    protection system maintenance program must follow the procedure established in Appendix 2 to
+    establish and maintain its performance-based intervals.
+ R3 Each legal owner of a transmission facility, legal owner of a generating unit, and legal owner of
+    an aggregated generating facility that uses time-based maintenance program(s) must maintain its
+    protection system, automatic reclosing, and sudden pressure relaying components that are included
+    within the time-based maintenance program in accordance with the minimum maintenance activities
+    and maximum maintenance intervals prescribed within Tables 1-1 through 1-5, Table 2, Table 3,
+    Tables 4-1 through 4-3, and Table 5 of Appendix 1.
+ R4 Each legal owner of a transmission facility, legal owner of a generating unit, and legal owner of
+    an aggregated generating facility that uses performance-based maintenance program(s) in
+    accordance with requirement R2 must implement and follow its protection system maintenance
+    program for its protection system, automatic reclosing, and sudden pressure relaying components
+    that are included within the performance-based program(s).
+ R5 Each legal owner of a transmission facility, legal owner of a generating unit, and legal owner of
+    an aggregated generating facility must demonstrate efforts to correct identified unresolved
+    maintenance issues.
+
+
+
+
+Effective: 2020-10-13                                Page 3 of 41                                           Public
+Alberta Reliability Standard
+Protection System, Automatic Reclosing and
+Sudden Pressure Relaying Maintenance
+PRC-005-AB2-6
+
+ 4. Measures
+ The following measures correspond to the requirements identified in section 3 of this reliability standard.
+ For example, MR1 is the measure for requirement R1.
+ MR1 Evidence of having a documented protection system maintenance program in accordance with
+     requirement R1 exists. Evidence may include, but is not limited to a documented protection
+     system maintenance program that may include supporting information such as manufacturer’s
+     specifications or engineering drawings or other equivalent evidence.
+ MR2 Evidence of following the procedure for performance-based maintenance intervals as required in
+     requirement R2 exists. Evidence may include, but is not limited to, component lists, dated
+     maintenance records and dated analysis records and results or other equivalent evidence.
+ MR3 Evidence of maintaining protection system, automatic reclosing, and sudden pressure relaying
+     components in accordance with the minimum maintenance activities and maximum maintenance
+     intervals as required in requirement R3 exists. Evidence may include, but is not limited to, dated
+     maintenance records, dated maintenance summaries, dated check-off lists, dated inspection
+     records, or dated work orders or other equivalent evidence.
+ MR4 Evidence of following the protection system maintenance program for performance-based
+     maintenance program(s) as required in requirement R4 exists. Evidence may include, but is not
+     limited to, dated maintenance records, dated maintenance summaries, dated check-off lists, dated
+     inspection records, or dated work orders or other equivalent evidence.
+ MR5 Evidence of demonstrating efforts to correct identified unresolved maintenance issues as required
+     in requirement R5 exists. Evidence may include, but is not limited to, work orders, replacement
+     component orders, invoices, project schedules with completed milestones, return material
+     authorizations or purchase orders or other equivalent evidence.
+
+ 5.    Implementation Plan
+ Each legal owner of a transmission facility, legal owner of a generating unit, and legal owner of an
+ aggregated generating facility must implement requirements R1 through R5 in accordance with the
+ implementation plan in Appendix 5.
+
+ 6.    Appendices
+ Appendix 1 – Tables describing protection system, automatic reclosing, and sudden pressure relaying
+ component types, maintenance activities and intervals:
+           Table 1-1    Maintenance Activities and Intervals for Protection Systems for Protective Relay
+                        Excluding distributed UFLS and distributed UVLS
+           Table 1-2    Maintenance Activities and Intervals for Protection Systems for Communications
+                        Systems Excluding distributed UFLS and distributed UVLS
+           Table 1-3    Maintenance Activities and Intervals for Protection Systems for Voltage and
+                        Current Sensing Devices Providing Inputs to Protective Relays Excluding
+                        distributed UFLS and distributed UVLS
+           Table 1-4(a) Maintenance Activities and Intervals for Protection Systems for Protection System
+                        Station dc Supply Using Vented Lead-Acid (VLA) Batteries Excluding distributed
+                        UFLS and distributed UVLS
+
+
+Effective: 2020-10-13                             Page 4 of 41                                         Public
+Alberta Reliability Standard
+Protection System, Automatic Reclosing and
+Sudden Pressure Relaying Maintenance
+PRC-005-AB2-6
+           Table 1-4(b) Maintenance Activities and Intervals for Protection Systems for Protection System
+                        Station dc Supply Using Valve-Regulated Lead-Acid (VRLA) Batteries Excluding
+                        distributed UFLS and distributed UVLS
+           Table 1-4(c) Maintenance Activities and Intervals for Protection Systems for Protection System
+                        Station dc Supply Using Nickel-Cadmium (NiCad) Batteries Excluding distributed
+                        UFLS and distributed UVLS
+           Table 1-4(d) Maintenance Activities and Intervals for Protection Systems for Protection System
+                        Station dc Supply Using Non Battery Based Energy Storage Excluding distributed
+                        UFLS and distributed UVLS
+           Table 1-4(e) Maintenance Activities and Intervals for Protection Systems for Protection System
+                        Station dc Supply for non-bulk electric system Interrupting Devices for RAS, non-
+                        distributed UFLS, and non-distributed UVLS systems
+           Table 1-4(f)   Exclusions for Protection System Station dc Supply Monitoring Devices and
+                          Systems
+           Table 1-5      Maintenance Activities and Intervals for Protection Systems for Control Circuitry
+                          Associated With Protective Functions Excluding distributed UFLS and distributed
+                          UVLS, Automatic Reclosing, and Sudden Pressure Relaying
+           Table 2        Alarming Paths and Monitoring
+           Table 3        Maintenance Activities and Intervals for distributed UFLS and distributed UVLS
+                          Systems
+           Table 4-1      Maintenance Activities and Intervals for Automatic Reclosing Components for
+                          Reclosing and Supervisory Relay
+           Table 4-2(a) Maintenance Activities and Intervals for Automatic Reclosing Components for
+                        Control Circuitry Associated with Reclosing and Supervisory Relays that are NOT
+                        an Integral Part of RAS
+           Table 4-2(b) Maintenance Activities and Intervals for Automatic Reclosing Components for
+                        Control Circuitry Associated with Reclosing and Supervisory Relays that are an
+                        Integral Part of RAS
+           Table 4-3      Maintenance Activities and Intervals for Automatic Reclosing Components for
+                          Voltage Sensing Devices Associated with Supervisory Relays
+           Table 5-1      Maintenance Activities and Intervals for Sudden Pressure Relaying for Fault
+                          Pressure Relay
+           Table 5-2      Maintenance Activities and Intervals for Sudden Pressure Relaying for Control
+                          Circuitry Associated with a Fault Pressure Relay
+ Appendix 2 – Performance-Based Protection System Maintenance Program;
+ Appendix 3 – Amending Process for List of Facilities;
+ Appendix 4 – Amending Process for List of Devices; and
+ Appendix 5 – Implementation Plan
+
+
+
+
+Effective: 2020-10-13                               Page 5 of 41                                          Public
+Alberta Reliability Standard
+Protection System, Automatic Reclosing and
+Sudden Pressure Relaying Maintenance
+PRC-005-AB2-6
+ Revision History
+
+  Date                  Description
+                        Revised Applicability section 2.2(g) to clearly identify the reclosers that this
+  2020-10-13
+                        reliability standard applies to.
+                        Revised:
+                           - the Applicability section to clearly apply the reliability standard to
+                               protection systems associated with underfrequency load shedding,
+                               under voltage load shedding, and remedial action schemes that are not
+                               part of the bulk electric system, add clarity regarding the reference to
+                               the bulk electric system and the exclusion of certain types of
+                               transformers, and to add a provision enabling the ISO to add
+  2019-10-01                   transmission facilities it determines are material to this reliability
+                               standard;
+                           - the Implementation Plan to add references to Tables 4 and 5 in
+                               subsection 5.5 in Appendix 5; and
+                           - reliability standard to correct various typos, update references, and
+                               replace the descriptions of compliance dates in Appendix 5 with the
+                               actual calendar dates.
+  2019-10-01            Initial release.
+
+
+
+
+Effective: 2020-10-13                            Page 6 of 41                                              Public
+  Alberta Reliability Standard
+  Protection System, Automatic Reclosing and
+  Sudden Pressure Relaying Maintenance
+  PRC-005-AB2-6
+
+    Appendix 1 – Protection system, automatic reclosing, and sudden pressure relaying component types, maintenance
+                                                 activities and intervals
+
+                                                                           Table 1-1
+                                                    Maintenance Activities and Intervals for Protection Systems
+                            Component Type - Protective Relay Excluding distributed UFLS and distributed UVLS (see Table 3)
+
+                        Component Attributes                       Maximum                                       Maintenance Activities
+                                                                  Maintenance
+                                                                    Interval
+
+ Any unmonitored protective relay not having all the             6 calendar years      For all unmonitored relays:
+ monitoring attributes of a category below.
+                                                                                           Verify that settings are as specified.
+
+                                                                                       For non-microprocessor relays:
+                                                                                           Test and, if necessary, calibrate.
+
+                                                                                       For microprocessor relays:
+                                                                                           Verify operation of the relay inputs and outputs that are essential to
+                                                                                           proper functioning of the protection system; and
+                                                                                           Verify acceptable measurement of power system input values.
+
+
+
+
+Effective: 2020-10-13                             Page 7 of 41                                          Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+                                                                             Table 1-1
+                                                     Maintenance Activities and Intervals for Protection Systems
+                            Component Type - Protective Relay Excluding distributed UFLS and distributed UVLS (see Table 3)
+
+                        Component Attributes                        Maximum                                         Maintenance Activities
+                                                                   Maintenance
+                                                                     Interval
+
+  Monitored microprocessor protective relay with the              12 calendar years      Verify:
+  following:
+                                                                                             Settings are as specified;
+       Internal self-diagnosis and alarming (see Table 2);
+                                                                                             Operation of the relay inputs and outputs that are essential to
+       Voltage and/or current waveform sampling three or                                     proper functioning of the protection system; and
+       more times per power cycle, and conversion of
+                                                                                             Acceptable measurement of power system input values.
+       samples to numeric values for measurement
+       calculations by microprocessor electronics; and
+       Alarming for power supply failure (see Table 2).
+
+
+
+
+Effective: 2020-10-13                              Page 8 of 41                                            Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+                                                                             Table 1-1
+                                                    Maintenance Activities and Intervals for Protection Systems
+                            Component Type - Protective Relay Excluding distributed UFLS and distributed UVLS (see Table 3)
+
+                        Component Attributes                        Maximum                                         Maintenance Activities
+                                                                   Maintenance
+                                                                     Interval
+
+  Monitored microprocessor protective relay with                  12 calendar years      Verify only the unmonitored relay inputs and outputs that are essential
+  preceding row attributes and the following:                                            to proper functioning of the protection system.
+       Ac measurements are continuously verified by
+       comparison to an independent ac measurement
+       source, with alarming for excessive error (See
+       Table 2);
+       Some or all inputs and outputs are monitored by a
+       process that continuously demonstrates ability to
+       perform as designed, with alarming for failure (See
+       Table 2); and
+       Alarming for change of settings (See Table 2).
+
+
+
+
+Effective: 2020-10-13                              Page 9 of 41                                            Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+
+                                                                            Table 1-2
+                                                Maintenance Activities and Intervals for Protection Systems
+                        Component Type - Communications Systems Excluding distributed UFLS and distributed UVLS (see Table 3)
+
+                    Component Attributes                            Maximum                                        Maintenance Activities
+                                                                   Maintenance
+                                                                     Interval
+  Any unmonitored communications system necessary                    4 months           Verify that the communications system is functional.
+  for correct operation of protective functions, and not
+  having all the monitoring attributes of a category below.       6 calendar years      Verify that the communications system meets performance criteria
+                                                                                        pertinent to the communications technology applied (e.g. signal level,
+                                                                                        reflected power, or data error rate).
+                                                                                        Verify operation of communications system inputs and outputs that are
+                                                                                        essential to proper functioning of the protection system.
+
+
+  Any communications system necessary for correct                 12 calendar years     Verify that the communications system meets performance criteria
+  operation of protective functions with continuous                                     pertinent to the communications technology applied (e.g. signal level,
+  monitoring or periodic automated testing for the                                      reflected power, or data error rate).
+  presence of the channel function, and alarming for loss
+                                                                                        Verify operation of communications system inputs and outputs that are
+  of function (See Table 2).
+                                                                                        essential to proper functioning of the protection system.
+
+
+
+
+Effective: 2020-10-13                             Page 10 of 41                                           Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+                                                                             Table 1-2
+                                                 Maintenance Activities and Intervals for Protection Systems
+                        Component Type - Communications Systems Excluding distributed UFLS and distributed UVLS (see Table 3)
+
+                    Component Attributes                             Maximum                                       Maintenance Activities
+                                                                    Maintenance
+                                                                      Interval
+  Any communications system with all of the following:             12 calendar years     Verify only the unmonitored communications system inputs and outputs
+                                                                                         that are essential to proper functioning of the protection system
+       Continuous monitoring or periodic automated
+       testing for the performance of the channel using
+       criteria pertinent to the communications technology
+       applied (e.g. signal level, reflected power, or data
+       error rate, and alarming for excessive performance
+       degradation); (See Table 2); and
+       Some or all inputs and outputs are monitored by a
+       process that continuously demonstrates ability to
+       perform as designed, with alarming for failure (See
+       Table 2).
+
+
+
+
+Effective: 2020-10-13                              Page 11 of 41                                          Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+
+                                                                               Table 1-3
+                                               Maintenance Activities and Intervals for Protection Systems
+                                       Component Type - Voltage and Current Sensing Devices Providing Inputs to Protective
+                                               Relays Excluding distributed UFLS and distributed UVLS (see Table 3)
+
+
+                        Component Attributes                          Maximum                                         Maintenance Activities
+                                                                     Maintenance
+                                                                       Interval
+
+  Any voltage and current sensing devices not having                12 calendar years      Verify that current and voltage signal values are provided to the
+  monitoring attributes of the category below.                                             protective relays.
+
+  Voltage and current sensing devices connected to                    No periodic          None.
+  microprocessor relays with ac measurements that are                 maintenance
+  continuously verified by comparison of sensing input                 specified
+  value, as measured by the microprocessor relay, to an
+  independent ac measurement source, with alarming for
+  unacceptable error or failure (see Table 2).
+
+
+
+
+Effective: 2020-10-13                               Page 12 of 41                                            Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+
+                                                                         Table 1-4(a)
+                                           Maintenance Activities and Intervals for Protection Systems
+                                   Component Type – Protection System Station dc Supply Using Vented Lead-Acid (VLA)
+                                        Batteries Excluding distributed UFLS and distributed UVLS (see Table 3)
+
+                        Protection System Station dc supply used only for non-bulk electric system interrupting devices for RAS,
+                               non-distributed UFLS systems, or non-distributed UVLS systems is excluded (see Table 1-4(e)).
+
+                 Component Attributes                              Maximum                                      Maintenance Activities
+                                                                  Maintenance
+                                                                    Interval
+
+  Protection system station dc supply using Vented              4 months unless a   Verify:
+  Lead-Acid (VLA) batteries not having monitoring                   variance is
+                                                                                        Station dc supply voltage
+  attributes of Table 1-4(f).                                     granted by the
+                                                                      AESO
+                                                                                    Inspect:
+                                                                                        Electrolyte level; and
+                                                                                        For unintentional grounds
+
+                                                                   18 months        Verify:
+                                                                                        Float voltage of battery charger
+                                                                                        Battery continuity
+                                                                                        Battery terminal connection resistance
+                                                                                        Battery intercell or unit-to-unit connection resistance
+
+
+
+
+Effective: 2020-10-13                           Page 13 of 41                                          Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+                                                                         Table 1-4(a)
+                                           Maintenance Activities and Intervals for Protection Systems
+                                   Component Type – Protection System Station dc Supply Using Vented Lead-Acid (VLA)
+                                        Batteries Excluding distributed UFLS and distributed UVLS (see Table 3)
+
+                        Protection System Station dc supply used only for non-bulk electric system interrupting devices for RAS,
+                               non-distributed UFLS systems, or non-distributed UVLS systems is excluded (see Table 1-4(e)).
+
+                 Component Attributes                             Maximum                                       Maintenance Activities
+                                                                 Maintenance
+                                                                   Interval
+
+                                                                                    Inspect:
+                                                                                        Cell condition of all individual battery cells where cells are visible –
+                                                                                        or measure battery cell/unit internal ohmic values where the cells
+                                                                                        are not visible; and
+                                                                                        Physical condition of battery rack.
+
+                                                                  18 months         Verify that the station battery can perform as manufactured by
+                                                                                    evaluating cell/unit measurements indicative of battery
+                                                                      -or-
+                                                                                    performance (e.g. internal ohmic values or float current) against
+                                                                6 calendar years    the station battery baseline.
+                                                                                                                      -or-
+                                                                                    Verify that the station battery can perform as manufactured by
+                                                                                    conducting a performance or modified performance capacity test
+                                                                                    of the entire battery bank.
+
+
+
+
+Effective: 2020-10-13                           Page 14 of 41                                          Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+                                                                          Table 1-4(b)
+                                                   Maintenance Activities and Intervals for Protection Systems
+                        Component Type – Protection System Station dc Supply Using Valve-Regulated Lead-Acid (VRLA) Batteries
+                                               Excluding distributed UFLS and distributed UVLS (see Table 3)
+
+                        Protection System Station dc supply used only for non-bulk electric system interrupting devices for RAS, non-
+                                  distributed UFLS systems, or non-distributed UVLS systems is excluded (see Table 1-4(e)).
+
+
+                    Component Attributes                            Maximum                                      Maintenance Activities
+                                                                   Maintenance
+                                                                     Interval
+
+  Protection system station dc supply with Valve                  4 months unless    Verify:
+  Regulated Lead-Acid (VRLA) batteries not having                   a variance is
+                                                                                         Station dc supply voltage
+  monitoring attributes of Table 1-4(f).                           granted by the
+                                                                       AESO
+                                                                                     Inspect:
+                                                                                         For unintentional grounds
+
+                                                                     6 months        Inspect:
+                                                                                         Condition of all individual units by measuring battery cell/unit
+                                                                                         internal ohmic values.
+
+                                                                    18 months        Verify:
+                                                                                         Float voltage of battery charger;
+                                                                                         Battery continuity;
+
+
+
+
+Effective: 2020-10-13                             Page 15 of 41                                         Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+                                                                           Table 1-4(b)
+                                                   Maintenance Activities and Intervals for Protection Systems
+                        Component Type – Protection System Station dc Supply Using Valve-Regulated Lead-Acid (VRLA) Batteries
+                                               Excluding distributed UFLS and distributed UVLS (see Table 3)
+
+                        Protection System Station dc supply used only for non-bulk electric system interrupting devices for RAS, non-
+                                  distributed UFLS systems, or non-distributed UVLS systems is excluded (see Table 1-4(e)).
+
+
+                    Component Attributes                            Maximum                                       Maintenance Activities
+                                                                   Maintenance
+                                                                     Interval
+
+                                                                                          Battery terminal connection resistance; and
+                                                                                          Battery intercell or unit-to-unit connection resistance.
+
+                                                                                      Inspect:
+                                                                                          Physical condition of battery rack.
+
+                                                                     6 months         Verify that the station battery can perform as manufactured by
+                                                                                      evaluating cell/unit measurements indicative of battery
+                                                                        -or-
+                                                                                      performance (e.g. internal ohmic values or float current) against
+                                                                  3 calendar years    the station battery baseline.
+                                                                                                                        -or-
+                                                                                      Verify that the station battery can perform as manufactured by
+                                                                                      conducting a performance or modified performance capacity test
+                                                                                      of the entire battery bank.
+
+
+
+
+Effective: 2020-10-13                             Page 16 of 41                                          Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+
+                                                                            Table 1-4(c)
+                                               Maintenance Activities and Intervals for Protection Systems
+                           Component Type – Protection System Station dc Supply Using Nickel-Cadmium (NiCad) Batteries Excluding
+                                                    distributed UFLS and distributed UVLS (see Table 3)
+
+                         Protection System Station dc supply used only for non-bulk electric system interrupting devices for RAS, non-
+                                          distributed UFLS system, or non-distributed UVLS systems is excluded (see Table 1-4(e)).
+
+                        Component Attributes                          Maximum                                      Maintenance Activities
+                                                                     Maintenance
+                                                                       Interval
+
+  Protection system station dc supply Nickel-Cadmium                4 months unless    Verify:
+  (NiCad) batteries not having monitoring attributes of               a variance is
+                                                                                           Station dc supply voltage.
+  Table 1-4(f).                                                      granted by the
+                                                                         AESO
+                                                                                       Inspect:
+                                                                                           Electrolyte level; and
+                                                                                           For unintentional grounds.
+
+                                                                      18 months        Verify:
+                                                                                           Float voltage of battery charger;
+                                                                                           Battery continuity;
+                                                                                           Battery terminal connection resistance; and
+                                                                                           Battery intercell or unit-to-unit connection resistance.
+
+
+
+
+Effective: 2020-10-13                               Page 17 of 41                                         Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+                                                                             Table 1-4(c)
+                                               Maintenance Activities and Intervals for Protection Systems
+                           Component Type – Protection System Station dc Supply Using Nickel-Cadmium (NiCad) Batteries Excluding
+                                                    distributed UFLS and distributed UVLS (see Table 3)
+
+                         Protection System Station dc supply used only for non-bulk electric system interrupting devices for RAS, non-
+                                          distributed UFLS system, or non-distributed UVLS systems is excluded (see Table 1-4(e)).
+
+                        Component Attributes                          Maximum                                       Maintenance Activities
+                                                                     Maintenance
+                                                                       Interval
+
+
+                                                                                        Inspect:
+                                                                                            Cell condition of all individual battery cells; and
+                                                                                            Physical condition of battery rack.
+
+                                                                    6 calendar years    Verify that the station battery can perform as manufactured by
+                                                                                        conducting a performance or modified performance capacity test
+                                                                                        of the entire battery bank.
+
+
+
+
+Effective: 2020-10-13                               Page 18 of 41                                          Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+
+                                                                             Table 1-4(d)
+                                                 Maintenance Activities and Intervals for Protection Systems
+                          Component Type – Protection System Station dc Supply Using Non Battery Based Energy Storage Excluding
+                                                    distributed UFLS and distributed UVLS (see Table 3)
+
+                         Protection System Station dc supply used only for non-bulk electric system interrupting devices for RAS, non-
+                                   distributed UFLS system, or non-distributed UVLS systems is excluded (see Table 1-4(e)).
+
+                        Component Attributes                          Maximum                                      Maintenance Activities
+                                                                     Maintenance
+                                                                       Interval
+
+  Any protection system station dc supply not using a                  4 months         Verify:
+  battery and not having monitoring attributes of
+                                                                                            Station dc supply voltage
+  Table 1-4(f).
+                                                                                        Inspect:
+                                                                                            For unintentional grounds
+
+
+                                                                      18 months         Inspect:
+                                                                                        Condition of non-battery based dc supply
+
+                                                                    6 calendar years    Verify that the dc supply can perform as manufactured when ac
+                                                                                        power is not present.
+
+
+
+
+Effective: 2020-10-13                               Page 19 of 41                                         Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+
+                                                                               Table 1-4(e)
+                                                 Maintenance Activities and Intervals for Protection Systems
+
+                         Component Type – Protection System Station dc Supply for non-bulk electric system Interrupting Devices for
+                                                     RAS, non-distributed UFLS, and non-distributed UVLS systems
+
+                        Component Attributes                          Maximum                                          Maintenance Activities
+                                                                     Maintenance
+                                                                       Interval
+
+  Any protection system dc supply used for tripping                   When control         Verify station dc supply voltage.
+  only non- bulk electric system interrupting devices as           circuits are verified
+  part of a remedial action scheme, non-distributed                  (See Table 1-5)
+  UFLS, or non-distributed UVLS system and not having
+  monitoring attributes of Table 1-4(f).
+
+
+
+
+Effective: 2020-10-13                              Page 20 of 41                                              Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+
+                                                                         Table 1-4(f)
+
+                                     Exclusions for Protection System Station dc Supply Monitoring Devices and Systems
+
+
+                        Component Attributes                        Maximum                                     Maintenance Activities
+                                                                   Maintenance
+                                                                     Interval
+  Any station dc supply with high and low voltage                  No periodic      No periodic verification of station dc supply voltage is required.
+  monitoring and alarming of the battery charger voltage           maintenance
+  to detect charger overvoltage and charger failure (See            specified
+  Table 2).
+  Any battery based station dc supply with electrolyte                              No periodic inspection of the electrolyte level for each cell is
+  level monitoring and alarming in every cell (See Table                            required.
+  2).
+  Any station dc supply with unintentional dc ground                                No periodic inspection of unintentional dc grounds is required.
+  monitoring and alarming (See Table 2).
+
+  Any station dc supply with charger float voltage                                  No periodic verification of float voltage of battery charger is
+  monitoring and alarming to ensure correct float voltage                           required.
+  is being applied on the station dc supply (See Table 2).
+
+
+  Any battery based station dc supply with monitoring and                           No periodic verification of the battery continuity is required.
+  alarming of battery string continuity (See Table 2).
+
+
+
+
+Effective: 2020-10-13                              Page 21 of 41                                       Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+                                                                         Table 1-4(f)
+
+                                     Exclusions for Protection System Station dc Supply Monitoring Devices and Systems
+
+
+                        Component Attributes                        Maximum                                     Maintenance Activities
+                                                                   Maintenance
+                                                                     Interval
+  Any battery based station dc supply with monitoring and                           No periodic verification of the intercell and terminal connection
+  alarming of the intercell and/or terminal connection                              resistance is required.
+  detail resistance of the entire battery (See Table 2).
+
+
+  Any Valve Regulated Lead-Acid (VRLA) or Vented                                    No periodic evaluation relative to baseline of battery cell/unit
+  Lead-Acid (VLA) station battery with internal ohmic                               measurements indicative of battery performance is required to
+  value or float current monitoring and alarming, and                               verify the station battery can perform as manufactured.
+  evaluating present values relative to baseline internal
+  ohmic values for every cell/unit (See Table 2).
+
+  Any Valve Regulated Lead-Acid (VRLA) or Vented                                    No periodic inspection of the condition of all individual units by
+  Lead-Acid (VLA) station battery with monitoring and                               measuring battery cell/unit internal ohmic values of a station
+  alarming of each cell/unit internal ohmic value (See                              VRLA or Vented Lead-Acid (VLA) battery is required.
+  Table 2).
+
+
+
+
+Effective: 2020-10-13                              Page 22 of 41                                       Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+
+                                                                               Table 1-5
+                                                 Maintenance Activities and Intervals for Protection Systems
+
+                           Component Type - Control Circuitry Associated With Protective Functions Excluding distributed UFLS and
+                          distributed UVLS (see Table 3), Automatic Reclosing (see Table 4), and Sudden Pressure Relaying (see Table 5)
+
+                        Note: Table requirements apply to all Control Circuitry Components of Protection Systems, and RAS except as noted.
+
+                   Component Attributes                               Maximum                                          Maintenance Activities
+                                                                     Maintenance
+                                                                       Interval
+
+  Trip coils or actuators of circuit breakers, interrupting         6 calendar years       Verify that each trip coil is able to operate the circuit breaker,
+  devices, or mitigating devices (regardless of any                                        interrupting device, or mitigating device.
+  monitoring of the control circuitry). As long as there is
+  monitoring on the mitigating devices for high-voltage
+  direct current/ flexible alternating current transmission
+  system (HVDC/FACTS) devices no maintenance is
+  required.
+
+  Electromechanical lockout devices which are directly in           6 calendar years       Verify electrical operation of electromechanical lockout devices.
+  a trip path from the protective relay to the interrupting
+  device trip coil (regardless of any monitoring of the
+  control circuitry).
+
+  Unmonitored control circuitry associated with RAS.                12 calendar years      Verify all paths of the control circuits essential for proper
+  (See Table 4-2(b) for RAS which include automatic                                        operation of the RAS.
+  reclosing.)
+
+
+
+
+Effective: 2020-10-13                               Page 23 of 41                                             Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+  Unmonitored control circuitry associated with protective       12 calendar years   Verify all paths of the trip circuits inclusive of all auxiliary relays
+  functions inclusive of all auxiliary relays.                                       through the trip coil(s) of the circuit breakers or other
+                                                                                     interrupting devices.
+
+  Control circuitry associated with protective functions           No periodic       None.
+  and/or RAS whose integrity is monitored and alarmed              maintenance
+  (See Table 2).                                                     specified
+
+
+
+
+Effective: 2020-10-13                            Page 24 of 41                                           Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+
+                                                            Table 2 – Alarming Paths and Monitoring
+
+                                 In Tables 1-1 through 1-5, Table 3, Tables 4-1 through 4-3, and Table 5 alarm attributes used to
+                                   justify extended maximum maintenance intervals and/or reduced maintenance activities are
+                                                       subject to the following maintenance requirements
+
+                        Component Attributes                          Maximum                                      Maintenance Activities
+                                                                     Maintenance
+                                                                       Interval
+
+  Any alarm path through which alarms in Tables 1-1                 12 calendar years   Verify that the alarm path conveys alarm signals to a location
+  through 1-5, Table 3, Tables 4-1 through 4-3, and                                     where corrective action can be initiated.
+  Table 5 are conveyed from the alarm origin to the
+  location where corrective action can be initiated, and
+  not having all the attributes of the “Alarm Path with
+  monitoring” category below.
+  Alarms are reported within 24 hours of detection to
+  location where corrective action can be initiated.
+
+  Alarm Path with monitoring:                                         No periodic       None.
+                                                                                        N
+                                                                      maintenance       o
+  The location where corrective action is taken receives
+                                                                        specified       n
+  an alarm within 24 hours for failure of any portion of the
+  alarming path from the alarm origin to the location                                   e
+  where corrective action can be initiated.                                             .
+
+
+
+
+Effective: 2020-10-13                               Page 25 of 41                                         Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+
+                                                                               Table 3
+                                   Maintenance Activities and Intervals for distributed UFLS and distributed UVLS Systems
+
+
+                        Component Attributes                         Maximum                                         Maintenance Activities
+                                                                    Maintenance
+                                                                      Interval
+
+  Any unmonitored protective relay not having all the              6 calendar years      Verify that settings are as specified.
+  monitoring attributes of a category below.
+                                                                                         For non-microprocessor relays:
+                                                                                             Test and, if necessary calibrate.
+
+                                                                                         For microprocessor relays:
+                                                                                             Verify operation of the relay inputs and outputs that are essential to
+                                                                                             proper functioning of the protection system; and
+                                                                                             Verify acceptable measurement of power system input values.
+
+
+  Monitored microprocessor protective relay with                   12 calendar years     Verify:
+  the following:
+                                                                                             Settings are as specified;
+       Internal self-diagnosis and alarming (See Table 2);
+                                                                                             Operation of the relay inputs and outputs that are essential to
+       and
+                                                                                             proper functioning of the protection system; and
+       Voltage and/or current waveform sampling three or
+                                                                                             Acceptable measurement of power system input values.
+       more times per power cycle, and conversion of
+       samples to numeric values for measurement
+       calculations by microprocessor electronics.
+  Alarming for power supply failure (See Table 2).
+
+
+Effective: 2020-10-13                              Page 26 of 41                                            Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+                                                                               Table 3
+                                   Maintenance Activities and Intervals for distributed UFLS and distributed UVLS Systems
+
+
+                        Component Attributes                         Maximum                                        Maintenance Activities
+                                                                    Maintenance
+                                                                      Interval
+
+  Monitored microprocessor protective relay with                   12 calendar years     Verify only the unmonitored relay inputs and outputs that are
+  preceding row attributes and the following:                                            essential to proper functioning of the protection system.
+       Ac measurements are continuously verified by
+       comparison to an independent ac measurement
+       source, with alarming for excessive error (See
+       Table 2); and
+       Some or all inputs and outputs are monitored by a
+       process that continuously demonstrates ability to
+       perform as designed, with alarming for failure (See
+       Table 2).
+  Alarming for change of settings (See Table 2).
+
+  Voltage and/or current sensing devices associated with           12 calendar years     Verify that current and/or voltage signal values are provided to
+  UFLS or UVLS systems.                                                                  the protective relays.
+
+  Protection system dc supply for tripping non-bulk                12 calendar years     Verify protection system dc supply voltage.
+  electric system interrupting devices used only for a
+  UFLS or UVLS system.
+
+
+
+
+Effective: 2020-10-13                              Page 27 of 41                                           Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+                                                                               Table 3
+                                   Maintenance Activities and Intervals for distributed UFLS and distributed UVLS Systems
+
+
+                        Component Attributes                         Maximum                                         Maintenance Activities
+                                                                    Maintenance
+                                                                      Interval
+
+  Control circuitry between the UFLS or UVLS relays and            12 calendar years     Verify the path from the relay to the lockout and/or tripping
+  electromechanical lockout and/or tripping auxiliary                                    auxiliary relay (including essential supervisory logic).
+  devices (excludes non-bulk electric system
+  interrupting device trip coils).
+
+  Electromechanical lockout and/or tripping auxiliary              12 calendar years     Verify electrical operation of electromechanical lockout and/or
+  devices associated only with UFLS or UVLS systems                                      tripping auxiliary devices.
+  (excludes non-bulk electric system interrupting device
+  trip coils).
+  Control circuitry between the electromechanical lockout            No periodic         None.
+  and/or tripping auxiliary devices and the non-bulk                 maintenance
+  electric system interrupting devices in UFLS or UVLS                specified
+  systems, or between UFLS or UVLS relays (with no
+  interposing electromechanical lockout or auxiliary
+  device) and the non-bulk electric system interrupting
+  devices (excludes non-bulk electric system
+  interrupting device trip coils).
+
+  Trip coils of non-bulk electric system interrupting                No periodic         None.
+  devices in UFLS or UVLS systems.                                   maintenance
+                                                                      specified
+
+
+
+
+Effective: 2020-10-13                              Page 28 of 41                                            Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+
+                                                                             Table 4-1
+                                         Maintenance Activities and Intervals for Automatic Reclosing Components
+                                                   Component Type – Reclosing and Supervisory Relay
+
+                        Note: In cases where Components of Automatic Reclosing are common to Components listed in Table 1-1 through
+                                     1-5, the Components only need to be tested once during a distinct maintenance interval.
+
+
+                        Component Attributes                         Maximum                                         Maintenance Activities
+                                                                    Maintenance
+                                                                      Interval
+
+  Any unmonitored reclosing relay or supervisory relay not         6 calendar years      Verify that settings are as specified.
+  having all the monitoring attributes of a category below.
+                                                                                         For non-microprocessor reclosing or supervisory relays:
+                                                                                             Test and, if necessary calibrate
+
+                                                                                         For microprocessor reclosing or supervisory relays:
+                                                                                             Verify operation of the relay inputs and outputs that are essential to
+                                                                                             proper functioning of the Automatic Reclosing.
+                                                                                         For microprocessor supervisory relays:
+                                                                                             Verify acceptable measurement of power system input values.
+
+
+
+
+Effective: 2020-10-13                              Page 29 of 41                                            Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+                                                                               Table 4-1
+                                         Maintenance Activities and Intervals for Automatic Reclosing Components
+                                                   Component Type – Reclosing and Supervisory Relay
+
+                        Note: In cases where Components of Automatic Reclosing are common to Components listed in Table 1-1 through
+                                     1-5, the Components only need to be tested once during a distinct maintenance interval.
+
+
+                        Component Attributes                          Maximum                                         Maintenance Activities
+                                                                     Maintenance
+                                                                       Interval
+
+     Monitored microprocessor reclosing relay or
+                                                                    12 calendar years      Verify:
+  supervisory relay with the following: Internal self-
+  diagnosis and alarming (See Table 2).                                                        Settings are as specified.
+       Alarming for power supply failure (See Table 2).                                        Operation of the relay inputs and outputs that are essential to
+                                                                                               proper functioning of the Automatic Reclosing.
+  For supervisory relay:
+                                                                                           For supervisory relays:
+  Voltage waveform sampling three or more times per
+  power cycle, and conversion of samples to numeric                                            Verify acceptable measurement of power system input values.
+  values for measurement calculations by microprocessor
+  electronics.
+
+
+
+
+Effective: 2020-10-13                               Page 30 of 41                                            Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+                                                                              Table 4-1
+                                         Maintenance Activities and Intervals for Automatic Reclosing Components
+                                                   Component Type – Reclosing and Supervisory Relay
+
+                        Note: In cases where Components of Automatic Reclosing are common to Components listed in Table 1-1 through
+                                     1-5, the Components only need to be tested once during a distinct maintenance interval.
+
+
+                        Component Attributes                         Maximum                                         Maintenance Activities
+                                                                    Maintenance
+                                                                      Interval
+
+  Monitored microprocessor reclosing relay or                      12 calendar years      Verify only the unmonitored relay inputs and outputs that are essential
+  supervisory relay with preceding row attributes and the                                 to proper functioning of the automatic reclosing.
+  following:
+       Some or all inputs and outputs are monitored by a
+       process that continuously demonstrates ability to
+       perform as designed, with alarming for failure (See
+       Table 2).
+       Alarming for change of settings (See Table 2).
+
+  For supervisory relay:
+       Ac measurements are continuously verified by
+       comparison to an independent ac measurement
+       source, with alarming for excessive error (See
+       Table 2).
+
+
+
+
+Effective: 2020-10-13                              Page 31 of 41                                            Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+
+                                                                            Table 4-2(a)
+                                         Maintenance Activities and Intervals for Automatic Reclosing Components
+
+                            Component Type – Control Circuitry Associated with Reclosing and Supervisory Relays that are NOT
+                                                              an Integral Part of RAS
+                         Note: In cases where Components of Automatic Reclosing are common to Components listed in Table 1-5, the
+                                        Components only need to be tested once during a distinct maintenance interval.
+
+                        Component Attributes                        Maximum                                        Maintenance Activities
+                                                                   Maintenance
+                                                                     Interval
+
+  Unmonitored control circuitry associated with automatic         12 calendar years    Verify that automatic reclosing, upon initiation, does not issue a
+  reclosing that is not an integral part of an RAS.                                    premature closing command to the close circuitry.
+
+
+  Control circuitry associated with automatic reclosing             No periodic        None.
+  that is not part of an RAS and is monitored and alarmed           maintenance
+  for conditions that would result in a premature closing            specified
+  command. (See Table 2)
+
+
+
+
+Effective: 2020-10-13                             Page 32 of 41                                           Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+
+                                                                              Table 4-2(b)
+                                         Maintenance Activities and Intervals for Automatic Reclosing Components
+
+                                 Component Type – Control Circuitry Associated with Reclosing and Supervisory Relays that are an
+                                                                     Integral Part of RAS
+                                  Note: In cases where Components of Automatic Reclosing are common to Components listed in
+                                   Table 1-5, the Components only need to be tested once during a distinct maintenance interval.
+
+                        Component Attributes                          Maximum                                        Maintenance Activities
+                                                                     Maintenance
+                                                                       Interval
+
+  Close coils or actuators of circuit breakers or similar           6 calendar years     Verify that each close coil or actuator is able to operate the circuit
+  devices that are used in conjunction with automatic                                    breaker or mitigating device.
+  reclosing as part of an RAS (regardless of any
+  monitoring of the control circuitry).
+
+  Unmonitored close control circuitry associated with               12 calendar years    Verify all paths of the control circuits associated with automatic reclosing
+  automatic reclosing used as an integral part of an RAS.                                that are essential for proper operation of the RAS.
+
+
+  Control circuitry associated with automatic reclosing               No periodic        None.
+                                                                                         N
+  that is an integral part of an RAS whose integrity is               maintenance
+                                                                                         o
+  monitored and alarmed (See Table 2).                                 specified
+                                                                                         n
+                                                                                         e
+                                                                                         .
+
+
+
+
+Effective: 2020-10-13                               Page 33 of 41                                           Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+
+                                                                              Table 4-3
+                                         Maintenance Activities and Intervals for Automatic Reclosing Components
+
+                                          Component Type – Voltage Sensing Devices Associated with Supervisory Relays
+                                   Note: In cases where Components of Automatic Reclosing are common to Components listed in
+                                    Table 1-3, the Components only need to be tested once during a distinct maintenance interval.
+
+                        Component Attributes                         Maximum                                   Maintenance Activities
+                                                                    Maintenance
+                                                                      Interval
+
+  Any voltage sensing devices not having monitoring                12 calendar years   Verify that voltage signal values are provided to the supervisory relays.
+  attributes of the category below.
+
+  Voltage sensing devices that are connected to                      No periodic       None.
+  microprocessor supervisory relays with ac                          maintenance
+  measurements that are continuously verified by                      specified
+  comparison of sensing input value, as measured by the
+  microprocessor relay, to an independent ac
+  measurement source, with alarming for unacceptable
+  error or failure. (See Table 2)
+
+
+
+
+Effective: 2020-10-13                              Page 34 of 41                                          Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+
+                                                                                Table 5-1
+                                               Maintenance Activities and Intervals for Sudden Pressure Relaying
+
+                                                                     Component Type – Fault Pressure Relay
+                                  Note: In cases where Components of Sudden Pressure Relaying are common to Components listed
+                                   in Table 1-5, the Components only need to be tested once during a distinct maintenance interval.
+
+                        Component Attributes                           Maximum                                         Maintenance Activities
+                                                                      Maintenance
+                                                                        Interval
+
+  Any fault pressure relay.                                          6 calendar years       Verify the pressure or flow sensing mechanism is operable.
+                                                                     unless a variance
+                                                                     is granted by the
+                                                                           AESO
+
+
+
+
+Effective: 2020-10-13                                Page 35 of 41                                            Public
+   Alberta Reliability Standard
+   Protection System, Automatic Reclosing and
+   Sudden Pressure Relaying Maintenance
+   PRC-005-AB2-6
+
+
+                                                                                Table 5-2
+                                               Maintenance Activities and Intervals for Sudden Pressure Relaying
+
+                                        Component Type – Control Circuitry Associated with a Fault Pressure Relay
+                         Note: In cases where Components of Sudden Pressure Relaying are common to Components listed in Table 1-5,
+                                          the Components only need to be tested once during a distinct maintenance interval.
+
+                        Component Attributes                            Maximum                                          Maintenance Activities
+                                                                       Maintenance
+                                                                         Interval
+
+  Electromechanical lockout devices which are directly in            6 calendar years       Verify electrical operation of electromechanical lockout devices.
+  a trip path from the fault pressure relay to the                   unless a variance
+  interrupting device trip coil (regardless of any                   is granted by the
+  monitoring of the control circuitry).                                    AESO
+
+  Unmonitored control circuitry associated with sudden               12 calendar years      Verify all paths of the trip circuits inclusive of all auxiliary relays through
+  pressure relaying.                                                                        the trip coil(s) of the circuit breakers or other interrupting devices.
+
+  Control circuitry associated with sudden pressure                    No periodic          None.
+  relaying whose integrity is monitored and alarmed (See               maintenance          o
+  Table 2).                                                             specified           n
+                                                                                            e
+                                                                                            .
+
+
+
+
+Effective: 2020-10-13                                Page 36 of 41                                              Public
+Alberta Reliability Standard
+Protection System, Automatic Reclosing and
+Sudden Pressure Relaying Maintenance
+PRC-005- AB2-6
+             Appendix 2 – Performance-Based Protection System Maintenance Program
+
+Purpose:
+1. To establish a technical basis for initial and continued use of a performance-based protection
+   system maintenance program.
+2. To establish the technical justification for the initial use of a performance-based protection
+   system maintenance program:
+    (a) Develop a list with a description of components included in each designated segment, with a
+        minimum segment population of 60 components;
+    (b) Maintain the components in each segment according to the time-based maximum allowable
+        intervals established in Tables 1-1 through 1-5, Table 3, Tables 4-1 through 4-2, and Table 5
+        until results of maintenance activities for the segment are available for a minimum of 30
+        individual components of the segment;
+    (c) Document the maintenance program activities and results for each segment, including
+        maintenance dates and countable events for each included component;
+    (d) Analyze the maintenance program activities and results for each segment to determine the
+        overall performance of the segment and develop maintenance intervals; and
+    (e) Determine the maximum allowable maintenance interval for each segment such that the
+        segment experiences countable events on no more than 4% of the components within the
+        segment, for the greater of either the last 30 components maintained or all components
+        maintained in the previous year.
+3. To maintain the technical justification for the ongoing use of a performance-based protection
+   system maintenance program:
+    (a) At least annually, update the list of components and segments, and/or description if any
+        changes occur within the segment;
+    (b) Perform maintenance on the greater of 5% of the components (addressed in the performance
+        based protection system maintenance program) in each segment or 3 individual
+        components within the segment in each year;
+    (c) For the prior year, analyze the maintenance program activities and results for each segment
+        to determine the overall performance of the segment; and
+    (d) Using the prior year’s data, determine the maximum allowable maintenance interval for each
+        segment such that the segment experiences countable events on no more than 4% of the
+        components within the segment, for the greater of either the last 30 components maintained
+        or all components maintained in the previous year.
+
+If the components in a segment maintained through a performance-based protection system
+maintenance program experience 4% or more countable events, develop, document and implement
+an action plan to reduce the countable events to less than 4% of the segment population within 3
+years.
+
+
+
+
+Effective: 2020-10-13                            Page 37 of 41                                      Public
+Alberta Reliability Standard
+Protection System, Automatic Reclosing and
+Sudden Pressure Relaying Maintenance
+PRC-005- AB2-6
+                         Appendix 3 – Amending Process for List of Facilities
+
+ In order to amend any list referenced in subsections 2.1(a)(iii), 2.1(b)(iv) and 2.1(c)(iii), of section 2,
+ Applicability of this reliability standard, the ISO must:
+      (a) upon determining that a transmission facility, generating unit or aggregated generating
+          facility is to be added, notify the legal owner in writing and determine when the legal owner
+          is to be compliant with the requirements of this reliability standard, which from the date of
+          notice must be at a minimum the maximum maintenance interval identified in Tables 1 to 5
+          plus six (6) full months;
+      (b) upon determining that a transmission facility, generating unit or aggregated generating
+          facility is to be deleted, notify the legal owner in writing and determine an effective date for
+          the legal owner to no longer be required to meet the applicable requirements; and
+      (c) publish the amended list with effective dates on the AESO website.
+
+
+
+
+Effective: 2020-10-13                                Page 38 of 41                                             Public
+Alberta Reliability Standard
+Protection System, Automatic Reclosing and
+Sudden Pressure Relaying Maintenance
+PRC-005- AB2-6
+                         Appendix 4 – Amending Process for List of Devices
+
+ If devices are added or removed as described in subsections 2.2(b), 2.2(c) and 2.2(d) of section 2,
+ Applicability of this reliability standard the ISO must:
+      (a) upon determining that a protection system that is to be used for underfrequency load
+          shedding, under voltage load shed or that is to be installed as a remedial action scheme
+          is to be added, notify the legal owner in writing and determine when the legal owner is to be
+          compliant with the requirements of this reliability standard, which from the date of notice
+          must be at a minimum the maximum maintenance interval identified in Tables 1 to 5 plus 6 full
+          months;
+      (b) upon determining that a protection system that is used for underfrequency load shedding,
+          under voltage load shed or that is installed as a remedial action scheme is to be removed,
+          notify the legal owner in writing and determine an effective date for the legal owner to no
+          longer be required to meet the applicable requirements.
+
+
+
+
+Effective: 2020-10-13                            Page 39 of 41                                         Public
+Alberta Reliability Standard
+Protection System, Automatic Reclosing and
+Sudden Pressure Relaying Maintenance
+PRC-005- AB2-6
+                                    Appendix 5 – Implementation Plan
+
+ 1.    Purpose
+ The purpose of this appendix is to set the effective dates and the implementation timelines for Alberta
+ reliability standard PRC-005-AB, Protection System, Automatic Reclosing and Sudden Pressure
+ Relaying Maintenance (“PRC-005-AB”).
+ 2.    Compliance with Reliability Standards
+ The entities identified in section 2 of this reliability standard must comply with the requirements of
+ PRC-005-AB in accordance with the implementation schedule.
+ 3.    Effective Date
+ PRC-005-AB will become effective on October 1, 2019. Entities must follow the phased
+ implementation plan set out in sections 4 and 5 below.
+ 4.     Implementation Plan for Requirements R1, R2 and R5
+ Entities must be compliant with requirements R1, R2 and R5 of PRC-005-AB on October 1, 2019.
+ 5.     Implementation Plan for Requirements R3 and R4
+      1. For protection system, automatic reclosing, and sudden pressure relaying component
+         maintenance activities with maximum allowable intervals of less than 1 calendar year, as
+         established in Tables 1-1 through 1-5, the entity must be compliant with PRC-005-AB by April
+         1, 2020.
+      2. For protection system, automatic reclosing, and sudden pressure relaying component
+         maintenance activities with maximum allowable intervals 1 calendar year or more, but 2
+         calendar years or less, as established in Tables 1-1 through 1-5, the entity must be compliant
+         with PRC-005-AB by October 1, 2021.
+      3. For protection system, automatic reclosing, and sudden pressure relaying component
+         maintenance activities with maximum allowable intervals of 3 calendar years, as established
+         in Tables 1-1 through 1-5, maintenance must be completed in accordance with the following:
+           •    The entity must complete maintenance on 30% of identified components in accordance
+                with their protection system maintenance program by October 1, 2020 or, for generating
+                plants with scheduled outage intervals exceeding 2 years, at the conclusion of the first
+                succeeding maintenance outage;
+           •    The entity must complete maintenance on 60% of the identified components in
+                accordance with their protection system maintenance program by October 1, 2021.
+           •    The entity must complete maintenance on 100% of the identified components in
+                accordance with their protection system maintenance program by October 1, 2022.
+      4. For protection system, automatic reclosing, and sudden pressure relaying component
+         maintenance activities with maximum allowable intervals of 6 calendar years, as established
+         in Tables 1-1 through 1-5, Table 3, Table 4-1, Table 4-2b, Table 5-1, and Table 5-2
+         maintenance must be completed in accordance with the following:
+           •    The entity must complete maintenance on 30% of the identified components in
+                accordance with their protection system maintenance program by October 1, 2021 or,
+                for generating plants with scheduled outage intervals exceeding 3 years, at the
+                conclusion of the first succeeding maintenance outage.
+
+Effective: 2020-10-13                              Page 40 of 41                                          Public
+Alberta Reliability Standard
+Protection System, Automatic Reclosing and
+Sudden Pressure Relaying Maintenance
+PRC-005- AB2-6
+           •    The entity must complete maintenance on 60% of the identified components in
+                accordance with their protection system maintenance program by October 1, 2023.
+           •    The entity must complete maintenance on 100% of the identified components in
+                accordance with their protection system maintenance program by October 1, 2025.
+      5. For protection system, automatic reclosing, and sudden pressure relaying component
+         maintenance activities with maximum allowable intervals of 12 calendar years, as established
+         in Tables 1-1 through 1-5, Table 2, Table 3, Tables 4-1 through 4-3, and Table 5-2
+         maintenance must be completed in accordance with the following:
+           •    The entity must complete maintenance on 30% of the identified components in
+                accordance with their protection system maintenance program by October 1, 2023.
+           •    The entity must complete maintenance on 60% of the identified components in
+                accordance with their protection system maintenance program by October 1, 2027.
+           •    The entity must complete maintenance on 100% of the identified components in
+                accordance with their protection system maintenance program by October 1, 2031.
+
+
+
+
+Effective: 2020-10-13                            Page 41 of 41                                      Public
+
