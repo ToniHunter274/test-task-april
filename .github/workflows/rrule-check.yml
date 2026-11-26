@@ -1,0 +1,59 @@
+name: rrule-check
+
+on:
+  push:
+    paths:
+      - "rrule/run_rrule.py"
+      - ".github/workflows/rrule-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        tzdata: ["2025.2", "latest"]
+    env:
+      PYTHONTZPATH: ""
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned tzdata
+        run: |
+          if [ "${{ matrix.tzdata }}" = "latest" ]; then pip install --upgrade tzdata; else pip install "tzdata==${{ matrix.tzdata }}"; fi
+          python -c "import tzdata, zoneinfo; print('tzdata', tzdata.IANA_VERSION, 'TZPATH', zoneinfo.TZPATH)"
+      - working-directory: rrule
+        run: |
+          mkdir -p results
+          V=$(python -c "import tzdata; print(tzdata.IANA_VERSION)")
+          python run_rrule.py "results/tzdata_${V}.json" | tee "results/tzdata_${V}.txt"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rrule-${{ matrix.tzdata }}
+          path: rrule/results/
+
+  collect:
+    needs: run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: art
+      - name: Gather and commit
+        run: |
+          mkdir -p rrule/results
+          for d in art/*/; do cp -r "$d"* rrule/results/; done
+          ls rrule/results
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add rrule/results
+          git commit -m "rrule: recurrence ground truth (original vs erratum, old vs 2026 tzdata)" || echo "nothing to commit"
+          git pull --rebase
+          git push
