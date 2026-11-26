@@ -54,7 +54,7 @@ jobs:
               d = json.load(open(f))
               rows.append(f"## scipy {d['scipy']} (numpy {d['numpy']})")
               for c, r in d["cases"].items():
-                  rows.append(f"- {c}: inv = {r.get('inv_default')} ; solve = {r['solve_default']} ; true_solve = {r['true_solve']}")
+                  rows.append(f"- {c}: solve = {r['solve_default']} ; true_solve = {r['true_solve']} ; hermitian-reading min eig = {r.get('hermitian_reading_min_eig')} ; predicted if Cholesky path = {r.get('pred_if_cholesky_path')}")
           open("inv/results/SUMMARY.md", "w").write("\n".join(rows) + "\n")
           print("\n".join(rows))
           PY
