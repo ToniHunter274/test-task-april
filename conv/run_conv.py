@@ -106,7 +106,11 @@ def diagnostics(Ns, vals, exact, formal_p=2.0, rel=True):
                 if f1 and f2:
                     g12 = 1.25 * abs(e21 / f1) / (2 ** p - 1); g23 = 1.25 * abs(e32 / f2) / (2 ** p - 1)
                     row["asymptotic_ratio"] = g23 / (2 ** p * g12)
+                    row["identity_abs_f1_over_f2"] = abs(f1 / f2)   # algebraically equal to asymptotic_ratio when p comes from the same triple
+                    row["asym_ratio_formal_p"] = g23 / (2 ** formal_p * g12)  # uses the formal order instead: an independent check
                 if exact is not None: row["RE_abs_err"] = abs(re - exact)
+        if i >= 3 and "p_obs" in out[-1] and "p_obs" in row:
+            row["p_obs_change_vs_previous_triple"] = row["p_obs"] - out[-1]["p_obs"]
         out.append(row)
     return out
 
@@ -134,7 +138,7 @@ def main(outdir="results"):
         res["problems"][name] = d
         print("done", name, flush=True)
 
-    Ns_L = [8, 16, 32, 64, 128, 256]
+    Ns_L = [8, 16, 32, 64, 128, 256, 512]
     solsL = {N: solve_L(N) for N in Ns_L}
     d = {}
     for (x, y) in [(-0.25, 0.25), (-0.5, 0.5), (-0.5, -0.5)]:
@@ -169,14 +173,32 @@ def main(outdir="results"):
         for qname, qd in pd.items():
             if not isinstance(qd, dict) or "rows" not in qd: continue
             L += [f"## {pname} — {qname}", "", f"exact = {fmt(qd['exact'], '.12g')}", "",
-                  "| N | value | abs err | rel err % | p_obs | osc | RE | GCI_fine % (Fs1.25) | asym ratio | RE abs err | formal-p err est | 2-grid GCI % (Fs3, formal p) |",
-                  "|---|---|---|---|---|---|---|---|---|---|---|---|"]
+                  "| N | value | abs err | rel err % | p_obs | osc | RE | GCI_fine % (Fs1.25) | asym ratio | abs(f1/f2) | asym ratio (formal p) | p change vs prev triple | RE abs err | formal-p err est | 2-grid GCI % (Fs3, formal p) |",
+                  "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
             for r in qd["rows"]:
                 L.append("| " + " | ".join([str(r["N"]), fmt(r["value"], ".12g"), fmt(r.get("abs_err"), ".4g"), fmt(r.get("rel_err_pct"), ".4g"),
                     fmt(r.get("p_obs"), ".4f"), fmt(r.get("oscillatory")), fmt(r.get("RE"), ".12g"), fmt(r.get("GCI_fine_Fs1.25_pct"), ".4g"),
-                    fmt(r.get("asymptotic_ratio"), ".5f"), fmt(r.get("RE_abs_err"), ".4g"), fmt(r.get("formal_p_err_est_abs"), ".4g"),
+                    fmt(r.get("asymptotic_ratio"), ".5f"), fmt(r.get("identity_abs_f1_over_f2"), ".5f"), fmt(r.get("asym_ratio_formal_p"), ".5f"),
+                    fmt(r.get("p_obs_change_vs_previous_triple"), "+.4f"), fmt(r.get("RE_abs_err"), ".4g"), fmt(r.get("formal_p_err_est_abs"), ".4g"),
                     fmt(r.get("two_grid_GCI_Fs3_formal_pct"), ".4g")]) + " |")
             L.append("")
+    checks = [  # (label, problem, quantity, tolerance, kind)
+        ("Analytic sensor", "analytic_a10", "u(0.5,0.5)", 1e-3, "relative 0.1%"),
+        ("Reentrant-corner sensor", "reentrant_corner_omega_3pi/2", "u(-0.25,0.25)", 5e-5, "absolute 5e-5 (0.01% of exact 0.5)"),
+        ("Hard-peak sensor", "peak_hard_alpha1e5_(0.51,0.117)", "u(0.5,0.5)", 1e-3, "absolute 1e-3 (0.1% of peak amplitude 1)"),
+        ("Steep wave-front sensor", "wave_steep_alpha1000", "u(0.5,0.5)", 1e-3, "relative 0.1%"),
+    ]
+    L += ["## Tolerance checks (true error vs tolerance, per grid)", "", "| quantity | tolerance | " + " | ".join(f"N={n}" for n in [8,16,32,64,128,256,512]) + " |", "|---|---|" + "---|" * 7]
+    for label, p, q, tol, kind in checks:
+        qd = res["problems"][p][q]; byN = {r["N"]: r for r in qd["rows"]}
+        cells = []
+        for n in [8, 16, 32, 64, 128, 256, 512]:
+            r = byN.get(n)
+            if r is None: cells.append("—"); continue
+            err = r["abs_err"] / (abs(qd["exact"]) if kind.startswith("relative") else 1.0)
+            cells.append(f"{'PASS' if err <= tol else 'FAIL'} ({r['abs_err']:.3g})")
+        L.append(f"| {label} | {kind} | " + " | ".join(cells) + " |")
+    L.append("")
     open(f"{outdir}/SUMMARY.md", "w").write("\n".join(L))
 
 if __name__ == "__main__":
