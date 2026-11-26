@@ -1,0 +1,30 @@
+name: iers-check
+
+on:
+  push:
+    paths:
+      - "iers/run_iers.py"
+      - ".github/workflows/iers-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - working-directory: iers
+        run: python run_iers.py results
+      - name: Commit
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add iers/results
+          git commit -m "iers: archived bulletins and UT1-UTC ground truth" || echo "nothing to commit"
+          git pull --rebase
+          git push
