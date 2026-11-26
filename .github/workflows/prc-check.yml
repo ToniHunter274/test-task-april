@@ -1,0 +1,31 @@
+name: prc-check
+
+on:
+  push:
+    paths:
+      - "prc/run_prc.py"
+      - ".github/workflows/prc-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - working-directory: prc
+        run: python run_prc.py results
+      - name: Commit
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add prc/results
+          git commit -m "prc: PRC-005 NERC/BC/AB text extraction and interval inventory" || echo "nothing to commit"
+          git pull --rebase
+          git push
