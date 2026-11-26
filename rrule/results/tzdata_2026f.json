@@ -1,0 +1,1284 @@
+{
+ "python": "3.12.16",
+ "tzdata_pkg": "2026.6",
+ "iana_version": "2026f",
+ "transitions_2026": {
+  "America/Vancouver": [
+   {
+    "utc": "2026-03-08T10:00Z",
+    "from": {
+     "offset": "-1 day, 16:00:00",
+     "abbr": "PST",
+     "dst": "0:00:00"
+    },
+    "to": {
+     "offset": "-1 day, 17:00:00",
+     "abbr": "PDT",
+     "dst": "1:00:00"
+    },
+    "offset_changes": true
+   },
+   {
+    "utc": "2026-11-01T09:00Z",
+    "from": {
+     "offset": "-1 day, 17:00:00",
+     "abbr": "PDT",
+     "dst": "1:00:00"
+    },
+    "to": {
+     "offset": "-1 day, 17:00:00",
+     "abbr": "MST",
+     "dst": "0:00:00"
+    },
+    "offset_changes": false
+   }
+  ],
+  "America/Los_Angeles": [
+   {
+    "utc": "2026-03-08T10:00Z",
+    "from": {
+     "offset": "-1 day, 16:00:00",
+     "abbr": "PST",
+     "dst": "0:00:00"
+    },
+    "to": {
+     "offset": "-1 day, 17:00:00",
+     "abbr": "PDT",
+     "dst": "1:00:00"
+    },
+    "offset_changes": true
+   },
+   {
+    "utc": "2026-11-01T09:00Z",
+    "from": {
+     "offset": "-1 day, 17:00:00",
+     "abbr": "PDT",
+     "dst": "1:00:00"
+    },
+    "to": {
+     "offset": "-1 day, 16:00:00",
+     "abbr": "PST",
+     "dst": "0:00:00"
+    },
+    "offset_changes": true
+   }
+  ],
+  "America/Edmonton": [
+   {
+    "utc": "2026-03-08T09:00Z",
+    "from": {
+     "offset": "-1 day, 17:00:00",
+     "abbr": "MST",
+     "dst": "0:00:00"
+    },
+    "to": {
+     "offset": "-1 day, 18:00:00",
+     "abbr": "MDT",
+     "dst": "1:00:00"
+    },
+    "offset_changes": true
+   },
+   {
+    "utc": "2026-11-01T08:00Z",
+    "from": {
+     "offset": "-1 day, 18:00:00",
+     "abbr": "MDT",
+     "dst": "1:00:00"
+    },
+    "to": {
+     "offset": "-1 day, 18:00:00",
+     "abbr": "CST",
+     "dst": "0:00:00"
+    },
+    "offset_changes": false
+   }
+  ],
+  "America/Winnipeg": [
+   {
+    "utc": "2026-03-08T08:00Z",
+    "from": {
+     "offset": "-1 day, 18:00:00",
+     "abbr": "CST",
+     "dst": "0:00:00"
+    },
+    "to": {
+     "offset": "-1 day, 19:00:00",
+     "abbr": "CDT",
+     "dst": "1:00:00"
+    },
+    "offset_changes": true
+   },
+   {
+    "utc": "2026-11-01T07:00Z",
+    "from": {
+     "offset": "-1 day, 19:00:00",
+     "abbr": "CDT",
+     "dst": "1:00:00"
+    },
+    "to": {
+     "offset": "-1 day, 19:00:00",
+     "abbr": "EST",
+     "dst": "0:00:00"
+    },
+    "offset_changes": false
+   }
+  ],
+  "Africa/Casablanca": [
+   {
+    "utc": "2026-02-15T02:00Z",
+    "from": {
+     "offset": "1:00:00",
+     "abbr": "+01",
+     "dst": "0:00:00"
+    },
+    "to": {
+     "offset": "0:00:00",
+     "abbr": "+00",
+     "dst": "-1 day, 23:00:00"
+    },
+    "offset_changes": true
+   },
+   {
+    "utc": "2026-03-22T02:00Z",
+    "from": {
+     "offset": "0:00:00",
+     "abbr": "+00",
+     "dst": "-1 day, 23:00:00"
+    },
+    "to": {
+     "offset": "1:00:00",
+     "abbr": "+01",
+     "dst": "0:00:00"
+    },
+    "offset_changes": true
+   },
+   {
+    "utc": "2026-09-20T01:00Z",
+    "from": {
+     "offset": "1:00:00",
+     "abbr": "+01",
+     "dst": "0:00:00"
+    },
+    "to": {
+     "offset": "0:00:00",
+     "abbr": "+00",
+     "dst": "0:00:00"
+    },
+    "offset_changes": true
+   }
+  ]
+ },
+ "cases": {
+  "A_gap_vancouver_daily_0230": {
+   "tz": "America/Vancouver",
+   "dtstart_local": "2026-03-01T02:30:00",
+   "rule": {
+    "freq": "DAILY",
+    "count": 14
+   },
+   "original": [
+    {
+     "local": "2026-03-01T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-01T10:30Z",
+     "wall_clock": "2026-03-01 02:30 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "2026-03-02T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-02T10:30Z",
+     "wall_clock": "2026-03-02 02:30 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "2026-03-03T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-03T10:30Z",
+     "wall_clock": "2026-03-03 02:30 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "2026-03-04T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-04T10:30Z",
+     "wall_clock": "2026-03-04 02:30 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "2026-03-05T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-05T10:30Z",
+     "wall_clock": "2026-03-05 02:30 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "2026-03-06T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-06T10:30Z",
+     "wall_clock": "2026-03-06 02:30 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "2026-03-07T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-07T10:30Z",
+     "wall_clock": "2026-03-07 02:30 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "2026-03-08T02:30:00",
+     "status": "dropped (nonexistent local time)"
+    },
+    {
+     "local": "2026-03-09T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-09T09:30Z",
+     "wall_clock": "2026-03-09 02:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-03-10T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-10T09:30Z",
+     "wall_clock": "2026-03-10 02:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-03-11T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-11T09:30Z",
+     "wall_clock": "2026-03-11 02:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-03-12T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-12T09:30Z",
+     "wall_clock": "2026-03-12 02:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-03-13T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-13T09:30Z",
+     "wall_clock": "2026-03-13 02:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-03-14T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-14T09:30Z",
+     "wall_clock": "2026-03-14 02:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-03-15T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-15T09:30Z",
+     "wall_clock": "2026-03-15 02:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    }
+   ],
+   "erratum": [
+    {
+     "local": "2026-03-01T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-01T10:30Z",
+     "wall_clock": "2026-03-01 02:30 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "2026-03-02T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-02T10:30Z",
+     "wall_clock": "2026-03-02 02:30 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "2026-03-03T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-03T10:30Z",
+     "wall_clock": "2026-03-03 02:30 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "2026-03-04T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-04T10:30Z",
+     "wall_clock": "2026-03-04 02:30 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "2026-03-05T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-05T10:30Z",
+     "wall_clock": "2026-03-05 02:30 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "2026-03-06T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-06T10:30Z",
+     "wall_clock": "2026-03-06 02:30 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "2026-03-07T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-07T10:30Z",
+     "wall_clock": "2026-03-07 02:30 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "2026-03-08T02:30:00",
+     "status": "kept, shifted (nonexistent local time)",
+     "utc": "2026-03-08T10:30Z",
+     "wall_clock": "2026-03-08 03:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-03-09T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-09T09:30Z",
+     "wall_clock": "2026-03-09 02:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-03-10T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-10T09:30Z",
+     "wall_clock": "2026-03-10 02:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-03-11T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-11T09:30Z",
+     "wall_clock": "2026-03-11 02:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-03-12T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-12T09:30Z",
+     "wall_clock": "2026-03-12 02:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-03-13T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-13T09:30Z",
+     "wall_clock": "2026-03-13 02:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-03-14T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-14T09:30Z",
+     "wall_clock": "2026-03-14 02:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    }
+   ]
+  },
+  "B_invalid_date_monthly_31": {
+   "tz": "America/Vancouver",
+   "dtstart_local": "2026-01-31T09:00:00",
+   "rule": {
+    "freq": "MONTHLY",
+    "bymonthday": 31,
+    "count": 6
+   },
+   "original": [
+    {
+     "local": "2026-01-31T09:00:00",
+     "status": "ok",
+     "utc": "2026-01-31T17:00Z",
+     "wall_clock": "2026-01-31 09:00 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "2026-03-31T09:00:00",
+     "status": "ok",
+     "utc": "2026-03-31T16:00Z",
+     "wall_clock": "2026-03-31 09:00 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "2026-05-31T09:00:00",
+     "status": "ok",
+     "utc": "2026-05-31T16:00Z",
+     "wall_clock": "2026-05-31 09:00 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "2026-07-31T09:00:00",
+     "status": "ok",
+     "utc": "2026-07-31T16:00Z",
+     "wall_clock": "2026-07-31 09:00 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-08-31T09:00:00",
+     "status": "ok",
+     "utc": "2026-08-31T16:00Z",
+     "wall_clock": "2026-08-31 09:00 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "2026-10-31T09:00:00",
+     "status": "ok",
+     "utc": "2026-10-31T16:00Z",
+     "wall_clock": "2026-10-31 09:00 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    }
+   ],
+   "erratum": [
+    {
+     "local": "2026-01-31T09:00:00",
+     "status": "ok",
+     "utc": "2026-01-31T17:00Z",
+     "wall_clock": "2026-01-31 09:00 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "2026-03-31T09:00:00",
+     "status": "ok",
+     "utc": "2026-03-31T16:00Z",
+     "wall_clock": "2026-03-31 09:00 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "2026-05-31T09:00:00",
+     "status": "ok",
+     "utc": "2026-05-31T16:00Z",
+     "wall_clock": "2026-05-31 09:00 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "2026-07-31T09:00:00",
+     "status": "ok",
+     "utc": "2026-07-31T16:00Z",
+     "wall_clock": "2026-07-31 09:00 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-08-31T09:00:00",
+     "status": "ok",
+     "utc": "2026-08-31T16:00Z",
+     "wall_clock": "2026-08-31 09:00 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "2026-10-31T09:00:00",
+     "status": "ok",
+     "utc": "2026-10-31T16:00Z",
+     "wall_clock": "2026-10-31 09:00 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    }
+   ]
+  },
+  "B2_invalid_date_yearly_feb29": {
+   "tz": "America/Vancouver",
+   "dtstart_local": "2024-02-29T09:00:00",
+   "rule": {
+    "freq": "YEARLY",
+    "bymonth": 2,
+    "bymonthday": 29,
+    "count": 3
+   },
+   "original": [
+    {
+     "local": "2024-02-29T09:00:00",
+     "status": "ok",
+     "utc": "2024-02-29T17:00Z",
+     "wall_clock": "2024-02-29 09:00 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "2028-02-29T09:00:00",
+     "status": "ok",
+     "utc": "2028-02-29T16:00Z",
+     "wall_clock": "2028-02-29 09:00 MST",
+     "utc_offset": "-0700",
+     "dst": false
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "2032-02-29T09:00:00",
+     "status": "ok",
+     "utc": "2032-02-29T16:00Z",
+     "wall_clock": "2032-02-29 09:00 MST",
+     "utc_offset": "-0700",
+     "dst": false
+    }
+   ],
+   "erratum": [
+    {
+     "local": "2024-02-29T09:00:00",
+     "status": "ok",
+     "utc": "2024-02-29T17:00Z",
+     "wall_clock": "2024-02-29 09:00 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "2028-02-29T09:00:00",
+     "status": "ok",
+     "utc": "2028-02-29T16:00Z",
+     "wall_clock": "2028-02-29 09:00 MST",
+     "utc_offset": "-0700",
+     "dst": false
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "invalid-date",
+     "status": "dropped (invalid date)"
+    },
+    {
+     "local": "2032-02-29T09:00:00",
+     "status": "ok",
+     "utc": "2032-02-29T16:00Z",
+     "wall_clock": "2032-02-29 09:00 MST",
+     "utc_offset": "-0700",
+     "dst": false
+    }
+   ]
+  },
+  "C_ambiguous_losangeles_0130_nov": {
+   "tz": "America/Los_Angeles",
+   "dtstart_local": "2026-10-30T01:30:00",
+   "rule": {
+    "freq": "DAILY",
+    "count": 5
+   },
+   "original": [
+    {
+     "local": "2026-10-30T01:30:00",
+     "status": "ok",
+     "utc": "2026-10-30T08:30Z",
+     "wall_clock": "2026-10-30 01:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-10-31T01:30:00",
+     "status": "ok",
+     "utc": "2026-10-31T08:30Z",
+     "wall_clock": "2026-10-31 01:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-11-01T01:30:00",
+     "status": "ambiguous; first occurrence used (other 09:30Z)",
+     "utc": "2026-11-01T08:30Z",
+     "wall_clock": "2026-11-01 01:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-11-02T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-02T09:30Z",
+     "wall_clock": "2026-11-02 01:30 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "2026-11-03T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-03T09:30Z",
+     "wall_clock": "2026-11-03 01:30 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    }
+   ],
+   "erratum": [
+    {
+     "local": "2026-10-30T01:30:00",
+     "status": "ok",
+     "utc": "2026-10-30T08:30Z",
+     "wall_clock": "2026-10-30 01:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-10-31T01:30:00",
+     "status": "ok",
+     "utc": "2026-10-31T08:30Z",
+     "wall_clock": "2026-10-31 01:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-11-01T01:30:00",
+     "status": "ambiguous; first occurrence used (other 09:30Z)",
+     "utc": "2026-11-01T08:30Z",
+     "wall_clock": "2026-11-01 01:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-11-02T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-02T09:30Z",
+     "wall_clock": "2026-11-02 01:30 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    },
+    {
+     "local": "2026-11-03T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-03T09:30Z",
+     "wall_clock": "2026-11-03 01:30 PST",
+     "utc_offset": "-0800",
+     "dst": false
+    }
+   ]
+  },
+  "C2_vancouver_0130_nov": {
+   "tz": "America/Vancouver",
+   "dtstart_local": "2026-10-30T01:30:00",
+   "rule": {
+    "freq": "DAILY",
+    "count": 5
+   },
+   "original": [
+    {
+     "local": "2026-10-30T01:30:00",
+     "status": "ok",
+     "utc": "2026-10-30T08:30Z",
+     "wall_clock": "2026-10-30 01:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-10-31T01:30:00",
+     "status": "ok",
+     "utc": "2026-10-31T08:30Z",
+     "wall_clock": "2026-10-31 01:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-11-01T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-01T08:30Z",
+     "wall_clock": "2026-11-01 01:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-11-02T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-02T08:30Z",
+     "wall_clock": "2026-11-02 01:30 MST",
+     "utc_offset": "-0700",
+     "dst": false
+    },
+    {
+     "local": "2026-11-03T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-03T08:30Z",
+     "wall_clock": "2026-11-03 01:30 MST",
+     "utc_offset": "-0700",
+     "dst": false
+    }
+   ],
+   "erratum": [
+    {
+     "local": "2026-10-30T01:30:00",
+     "status": "ok",
+     "utc": "2026-10-30T08:30Z",
+     "wall_clock": "2026-10-30 01:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-10-31T01:30:00",
+     "status": "ok",
+     "utc": "2026-10-31T08:30Z",
+     "wall_clock": "2026-10-31 01:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-11-01T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-01T08:30Z",
+     "wall_clock": "2026-11-01 01:30 PDT",
+     "utc_offset": "-0700",
+     "dst": true
+    },
+    {
+     "local": "2026-11-02T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-02T08:30Z",
+     "wall_clock": "2026-11-02 01:30 MST",
+     "utc_offset": "-0700",
+     "dst": false
+    },
+    {
+     "local": "2026-11-03T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-03T08:30Z",
+     "wall_clock": "2026-11-03 01:30 MST",
+     "utc_offset": "-0700",
+     "dst": false
+    }
+   ]
+  },
+  "D_casablanca_daily_0130_sep": {
+   "tz": "Africa/Casablanca",
+   "dtstart_local": "2026-09-17T01:30:00",
+   "rule": {
+    "freq": "DAILY",
+    "count": 7
+   },
+   "original": [
+    {
+     "local": "2026-09-17T01:30:00",
+     "status": "ok",
+     "utc": "2026-09-17T00:30Z",
+     "wall_clock": "2026-09-17 01:30 +01",
+     "utc_offset": "+0100",
+     "dst": false
+    },
+    {
+     "local": "2026-09-18T01:30:00",
+     "status": "ok",
+     "utc": "2026-09-18T00:30Z",
+     "wall_clock": "2026-09-18 01:30 +01",
+     "utc_offset": "+0100",
+     "dst": false
+    },
+    {
+     "local": "2026-09-19T01:30:00",
+     "status": "ok",
+     "utc": "2026-09-19T00:30Z",
+     "wall_clock": "2026-09-19 01:30 +01",
+     "utc_offset": "+0100",
+     "dst": false
+    },
+    {
+     "local": "2026-09-20T01:30:00",
+     "status": "ambiguous; first occurrence used (other 01:30Z)",
+     "utc": "2026-09-20T00:30Z",
+     "wall_clock": "2026-09-20 01:30 +01",
+     "utc_offset": "+0100",
+     "dst": false
+    },
+    {
+     "local": "2026-09-21T01:30:00",
+     "status": "ok",
+     "utc": "2026-09-21T01:30Z",
+     "wall_clock": "2026-09-21 01:30 +00",
+     "utc_offset": "+0000",
+     "dst": false
+    },
+    {
+     "local": "2026-09-22T01:30:00",
+     "status": "ok",
+     "utc": "2026-09-22T01:30Z",
+     "wall_clock": "2026-09-22 01:30 +00",
+     "utc_offset": "+0000",
+     "dst": false
+    },
+    {
+     "local": "2026-09-23T01:30:00",
+     "status": "ok",
+     "utc": "2026-09-23T01:30Z",
+     "wall_clock": "2026-09-23 01:30 +00",
+     "utc_offset": "+0000",
+     "dst": false
+    }
+   ],
+   "erratum": [
+    {
+     "local": "2026-09-17T01:30:00",
+     "status": "ok",
+     "utc": "2026-09-17T00:30Z",
+     "wall_clock": "2026-09-17 01:30 +01",
+     "utc_offset": "+0100",
+     "dst": false
+    },
+    {
+     "local": "2026-09-18T01:30:00",
+     "status": "ok",
+     "utc": "2026-09-18T00:30Z",
+     "wall_clock": "2026-09-18 01:30 +01",
+     "utc_offset": "+0100",
+     "dst": false
+    },
+    {
+     "local": "2026-09-19T01:30:00",
+     "status": "ok",
+     "utc": "2026-09-19T00:30Z",
+     "wall_clock": "2026-09-19 01:30 +01",
+     "utc_offset": "+0100",
+     "dst": false
+    },
+    {
+     "local": "2026-09-20T01:30:00",
+     "status": "ambiguous; first occurrence used (other 01:30Z)",
+     "utc": "2026-09-20T00:30Z",
+     "wall_clock": "2026-09-20 01:30 +01",
+     "utc_offset": "+0100",
+     "dst": false
+    },
+    {
+     "local": "2026-09-21T01:30:00",
+     "status": "ok",
+     "utc": "2026-09-21T01:30Z",
+     "wall_clock": "2026-09-21 01:30 +00",
+     "utc_offset": "+0000",
+     "dst": false
+    },
+    {
+     "local": "2026-09-22T01:30:00",
+     "status": "ok",
+     "utc": "2026-09-22T01:30Z",
+     "wall_clock": "2026-09-22 01:30 +00",
+     "utc_offset": "+0000",
+     "dst": false
+    },
+    {
+     "local": "2026-09-23T01:30:00",
+     "status": "ok",
+     "utc": "2026-09-23T01:30Z",
+     "wall_clock": "2026-09-23 01:30 +00",
+     "utc_offset": "+0000",
+     "dst": false
+    }
+   ]
+  },
+  "E_casablanca_daily_0230_mar": {
+   "tz": "Africa/Casablanca",
+   "dtstart_local": "2026-03-18T02:30:00",
+   "rule": {
+    "freq": "DAILY",
+    "count": 7
+   },
+   "original": [
+    {
+     "local": "2026-03-18T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-18T02:30Z",
+     "wall_clock": "2026-03-18 02:30 +00",
+     "utc_offset": "+0000",
+     "dst": true
+    },
+    {
+     "local": "2026-03-19T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-19T02:30Z",
+     "wall_clock": "2026-03-19 02:30 +00",
+     "utc_offset": "+0000",
+     "dst": true
+    },
+    {
+     "local": "2026-03-20T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-20T02:30Z",
+     "wall_clock": "2026-03-20 02:30 +00",
+     "utc_offset": "+0000",
+     "dst": true
+    },
+    {
+     "local": "2026-03-21T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-21T02:30Z",
+     "wall_clock": "2026-03-21 02:30 +00",
+     "utc_offset": "+0000",
+     "dst": true
+    },
+    {
+     "local": "2026-03-22T02:30:00",
+     "status": "dropped (nonexistent local time)"
+    },
+    {
+     "local": "2026-03-23T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-23T01:30Z",
+     "wall_clock": "2026-03-23 02:30 +01",
+     "utc_offset": "+0100",
+     "dst": false
+    },
+    {
+     "local": "2026-03-24T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-24T01:30Z",
+     "wall_clock": "2026-03-24 02:30 +01",
+     "utc_offset": "+0100",
+     "dst": false
+    },
+    {
+     "local": "2026-03-25T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-25T01:30Z",
+     "wall_clock": "2026-03-25 02:30 +01",
+     "utc_offset": "+0100",
+     "dst": false
+    }
+   ],
+   "erratum": [
+    {
+     "local": "2026-03-18T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-18T02:30Z",
+     "wall_clock": "2026-03-18 02:30 +00",
+     "utc_offset": "+0000",
+     "dst": true
+    },
+    {
+     "local": "2026-03-19T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-19T02:30Z",
+     "wall_clock": "2026-03-19 02:30 +00",
+     "utc_offset": "+0000",
+     "dst": true
+    },
+    {
+     "local": "2026-03-20T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-20T02:30Z",
+     "wall_clock": "2026-03-20 02:30 +00",
+     "utc_offset": "+0000",
+     "dst": true
+    },
+    {
+     "local": "2026-03-21T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-21T02:30Z",
+     "wall_clock": "2026-03-21 02:30 +00",
+     "utc_offset": "+0000",
+     "dst": true
+    },
+    {
+     "local": "2026-03-22T02:30:00",
+     "status": "kept, shifted (nonexistent local time)",
+     "utc": "2026-03-22T02:30Z",
+     "wall_clock": "2026-03-22 03:30 +01",
+     "utc_offset": "+0100",
+     "dst": false
+    },
+    {
+     "local": "2026-03-23T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-23T01:30Z",
+     "wall_clock": "2026-03-23 02:30 +01",
+     "utc_offset": "+0100",
+     "dst": false
+    },
+    {
+     "local": "2026-03-24T02:30:00",
+     "status": "ok",
+     "utc": "2026-03-24T01:30Z",
+     "wall_clock": "2026-03-24 02:30 +01",
+     "utc_offset": "+0100",
+     "dst": false
+    }
+   ]
+  },
+  "F_edmonton_daily_0130_nov": {
+   "tz": "America/Edmonton",
+   "dtstart_local": "2026-10-30T01:30:00",
+   "rule": {
+    "freq": "DAILY",
+    "count": 5
+   },
+   "original": [
+    {
+     "local": "2026-10-30T01:30:00",
+     "status": "ok",
+     "utc": "2026-10-30T07:30Z",
+     "wall_clock": "2026-10-30 01:30 MDT",
+     "utc_offset": "-0600",
+     "dst": true
+    },
+    {
+     "local": "2026-10-31T01:30:00",
+     "status": "ok",
+     "utc": "2026-10-31T07:30Z",
+     "wall_clock": "2026-10-31 01:30 MDT",
+     "utc_offset": "-0600",
+     "dst": true
+    },
+    {
+     "local": "2026-11-01T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-01T07:30Z",
+     "wall_clock": "2026-11-01 01:30 MDT",
+     "utc_offset": "-0600",
+     "dst": true
+    },
+    {
+     "local": "2026-11-02T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-02T07:30Z",
+     "wall_clock": "2026-11-02 01:30 CST",
+     "utc_offset": "-0600",
+     "dst": false
+    },
+    {
+     "local": "2026-11-03T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-03T07:30Z",
+     "wall_clock": "2026-11-03 01:30 CST",
+     "utc_offset": "-0600",
+     "dst": false
+    }
+   ],
+   "erratum": [
+    {
+     "local": "2026-10-30T01:30:00",
+     "status": "ok",
+     "utc": "2026-10-30T07:30Z",
+     "wall_clock": "2026-10-30 01:30 MDT",
+     "utc_offset": "-0600",
+     "dst": true
+    },
+    {
+     "local": "2026-10-31T01:30:00",
+     "status": "ok",
+     "utc": "2026-10-31T07:30Z",
+     "wall_clock": "2026-10-31 01:30 MDT",
+     "utc_offset": "-0600",
+     "dst": true
+    },
+    {
+     "local": "2026-11-01T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-01T07:30Z",
+     "wall_clock": "2026-11-01 01:30 MDT",
+     "utc_offset": "-0600",
+     "dst": true
+    },
+    {
+     "local": "2026-11-02T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-02T07:30Z",
+     "wall_clock": "2026-11-02 01:30 CST",
+     "utc_offset": "-0600",
+     "dst": false
+    },
+    {
+     "local": "2026-11-03T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-03T07:30Z",
+     "wall_clock": "2026-11-03 01:30 CST",
+     "utc_offset": "-0600",
+     "dst": false
+    }
+   ]
+  },
+  "G_winnipeg_daily_0130_nov": {
+   "tz": "America/Winnipeg",
+   "dtstart_local": "2026-10-30T01:30:00",
+   "rule": {
+    "freq": "DAILY",
+    "count": 5
+   },
+   "original": [
+    {
+     "local": "2026-10-30T01:30:00",
+     "status": "ok",
+     "utc": "2026-10-30T06:30Z",
+     "wall_clock": "2026-10-30 01:30 CDT",
+     "utc_offset": "-0500",
+     "dst": true
+    },
+    {
+     "local": "2026-10-31T01:30:00",
+     "status": "ok",
+     "utc": "2026-10-31T06:30Z",
+     "wall_clock": "2026-10-31 01:30 CDT",
+     "utc_offset": "-0500",
+     "dst": true
+    },
+    {
+     "local": "2026-11-01T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-01T06:30Z",
+     "wall_clock": "2026-11-01 01:30 CDT",
+     "utc_offset": "-0500",
+     "dst": true
+    },
+    {
+     "local": "2026-11-02T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-02T06:30Z",
+     "wall_clock": "2026-11-02 01:30 EST",
+     "utc_offset": "-0500",
+     "dst": false
+    },
+    {
+     "local": "2026-11-03T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-03T06:30Z",
+     "wall_clock": "2026-11-03 01:30 EST",
+     "utc_offset": "-0500",
+     "dst": false
+    }
+   ],
+   "erratum": [
+    {
+     "local": "2026-10-30T01:30:00",
+     "status": "ok",
+     "utc": "2026-10-30T06:30Z",
+     "wall_clock": "2026-10-30 01:30 CDT",
+     "utc_offset": "-0500",
+     "dst": true
+    },
+    {
+     "local": "2026-10-31T01:30:00",
+     "status": "ok",
+     "utc": "2026-10-31T06:30Z",
+     "wall_clock": "2026-10-31 01:30 CDT",
+     "utc_offset": "-0500",
+     "dst": true
+    },
+    {
+     "local": "2026-11-01T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-01T06:30Z",
+     "wall_clock": "2026-11-01 01:30 CDT",
+     "utc_offset": "-0500",
+     "dst": true
+    },
+    {
+     "local": "2026-11-02T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-02T06:30Z",
+     "wall_clock": "2026-11-02 01:30 EST",
+     "utc_offset": "-0500",
+     "dst": false
+    },
+    {
+     "local": "2026-11-03T01:30:00",
+     "status": "ok",
+     "utc": "2026-11-03T06:30Z",
+     "wall_clock": "2026-11-03 01:30 EST",
+     "utc_offset": "-0500",
+     "dst": false
+    }
+   ]
+  }
+ }
+}
