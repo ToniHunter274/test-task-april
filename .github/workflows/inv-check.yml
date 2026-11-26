@@ -1,0 +1,68 @@
+name: inv-check
+
+on:
+  push:
+    paths:
+      - "inv/run_inv.py"
+      - ".github/workflows/inv-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        scipy: ["1.16.3", "1.17.0", "1.17.1", "1.18.1"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install "numpy==2.3.5" "scipy==${{ matrix.scipy }}"
+      - working-directory: inv
+        run: python run_inv.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: inv-${{ matrix.scipy }}
+          path: inv/inv_*.json
+
+  collect:
+    needs: run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: art
+      - name: Build summary
+        run: |
+          mkdir -p inv/results
+          cp art/*/inv_*.json inv/results/
+          python3 - <<'PY'
+          import json, glob
+          rows = ["# scipy.linalg inv/solve across versions", "", "| scipy | case | cond | inv residual | solve residual |", "|---|---|---|---|---|"]
+          for f in sorted(glob.glob("inv/results/inv_*.json")):
+              d = json.load(open(f))
+              for c, r in d["cases"].items():
+                  rows.append(f"| {d['scipy']} | {c} | {r['cond']:.3f} | {r.get('inv_default_resid', float('nan')):.3e} | {r['solve_default_resid']:.3e} |")
+          rows.append("")
+          for f in sorted(glob.glob("inv/results/inv_*.json")):
+              d = json.load(open(f))
+              rows.append(f"## scipy {d['scipy']} (numpy {d['numpy']})")
+              for c, r in d["cases"].items():
+                  rows.append(f"- {c}: inv = {r.get('inv_default')} ; solve = {r['solve_default']} ; true_solve = {r['true_solve']}")
+          open("inv/results/SUMMARY.md", "w").write("\n".join(rows) + "\n")
+          print("\n".join(rows))
+          PY
+      - name: Commit
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add inv/results
+          git commit -m "inv/solve version check results" || echo "nothing to commit"
+          git pull --rebase
+          git push
