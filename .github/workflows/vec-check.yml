@@ -1,0 +1,59 @@
+name: vec-check
+
+on:
+  push:
+    paths:
+      - "vec/run_vec.py"
+      - ".github/workflows/vec-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:0.8.0-pg16
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 20
+      qdrant:
+        image: qdrant/qdrant:v1.13.4
+        ports: ["6333:6333"]
+      elasticsearch:
+        image: docker.elastic.co/elasticsearch/elasticsearch:8.15.3
+        env:
+          discovery.type: single-node
+          xpack.security.enabled: "false"
+          ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+        ports: ["9200:9200"]
+        options: >-
+          --health-cmd "curl -s http://localhost:9200/_cluster/health | grep -vq red" --health-interval 10s --health-timeout 5s --health-retries 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install clients
+        run: pip install "psycopg[binary]==3.2.3" "chromadb==0.6.3" "qdrant-client==1.13.3" requests
+      - name: Wait for Qdrant and Elasticsearch
+        run: |
+          for i in $(seq 1 60); do curl -sf http://localhost:6333/readyz && break; sleep 2; done
+          for i in $(seq 1 60); do curl -sf http://localhost:9200 && break; sleep 2; done
+      - name: Run all stores
+        working-directory: vec
+        run: python run_vec.py
+      - name: Commit results
+        run: |
+          mkdir -p vec/results
+          cp vec/vec_results.json vec/SUMMARY.md vec/results/
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add vec/results
+          git commit -m "Vector-store raw scores" || echo "nothing to commit"
+          git pull --rebase
+          git push
