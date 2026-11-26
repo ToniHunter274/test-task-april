@@ -10,9 +10,9 @@ cases = {
     "general_complex": np.array([[2 + 1j, 1 - 1j], [0.5 + 2j, 3 + 1j]]),
     # 3-node AC network: nodal admittance matrix (siemens), complex symmetric
     "ybus_3node": np.array([
-        [0.30 - 0.90j, -0.10 + 0.40j, -0.20 + 0.50j],
-        [-0.10 + 0.40j, 0.25 - 0.70j, -0.15 + 0.30j],
-        [-0.20 + 0.50j, -0.15 + 0.30j, 0.35 - 0.80j]]),
+        [0.35 - 0.80j, -0.10 + 0.40j, -0.20 + 0.50j],
+        [-0.10 + 0.40j, 0.33 - 0.62j, -0.15 + 0.30j],
+        [-0.20 + 0.50j, -0.15 + 0.30j, 0.41 - 0.71j]]),  # line admittances plus shunt-to-ground terms on the diagonal
 }
 out = {"python": sys.version.split()[0], "numpy": np.__version__, "scipy": scipy.__version__, "cases": {}}
 for name, A in cases.items():
